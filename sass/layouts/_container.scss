@@ -10,12 +10,11 @@
   }
 }
 
-// @media (max-width: $screen-size-l) {
-//   .container {
-//     max-width: 960px;
-//     border: 3px dashed red;
-//   }
-// }
+@media (max-width: $screen-size-l) {
+  .container {
+    padding: 0 0.5rem;
+  }
+}
 
 // @media (max-width: $screen-size-m) {
 //   .container {

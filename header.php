@@ -51,7 +51,19 @@
         </div><!-- container -->
       </div><!-- top-bar -->
       <div class="hero">
-        <img class="hero-image" src="<?php echo get_template_directory_uri(); ?>/assets/montenegro.png">
+        <?php
+        ?>
+        <?php if (is_front_page()) : ?>
+          <img class="hero-image" src="<?php echo get_template_directory_uri(); ?>/assets/montenegro.png">
+        <?php elseif (is_single() && has_post_thumbnail()) : ?>
+          <?php the_post_thumbnail('post-thumbnail', ['class' => "hero-image"]); ?>
+        <?php elseif (is_category()) : ?>
+          <?php
+          $term = get_queried_object();
+          $featured_img_uri = get_field('image', $term);
+          ?>
+          <img class="hero-image" src="<?php echo $featured_img_uri; ?>">
+        <?php endif; ?>
         <div class="hero-content">
           <!-- Subtitle: display the country category for the current post, e.g. "Iceland" -->
           <?php
@@ -74,16 +86,17 @@
               ?>
               <h1 class="hero-title"><?php echo is_category() ? $cat_name : the_title() ?></h1>
             <?php endif; ?>
-          </div>
+          </div> <!-- .hero-title -->
 
           <!-- Excerpt: display excerpt depending if front page, category page or single post page -->
           <div class="hero-excerpt">
             <?php if (is_front_page()) : ?>
-              <p><?php echo get_bloginfo('description') ?></p>
+              <?php echo get_bloginfo('description') ?>
             <?php else : ?>
               <div class="hero-subtitle"><?php echo is_category() ? category_description() : the_excerpt() ?></div>
             <?php endif; ?>
-          </div>
+          </div><!-- .hero-excerpt -->
+
         </div>
       </div>
     </header><!-- #masthead -->

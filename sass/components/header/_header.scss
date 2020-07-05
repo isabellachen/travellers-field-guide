@@ -4,7 +4,11 @@
   position: absolute;
   z-index: 10;
   width: 100%;
-  margin-top: 0.75rem;
+  margin-top: 0.25rem;
+
+  @media (min-width: $screen-size-l) {
+    margin-top: 0.75rem;
+  }
 
   &_content {
     display: flex;
@@ -22,16 +26,53 @@
 .hero {
   position: relative;
   z-index: 0;
+  display: flex;
+  justify-content: center;
 
   &-image {
+    max-width: none;
     width: 100vw;
+    height: 240px;
+    object-fit: cover;
+
+    @media (min-width: $screen-size-s) {
+      height: auto;
+    }
   }
 
   &-content {
+    text-align: center;
     position: absolute;
-    top: 0;
+    top: 56px;
+    color: #fff;
+
+    @media (min-width: $screen-size-l) {
+      top: 88px;
+    }
+  }
+
+  &-title {
+    margin: 0 0 10px 0;
+    font-family: $font-display;
+    font-size: $fs-hero-title-mobile;
+    text-transform: uppercase;
+    font-weight: normal;
+    line-height: initial;
+
     @media (min-width: $screen-size-m) {
-      color: pink;
+      font-size: $fs-hero-title-ipad;
+    }
+
+    @media (min-width: $screen-size-l) {
+      font-size: $fs-hero-title-desktop;
+    }
+  }
+
+  &-excerpt {
+    margin: auto;
+    max-width: 320px;
+    @media (min-width: $screen-size-m) {
+      max-width: 540px;
     }
   }
 }
