@@ -1,0 +1,32 @@
+@media (min-width: $screen-size-xl) {
+  .container {
+    max-width: 1170px;
+  }
+}
+
+@media (max-width: $screen-size-xl) {
+  .container {
+    padding: 0 1.5rem;
+  }
+}
+
+// @media (max-width: $screen-size-l) {
+//   .container {
+//     max-width: 960px;
+//     border: 3px dashed red;
+//   }
+// }
+
+// @media (max-width: $screen-size-m) {
+//   .container {
+//     max-width: 720px;
+//     border: 3px dashed blue;
+//   }
+// }
+
+// @media (max-width: $screen-size-s) {
+//   .container {
+//     max-width: 540px;
+//     border: 3px dashed green;
+//   }
+// }

@@ -48,6 +48,9 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	- Alignments
 
 --------------------------------------------------------------*/
+/*
+ * SCREEN SIZES
+*/
 /*--------------------------------------------------------------
 # Generic
 --------------------------------------------------------------*/
@@ -518,15 +521,15 @@ table {
 /* Links
 --------------------------------------------- */
 a {
-  color: #4169e1;
+  color: #ffffff;
 }
 
 a:visited {
-  color: #800080;
+  color: #d3ced5;
 }
 
 a:hover, a:focus, a:active {
-  color: #191970;
+  color: #ffffff;
 }
 
 a:focus {
@@ -540,32 +543,32 @@ a:hover, a:active {
 /* Forms
 --------------------------------------------- */
 button,
-input[type="button"],
-input[type="reset"],
-input[type="submit"] {
+input[type='button'],
+input[type='reset'],
+input[type='submit'] {
   border: 1px solid;
   border-color: #ccc #ccc #bbb;
   border-radius: 3px;
   background: #e6e6e6;
   color: rgba(0, 0, 0, 0.8);
   line-height: 1;
-  padding: 0.6em 1em 0.4em;
+  padding: 0.15;
 }
 
 button:hover,
-input[type="button"]:hover,
-input[type="reset"]:hover,
-input[type="submit"]:hover {
+input[type='button']:hover,
+input[type='reset']:hover,
+input[type='submit']:hover {
   border-color: #ccc #bbb #aaa;
 }
 
 button:active, button:focus,
-input[type="button"]:active,
-input[type="button"]:focus,
-input[type="reset"]:active,
-input[type="reset"]:focus,
-input[type="submit"]:active,
-input[type="submit"]:focus {
+input[type='button']:active,
+input[type='button']:focus,
+input[type='reset']:active,
+input[type='reset']:focus,
+input[type='submit']:active,
+input[type='submit']:focus {
   border-color: #aaa #bbb #bbb;
 }
 
@@ -621,14 +624,41 @@ textarea {
 /*--------------------------------------------------------------
 # Layouts
 --------------------------------------------------------------*/
+/* Container
+--------------------------------------------- */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1170px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+}
+
 /*--------------------------------------------------------------
 # Components
 --------------------------------------------------------------*/
 /* Navigation
 --------------------------------------------- */
+/*
+ * SCREEN SIZES
+*/
 .main-navigation {
-  display: block;
-  width: 100%;
+  display: flex;
+  align-items: center;
+  font-family: 'Alata';
+  font-size: 1.125rem;
+  text-transform: uppercase;
+  position: relative;
+}
+
+@media (min-width: 992px) {
+  .main-navigation {
+    top: 0.25rem;
+  }
 }
 
 .main-navigation ul {
@@ -669,6 +699,17 @@ textarea {
 
 .main-navigation li {
   position: relative;
+  padding: 0 1.25rem;
+}
+
+.main-navigation li > a {
+  border-bottom: 2px solid transparent;
+  padding-bottom: 0.25rem;
+}
+
+.main-navigation li:hover > a,
+.main-navigation li.focus > a {
+  border-bottom: 2px solid #ffffff;
 }
 
 .main-navigation a {
@@ -677,12 +718,20 @@ textarea {
 }
 
 /* Small menu. */
+.menu-toggle {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  display: inline-block;
+  margin-top: 1rem 0.25rem;
+}
+
 .menu-toggle,
 .main-navigation.toggled ul {
   display: block;
 }
 
-@media screen and (min-width: 37.5em) {
+@media screen and (min-width: 992px) {
   .menu-toggle {
     display: none;
   }
@@ -716,6 +765,35 @@ textarea {
   flex: 1 0 50%;
 }
 
+/* Hamburger */
+/*
+ * Hamburger button
+*/
+.bar1,
+.bar2,
+.bar3 {
+  width: 35px;
+  height: 5px;
+  border-radius: 2px;
+  background-color: #ffffff;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+.change .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+  transform: rotate(-45deg) translate(-8px, 6px);
+}
+
+.change .bar2 {
+  opacity: 0;
+}
+
+.change .bar3 {
+  -webkit-transform: rotate(45deg) translate(-8px, -8px);
+  transform: rotate(45deg) translate(-10px, -8px);
+}
+
 /* Posts and pages
 --------------------------------------------- */
 .sticky {
@@ -742,16 +820,6 @@ textarea {
   margin: 0 0 1.5em;
 }
 
-/* Comments
---------------------------------------------- */
-.comment-content a {
-  word-wrap: break-word;
-}
-
-.bypostauthor {
-  display: block;
-}
-
 /* Widgets
 --------------------------------------------- */
 .widget {
@@ -775,7 +843,7 @@ textarea {
 
 /* Make sure logo link wraps around logo image. */
 .custom-logo-link {
-  display: inline-block;
+  display: flex;
 }
 
 /* Captions
@@ -799,54 +867,48 @@ textarea {
   text-align: center;
 }
 
-/* Galleries
+/* Header
 --------------------------------------------- */
-.gallery {
-  margin-bottom: 1.5em;
-  display: grid;
-  grid-gap: 1.5em;
-}
-
-.gallery-item {
-  display: inline-block;
-  text-align: center;
+/*
+ * SCREEN SIZES
+*/
+.top-bar {
+  position: absolute;
+  z-index: 10;
   width: 100%;
+  margin-top: 0.75rem;
 }
 
-.gallery-columns-2 {
-  grid-template-columns: repeat(2, 1fr);
+.top-bar_content {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
 }
 
-.gallery-columns-3 {
-  grid-template-columns: repeat(3, 1fr);
+.site-branding {
+  width: 16rem;
 }
 
-.gallery-columns-4 {
-  grid-template-columns: repeat(4, 1fr);
+.hero {
+  position: relative;
+  z-index: 0;
 }
 
-.gallery-columns-5 {
-  grid-template-columns: repeat(5, 1fr);
+.hero-image {
+  width: 100vw;
 }
 
-.gallery-columns-6 {
-  grid-template-columns: repeat(6, 1fr);
+.hero-content {
+  position: absolute;
+  top: 0;
 }
 
-.gallery-columns-7 {
-  grid-template-columns: repeat(7, 1fr);
-}
-
-.gallery-columns-8 {
-  grid-template-columns: repeat(8, 1fr);
-}
-
-.gallery-columns-9 {
-  grid-template-columns: repeat(9, 1fr);
-}
-
-.gallery-caption {
-  display: block;
+@media (min-width: 768px) {
+  .hero-content {
+    color: pink;
+  }
 }
 
 /*--------------------------------------------------------------

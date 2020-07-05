@@ -17,7 +17,6 @@ get_header();
 ?>
 
 <main id="primary" class="site-main">
-  <img src="<?php echo get_template_directory_uri(); ?>/assets/montenegro.png">
   <?php
   while (have_posts()) :
     the_post();

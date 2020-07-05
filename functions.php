@@ -153,6 +153,8 @@ function travellers_field_guide_scripts()
 
   wp_enqueue_script('travellers-field-guide-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true);
 
+  wp_enqueue_style('googlefont_css', 'https://fonts.googleapis.com/css2?family=Alata&family=Lato:wght@300;400;700;900&display=swap');
+
   if (is_singular() && comments_open() && get_option('thread_comments')) {
     wp_enqueue_script('comment-reply');
   }
