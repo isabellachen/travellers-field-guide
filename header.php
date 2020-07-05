@@ -54,7 +54,21 @@
         <?php
         ?>
         <?php if (is_front_page()) : ?>
-          <img class="hero-image" src="<?php echo get_template_directory_uri(); ?>/assets/montenegro.png">
+          <?php
+          $hero_posts = get_posts(array(
+            'meta_query' => array(
+              array(
+                'key'   => 'home_hero',
+                'value' => '1',
+              )
+            )
+          ));
+          $rand = rand(0, count($hero_posts) - 1);
+          $post_id = $hero_posts[$rand]->ID;
+          $featured_img_url = get_the_post_thumbnail_url($post_id);
+          wp_reset_postdata()
+          ?>
+          <img class="hero-image" src="<?php echo $featured_img_url ?>">
         <?php elseif (is_single() && has_post_thumbnail()) : ?>
           <?php the_post_thumbnail('post-thumbnail', ['class' => "hero-image"]); ?>
         <?php elseif (is_category()) : ?>
