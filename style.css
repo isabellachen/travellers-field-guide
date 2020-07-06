@@ -919,6 +919,24 @@ textarea {
   justify-content: center;
 }
 
+.hero:before {
+  content: '';
+  background: linear-gradient(180deg, rgba(0, 0, 13, 0.3) 0%, rgba(255, 255, 255, 0) 20%);
+  position: absolute;
+  z-index: 10;
+  height: 100%;
+  width: 100%;
+}
+
+.hero:after {
+  content: '';
+  background: linear-gradient(180deg, rgba(0, 0, 3, 0) 65%, #00000d 100%);
+  position: absolute;
+  z-index: 10;
+  height: 100%;
+  width: 100%;
+}
+
 .hero-image {
   max-width: none;
   width: 100vw;

@@ -24,6 +24,32 @@
 }
 
 .hero {
+  &:before {
+    content: '';
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 13, 0.3) 0%,
+      rgba(255, 255, 255, 0) 20%
+    );
+    position: absolute;
+    z-index: 10;
+    height: 100%;
+    width: 100%;
+  }
+
+  &:after {
+    content: '';
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 3, 0) 65%,
+      rgba(0, 0, 13, 1) 100%
+    );
+    position: absolute;
+    z-index: 10;
+    height: 100%;
+    width: 100%;
+  }
+
   position: relative;
   z-index: 0;
   display: flex;
