@@ -463,11 +463,11 @@ big {
 /* Elements
 --------------------------------------------- */
 body {
-  background: #fff;
+  background: #00000d;
 }
 
 hr {
-  background-color: #ccc;
+  background-color: #50555e;
   border: 0;
   height: 1px;
   margin-bottom: 1.5em;
@@ -528,7 +528,7 @@ a {
 }
 
 a:visited {
-  color: #d3ced5;
+  color: #eeecef;
 }
 
 a:hover, a:focus, a:active {
@@ -945,8 +945,11 @@ textarea {
   }
 }
 
-.hero-title {
+.hero-title-wrapper {
   margin: 0 0 10px 0;
+}
+
+.hero-title {
   font-family: "Alata", "Segoe UI", Roboto, Cantarell, "Helvetica Neue", sans-serif;
   font-size: 1.625rem;
   text-transform: uppercase;
@@ -966,14 +969,38 @@ textarea {
   }
 }
 
-.hero-excerpt {
+.hero-subtitle {
+  font-family: "Alata", "Segoe UI", Roboto, Cantarell, "Helvetica Neue", sans-serif;
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  display: inline-block;
+  border-bottom: 2px solid #ffffff;
+}
+
+@media (min-width: 768px) {
+  .hero-subtitle {
+    font-size: 1.5rem;
+  }
+}
+
+.hero-excerpt-wrapper {
   margin: auto;
   max-width: 320px;
 }
 
 @media (min-width: 768px) {
-  .hero-excerpt {
+  .hero-excerpt-wrapper {
     max-width: 540px;
+  }
+}
+
+.hero-excerpt--mobile {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .hero-excerpt--mobile {
+    display: block;
   }
 }
 
@@ -1013,12 +1040,12 @@ textarea {
 }
 
 .screen-reader-text:focus {
-  background-color: #f1f1f1;
+  background-color: #00000d;
   border-radius: 3px;
   box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
   clip: auto !important;
   clip-path: none;
-  color: #21759b;
+  color: #736997;
   display: block;
   font-size: 0.875rem;
   font-weight: 700;

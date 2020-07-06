@@ -82,15 +82,16 @@
           <!-- Subtitle: display the country category for the current post, e.g. "Iceland" -->
           <?php
           if (is_single()) : ?>
-            <?php
-            $post_id = get_the_ID();
-            $post_tags = get_the_tags($post_id);
-            echo $post_tags[0]->name
-            ?>
-            <div class="hero-subtitle"><?php echo $post_tags->name ?></div>
+            <div class="hero-subtitle">
+              <?php
+              $post_id = get_the_ID();
+              $post_tags = get_the_tags($post_id);
+              echo $post_tags[0]->name
+              ?>
+            </div>
           <?php endif; ?>
 
-          <div class="hero-title">
+          <div class="hero-title-wrapper">
             <?php if (is_front_page()) : ?>
               <h1 class="hero-title">A Traveller's Field Guide</h1>
             <?php else : ?>
@@ -103,11 +104,11 @@
           </div> <!-- .hero-title -->
 
           <!-- Excerpt: display excerpt depending if front page, category page or single post page -->
-          <div class="hero-excerpt">
+          <div class="hero-excerpt-wrapper">
             <?php if (is_front_page()) : ?>
               <?php echo get_bloginfo('description') ?>
             <?php else : ?>
-              <div class="hero-subtitle"><?php echo is_category() ? category_description() : the_excerpt() ?></div>
+              <div class="hero-excerpt hero-excerpt--mobile"><?php echo is_category() ? category_description() : the_excerpt() ?></div>
             <?php endif; ?>
           </div><!-- .hero-excerpt -->
 

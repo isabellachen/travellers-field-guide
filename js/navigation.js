@@ -49,6 +49,7 @@
 
     if (!isClickInside) {
       siteNavigation.classList.remove('toggled');
+      button.classList.remove('change');
       button.setAttribute('aria-expanded', 'false');
     }
   });

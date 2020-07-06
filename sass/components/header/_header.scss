@@ -51,8 +51,11 @@
     }
   }
 
-  &-title {
+  &-title-wrapper {
     margin: 0 0 10px 0;
+  }
+
+  &-title {
     font-family: $font-display;
     font-size: $fs-hero-title-mobile;
     text-transform: uppercase;
@@ -68,11 +71,31 @@
     }
   }
 
-  &-excerpt {
+  &-subtitle {
+    font-family: $font-display;
+    font-size: $fs-hero-subtitle-mobile;
+    text-transform: uppercase;
+    display: inline-block;
+    border-bottom: 2px solid #ffffff;
+
+    @media (min-width: $screen-size-m) {
+      font-size: $fs-hero-subtitle-desktop;
+    }
+  }
+
+  &-excerpt-wrapper {
     margin: auto;
     max-width: 320px;
+
     @media (min-width: $screen-size-m) {
       max-width: 540px;
+    }
+  }
+
+  &-excerpt--mobile {
+    display: none;
+    @media (min-width: $screen-size-m) {
+      display: block;
     }
   }
 }
