@@ -42,8 +42,31 @@ get_header();
       </div><!-- .homepage-intro -->
     </div><!-- .homepage-intro-wrapper -->
     <div class="homepage-featured-wrapper">
+      <?php
+      $featured_stories = get_posts(array(
+        'meta_query' => array(
+          array(
+            'key'   => 'home_featured',
+            'value' => '1',
+          )
+        )
+      ));
+      ?>
       <div class="homepage-featured-title heading home-h2">Featured Stories</div>
-      <div class="homepage-featured-tiles"></div>
+      <div class="homepage-featured-tiles">
+        <?php
+        if ($featured_stories) {
+          for ($i = 0; $i < 3; $i++) {
+            $post = $featured_stories[$i];
+            $featured_story_image = get_field('featured_story_image');
+            if (!empty($featured_story_image)) : ?>
+              <img src="<?php echo esc_url($featured_story_image['url']); ?>" alt="<?php echo esc_attr($featured_story_image['alt']); ?>" />
+            <?php endif; ?>
+        <?php wp_reset_postdata();
+          }
+        }
+        ?>
+      </div>
     </div><!-- .homepage-featured-wrapper -->
   <?php endwhile; ?>
   <!-- end loop -->
