@@ -41,7 +41,7 @@
 
     @media (min-width: $screen-size-m) {
       width: auto;
-      flex-basis: 32%;
+      flex-basis: 31%;
       padding-top: 45%;
       margin: unset;
     }
@@ -49,6 +49,20 @@
     a,
     a:visited {
       color: #ffffff;
+    }
+
+    &:before {
+      content: '';
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0) 35%,
+        rgba(0, 0, 13, 0.5) 100%
+      );
+      z-index: 10;
     }
   }
 
@@ -96,19 +110,6 @@
 
     @media (min-width: $screen-size-m) {
       padding-bottom: 0;
-    }
-  }
-}
-
-.shrink-on-hover {
-  img {
-    transition: all 0.2s ease-in-out;
-    transform: scale(1.1);
-  }
-
-  &:hover {
-    img {
-      transform: scale(1);
     }
   }
 }
