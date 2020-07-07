@@ -16,13 +16,13 @@
 get_header();
 ?>
 
-<main id="primary" class="homepage site-main container">
+<main id="primary" class="home site-main container">
   <?php while (have_posts()) :
     the_post(); ?>
-    <div class="homepage-intro-wrapper">
+    <div class="home-intro-wrapper">
       <!-- Who We Are -->
       <h2 class="heading home-h2">Who We Are</h2>
-      <div class="homepage-intro">
+      <div class="home-intro">
         <?php
         the_content(
           sprintf(
@@ -39,9 +39,9 @@ get_header();
           )
         );
         ?>
-      </div><!-- .homepage-intro -->
-    </div><!-- .homepage-intro-wrapper -->
-    <div class="homepage-featured-wrapper">
+      </div><!-- .home-intro -->
+    </div><!-- .home-intro-wrapper -->
+    <div class="home-featured-wrapper">
       <?php
       $featured_stories = get_posts(array(
         'meta_query' => array(
@@ -52,22 +52,38 @@ get_header();
         )
       ));
       ?>
-      <div class="homepage-featured-title heading home-h2">Featured Stories</div>
-      <div class="homepage-featured-tiles">
+      <div class="home-featured-title heading home-h2">Featured Stories</div>
+      <div class="home-featured">
         <?php
         if ($featured_stories) {
           for ($i = 0; $i < 3; $i++) {
             $post = $featured_stories[$i];
+            $post_id = get_the_ID();
+            $post_country = get_the_tags($post_id)[0]->name; //name of country
+            $post_title = get_the_title();
+            $post_excerpt = get_the_excerpt();
+            $post_permalink = get_the_permalink();
             $featured_story_image = get_field('featured_story_image');
-            if (!empty($featured_story_image)) : ?>
-              <img src="<?php echo esc_url($featured_story_image['url']); ?>" alt="<?php echo esc_attr($featured_story_image['alt']); ?>" />
+            if ($featured_story_image) : ?>
+              <div class="home-featured-single shrink-on-hover">
+                <a href="<?php echo $post_permalink ?>">
+                  <div class="home-featured-content-wrapper">
+                    <div class="home-featured-content">
+                      <h3 class="home-featured-content-subheading subheading"><?php echo $post_country ?></h3>
+                      <h3 class="home-featured-content-title heading home-h3"><?php echo $post_title ?></h3>
+                      <p class="home-featured-content-paragraph"><?php echo $post_excerpt ?></p>
+                    </div>
+                  </div>
+                  <?php echo wp_get_attachment_image($featured_story_image, 'full', "", array("class" => "home-featured-image")); ?>
+                </a>
+              </div>
             <?php endif; ?>
         <?php wp_reset_postdata();
           }
         }
         ?>
       </div>
-    </div><!-- .homepage-featured-wrapper -->
+    </div><!-- .home-featured-wrapper -->
   <?php endwhile; ?>
   <!-- end loop -->
 </main><!-- #main -->

@@ -78,7 +78,7 @@
           ?>
           <img class="hero-image" src="<?php echo $featured_img_uri; ?>">
         <?php endif; ?>
-        <div class="hero-content">
+        <div class="hero-content <?php echo is_front_page() ? "hero-content--centered" : "" ?>">
           <!-- Subtitle: display the country category for the current post, e.g. "Iceland" -->
           <?php
           if (is_single()) : ?>
@@ -93,7 +93,7 @@
 
           <div class="hero-title-wrapper container">
             <?php if (is_front_page()) : ?>
-              <h1 class="hero-title">A Traveller's Field Guide</h1>
+              <h1 class="hero-title hero-title--lg">A Traveller's Field Guide</h1>
             <?php else : ?>
               <?php
               $category = get_queried_object();
