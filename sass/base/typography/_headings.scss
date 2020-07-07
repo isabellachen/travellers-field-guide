@@ -4,5 +4,14 @@ h3,
 h4,
 h5,
 h6 {
-	clear: both;
+  clear: both;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0.3125rem 0;
+  @media (min-width: $screen-size-l) {
+    margin: 0.623rem 0;
+  }
 }

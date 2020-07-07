@@ -91,7 +91,7 @@
             </div>
           <?php endif; ?>
 
-          <div class="hero-title-wrapper">
+          <div class="hero-title-wrapper container">
             <?php if (is_front_page()) : ?>
               <h1 class="hero-title">A Traveller's Field Guide</h1>
             <?php else : ?>

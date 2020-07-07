@@ -87,8 +87,10 @@
     text-transform: uppercase;
     font-weight: normal;
     line-height: initial;
+    margin: 0.25rem 0;
 
     @media (min-width: $screen-size-m) {
+      margin: 0.5rem 0;
       font-size: $fs-hero-title-ipad;
     }
 
@@ -111,10 +113,10 @@
 
   &-excerpt-wrapper {
     margin: auto;
-    max-width: 320px;
+    max-width: $width-xs;
 
     @media (min-width: $screen-size-m) {
-      max-width: 540px;
+      max-width: $width-s;
     }
   }
 

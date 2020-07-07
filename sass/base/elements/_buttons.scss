@@ -3,19 +3,19 @@ input[type='button'],
 input[type='reset'],
 input[type='submit'] {
   border: 1px solid;
-  border-color: $color__border-button;
+  border-color: $c-primary-mid;
   border-radius: 3px;
-  background: $color__background-button;
+  background: $c-primary-light;
   color: rgba(0, 0, 0, 0.8);
   line-height: 1;
   padding: 0.15;
 
   &:hover {
-    border-color: $color__border-button-hover;
+    border-color: $c-primary-mid;
   }
 
   &:active,
   &:focus {
-    border-color: $color__border-button-focus;
+    border-color: $c-primary-mid;
   }
 }

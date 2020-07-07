@@ -1,6 +1,18 @@
+.container {
+  margin: auto;
+}
+
 @media (min-width: $screen-size-xl) {
   .container {
     max-width: 1170px;
+  }
+
+  .container-inner {
+    max-width: 800px;
+  }
+
+  .container-innermost {
+    max-width: 500px;
   }
 }
 
@@ -15,17 +27,3 @@
     padding: 0 0.5rem;
   }
 }
-
-// @media (max-width: $screen-size-m) {
-//   .container {
-//     max-width: 720px;
-//     border: 3px dashed blue;
-//   }
-// }
-
-// @media (max-width: $screen-size-s) {
-//   .container {
-//     max-width: 540px;
-//     border: 3px dashed green;
-//   }
-// }

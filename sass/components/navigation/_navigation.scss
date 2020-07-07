@@ -63,13 +63,19 @@
     padding: 0 1.25rem;
 
     & > a {
+      color: $c-primary-light;
       border-bottom: $nav-border-bottom-hide;
       padding-bottom: 0.25rem;
     }
 
     &:hover > a,
     &.focus > a {
+      color: $c-primary-light;
       border-bottom: $nav-border-bottom-active;
+    }
+
+    &:visited > a {
+      color: $c-primary-light;
     }
   }
 
