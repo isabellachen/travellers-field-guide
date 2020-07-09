@@ -187,3 +187,101 @@ require get_template_directory() . '/inc/customizer.php';
 if (defined('JETPACK__VERSION')) {
   require get_template_directory() . '/inc/jetpack.php';
 }
+
+/*-----------------------------------------------------------------------------------*/
+/* Numbered Pagination
+/*-----------------------------------------------------------------------------------*/
+function tfg_pagination_double_left_chevron()
+{
+  return "
+<svg width='13px' height='12px' viewBox='0 0 13 12' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'>
+    <title>chevron-double-left</title>
+    <g id='chevron-double-left' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'>
+        <g id='chevron-down' fill='#F5F5F6' fill-rule='nonzero'>
+            <path d='M13.7268994,3.1446875 L9.46022727,7.4675 L5.19355519,3.1446875 C4.87154221,2.8184375 4.38852273,2.8184375 4.06650974,3.1446875 C3.74449675,3.4709375 3.74449675,3.9603125 4.06650974,4.2865625 L8.89670455,9.1803125 C9.05771104,9.3434375 9.29922078,9.425 9.46022727,9.425 C9.62123377,9.425 9.86274351,9.3434375 10.02375,9.1803125 L14.8539448,4.2865625 C15.1759578,3.9603125 15.1759578,3.4709375 14.8539448,3.1446875 C14.5319318,2.8184375 14.0489123,2.8184375 13.7268994,3.1446875 Z' id='Path' transform='translate(9.460227, 6.162500) rotate(-270.000000) translate(-9.460227, -6.162500) '></path>
+            <path d='M7.72689935,3.1446875 L3.46022727,7.4675 L-0.806444805,3.1446875 C-1.12845779,2.8184375 -1.61147727,2.8184375 -1.93349026,3.1446875 C-2.25550325,3.4709375 -2.25550325,3.9603125 -1.93349026,4.2865625 L2.89670455,9.1803125 C3.05771104,9.3434375 3.29922078,9.425 3.46022727,9.425 C3.62123377,9.425 3.86274351,9.3434375 4.02375,9.1803125 L8.85394481,4.2865625 C9.17595779,3.9603125 9.17595779,3.4709375 8.85394481,3.1446875 C8.53193182,2.8184375 8.04891234,2.8184375 7.72689935,3.1446875 Z' id='Path-Copy' transform='translate(3.460227, 6.162500) rotate(-270.000000) translate(-3.460227, -6.162500) '></path>
+        </g>
+    </g>
+</svg>";
+}
+
+function tfg_pagination_double_right_chevron()
+{
+  return "
+<svg width='13px' height='13px' viewBox='0 0 13 13' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'>
+    <title>chevron-down</title>
+    <g id='Symbols' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'>
+        <g id='chevron-double-right' fill='#F5F5F6' fill-rule='nonzero'>
+            <g id='chevron-down' transform='translate(6.500000, 6.500000) rotate(-180.000000) translate(-6.500000, -6.500000) '>
+                <path d='M14.0164286,3.15184211 L9.625,7.60105263 L5.23357143,3.15184211 C4.90214286,2.81605263 4.405,2.81605263 4.07357143,3.15184211 C3.74214286,3.48763158 3.74214286,3.99131579 4.07357143,4.32710526 L9.045,9.36394737 C9.21071429,9.53184211 9.45928571,9.61578947 9.625,9.61578947 C9.79071429,9.61578947 10.0392857,9.53184211 10.205,9.36394737 L15.1764286,4.32710526 C15.5078571,3.99131579 15.5078571,3.48763158 15.1764286,3.15184211 C14.845,2.81605263 14.3478571,2.81605263 14.0164286,3.15184211 Z' id='Path' transform='translate(9.625000, 6.257895) rotate(-270.000000) translate(-9.625000, -6.257895) '></path>
+                <path d='M8.01642857,3.15184211 L3.625,7.60105263 L-0.766428571,3.15184211 C-1.09785714,2.81605263 -1.595,2.81605263 -1.92642857,3.15184211 C-2.25785714,3.48763158 -2.25785714,3.99131579 -1.92642857,4.32710526 L3.045,9.36394737 C3.21071429,9.53184211 3.45928571,9.61578947 3.625,9.61578947 C3.79071429,9.61578947 4.03928571,9.53184211 4.205,9.36394737 L9.17642857,4.32710526 C9.50785714,3.99131579 9.50785714,3.48763158 9.17642857,3.15184211 C8.845,2.81605263 8.34785714,2.81605263 8.01642857,3.15184211 Z' id='Path-Copy' transform='translate(3.625000, 6.257895) rotate(-270.000000) translate(-3.625000, -6.257895) '></path>
+            </g>
+        </g>
+    </g>
+</svg>";
+}
+
+function tfg_pagination_left_chevron()
+{
+  return "
+<svg width='7px' height='12px' viewBox='0 0 7 12' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'>
+    <title>chevron-down copy</title>
+    <g id='Symbols' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'>
+        <g id='chevron-left' fill='#F5F5F6' fill-rule='nonzero'>
+            <g id='chevron-down-copy'>
+                <path d='M7.72689935,3.1446875 L3.46022727,7.4675 L-0.806444805,3.1446875 C-1.12845779,2.8184375 -1.61147727,2.8184375 -1.93349026,3.1446875 C-2.25550325,3.4709375 -2.25550325,3.9603125 -1.93349026,4.2865625 L2.89670455,9.1803125 C3.05771104,9.3434375 3.29922078,9.425 3.46022727,9.425 C3.62123377,9.425 3.86274351,9.3434375 4.02375,9.1803125 L8.85394481,4.2865625 C9.17595779,3.9603125 9.17595779,3.4709375 8.85394481,3.1446875 C8.53193182,2.8184375 8.04891234,2.8184375 7.72689935,3.1446875 Z' id='Path' transform='translate(3.460227, 6.162500) rotate(-270.000000) translate(-3.460227, -6.162500) '></path>
+            </g>
+        </g>
+    </g>
+</svg>";
+}
+
+function tfg_pagination_right_chevron()
+{
+  return "
+<svg width='7px' height='12px' viewBox='0 0 7 12' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'>
+    <title>chevron-down copy</title>
+    <g id='Symbols' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'>
+        <g id='chevron-right' fill='#F5F5F6' fill-rule='nonzero'>
+            <g id='chevron-down-copy' transform='translate(3.500000, 6.000000) rotate(-180.000000) translate(-3.500000, -6.000000) '>
+                <path d='M7.72689935,3.1446875 L3.46022727,7.4675 L-0.806444805,3.1446875 C-1.12845779,2.8184375 -1.61147727,2.8184375 -1.93349026,3.1446875 C-2.25550325,3.4709375 -2.25550325,3.9603125 -1.93349026,4.2865625 L2.89670455,9.1803125 C3.05771104,9.3434375 3.29922078,9.425 3.46022727,9.425 C3.62123377,9.425 3.86274351,9.3434375 4.02375,9.1803125 L8.85394481,4.2865625 C9.17595779,3.9603125 9.17595779,3.4709375 8.85394481,3.1446875 C8.53193182,2.8184375 8.04891234,2.8184375 7.72689935,3.1446875 Z' id='Path' transform='translate(3.460227, 6.162500) rotate(-270.000000) translate(-3.460227, -6.162500) '></path>
+            </g>
+        </g>
+    </g>
+</svg>";
+}
+
+if (!function_exists('tfg_pagination')) {
+  function tfg_pagination($pages = '', $range = 2)
+  {
+
+    $showitems = ($range * 2) + 1;
+
+    global $paged;
+    if (empty($paged)) $paged = 1;
+
+    if ($pages == '') {
+      global $wp_query;
+      $pages = $wp_query->max_num_pages;
+      if (!$pages) {
+        $pages = 1;
+      }
+    }
+
+    if (1 != $pages) {
+      echo "<div class='page-numbers clearfix'>";
+      if ($paged > 2 && $paged > $range + 1 && $showitems < $pages) echo "<a href='" . get_pagenum_link(1) . "'>" . tfg_pagination_double_left_chevron() . "</a>";
+      if ($paged > 1 && $showitems < $pages) echo "<a href='" . get_pagenum_link($paged - 1) . "'>" . tfg_pagination_left_chevron() . "</a>";
+
+      for ($i = 1; $i <= $pages; $i++) {
+        if (1 != $pages && (!($i >= $paged + $range + 1 || $i <= $paged - $range - 1) || $pages <= $showitems)) {
+          echo ($paged == $i) ? "<span class='current'>" . $i . "</span>" : "<a href='" . get_pagenum_link($i) . "' class='inactive' >" . $i . "</a>";
+        }
+      }
+
+      if ($paged < $pages && $showitems < $pages) echo "<a href='" . get_pagenum_link($paged + 1) . "'>" . tfg_pagination_right_chevron() . "</a>";
+      if ($paged < $pages - 1 &&  $paged + $range - 1 < $pages && $showitems < $pages) echo "<a href='" . get_pagenum_link($pages) . "'>" . tfg_pagination_double_right_chevron() . "</a>";
+      echo "</div>\n";
+    }
+  }
+}

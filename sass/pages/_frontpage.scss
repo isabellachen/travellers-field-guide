@@ -1,0 +1,38 @@
+.frontpage {
+  position: relative;
+  top: -3rem;
+  @media (min-width: $screen-size-m) {
+    top: -8rem;
+  }
+
+  &-intro-wrapper {
+    position: relative;
+    margin: auto;
+
+    @media (min-width: $screen-size-m) {
+      text-align: center;
+      max-width: $width-s;
+    }
+
+    @media (min-width: $screen-size-l) {
+      max-width: $width-m;
+    }
+  }
+
+  &-featured {
+    @media (min-width: $screen-size-m) {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &-featured-wrapper {
+    @media (min-width: $screen-size-m) {
+      margin-top: 1.5rem;
+    }
+  }
+
+  &-featured-title {
+    margin-bottom: 1.5rem;
+  }
+}

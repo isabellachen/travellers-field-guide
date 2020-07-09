@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="7px" height="12px" viewBox="0 0 7 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>chevron-down copy</title>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="chevron-left" fill="#F5F5F6" fill-rule="nonzero">
+            <g id="chevron-down-copy">
+                <path d="M7.72689935,3.1446875 L3.46022727,7.4675 L-0.806444805,3.1446875 C-1.12845779,2.8184375 -1.61147727,2.8184375 -1.93349026,3.1446875 C-2.25550325,3.4709375 -2.25550325,3.9603125 -1.93349026,4.2865625 L2.89670455,9.1803125 C3.05771104,9.3434375 3.29922078,9.425 3.46022727,9.425 C3.62123377,9.425 3.86274351,9.3434375 4.02375,9.1803125 L8.85394481,4.2865625 C9.17595779,3.9603125 9.17595779,3.4709375 8.85394481,3.1446875 C8.53193182,2.8184375 8.04891234,2.8184375 7.72689935,3.1446875 Z" id="Path" transform="translate(3.460227, 6.162500) rotate(-270.000000) translate(-3.460227, -6.162500) "></path>
+            </g>
+        </g>
+    </g>
+</svg>
