@@ -53,21 +53,25 @@
     text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
 
     @media (min-width: $screen-size-m) {
+      margin: 0 1rem;
       height: 100%;
     }
   }
 
-  &-featured-content {
+  &-content {
     padding-bottom: 0.5rem;
+    @media (min-width: $screen-size-m) {
+      padding-bottom: 1rem;
+    }
   }
 
-  &-featured-content-subheading,
-  &-featured-content-title,
-  &-featured-content-paragraph {
+  &-content-subheading,
+  &-content-title,
+  &-content-paragraph {
     margin: 0;
   }
 
-  &-featured-content-title {
+  &-content-title {
     line-height: 2rem;
     margin-top: 0.15rem;
 

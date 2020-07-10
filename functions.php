@@ -269,18 +269,18 @@ if (!function_exists('tfg_pagination')) {
     }
 
     if (1 != $pages) {
-      echo "<div class='page-numbers clearfix'>";
-      if ($paged > 2 && $paged > $range + 1 && $showitems < $pages) echo "<a href='" . get_pagenum_link(1) . "'>" . tfg_pagination_double_left_chevron() . "</a>";
-      if ($paged > 1 && $showitems < $pages) echo "<a href='" . get_pagenum_link($paged - 1) . "'>" . tfg_pagination_left_chevron() . "</a>";
+      echo "<div class='pagination clearfix'>";
+      if ($paged > 2 && $paged > $range + 1 && $showitems < $pages) echo "<a class='pagination-link' href='" . get_pagenum_link(1) . "'>" . tfg_pagination_double_left_chevron() . "</a>";
+      if ($paged > 1 && $showitems < $pages) echo "<a class='pagination-link' href='" . get_pagenum_link($paged - 1) . "'>" . tfg_pagination_left_chevron() . "</a>";
 
       for ($i = 1; $i <= $pages; $i++) {
         if (1 != $pages && (!($i >= $paged + $range + 1 || $i <= $paged - $range - 1) || $pages <= $showitems)) {
-          echo ($paged == $i) ? "<span class='current'>" . $i . "</span>" : "<a href='" . get_pagenum_link($i) . "' class='inactive' >" . $i . "</a>";
+          echo ($paged == $i) ? "<span class='pagination-link pagination-link-current'>" . $i . "</span>" : "<a class='pagination-link' href='" . get_pagenum_link($i) . "' class='inactive' >" . $i . "</a>";
         }
       }
 
-      if ($paged < $pages && $showitems < $pages) echo "<a href='" . get_pagenum_link($paged + 1) . "'>" . tfg_pagination_right_chevron() . "</a>";
-      if ($paged < $pages - 1 &&  $paged + $range - 1 < $pages && $showitems < $pages) echo "<a href='" . get_pagenum_link($pages) . "'>" . tfg_pagination_double_right_chevron() . "</a>";
+      if ($paged < $pages && $showitems < $pages) echo "<a class='pagination-link' href='" . get_pagenum_link($paged + 1) . "'>" . tfg_pagination_right_chevron() . "</a>";
+      if ($paged < $pages - 1 &&  $paged + $range - 1 < $pages && $showitems < $pages) echo "<a class='pagination-link' href='" . get_pagenum_link($pages) . "'>" . tfg_pagination_double_right_chevron() . "</a>";
       echo "</div>\n";
     }
   }

@@ -1,0 +1,31 @@
+.pagination {
+  display: flex;
+
+  &-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+
+  &-link {
+    height: 1.875rem;
+    width: 1.875rem;
+    background-color: $c-primary-mid;
+    display: inline-block;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: $c-primary-light;
+    margin: 0 0.35rem;
+
+    &:visited {
+      color: $c-secondary-light;
+    }
+  }
+
+  &-link-current {
+    color: #ffffff;
+    border: 2px solid $c-primary-light;
+  }
+}

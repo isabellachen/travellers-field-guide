@@ -94,7 +94,7 @@ get_header();
           while ($wp_query->have_posts()) : $wp_query->the_post();
             echo the_title();
           endwhile; ?>
-          <nav>
+          <nav class="pagination-wrapper">
             <?php tfg_pagination(); ?>
           </nav>
         <?php

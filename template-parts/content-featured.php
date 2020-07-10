@@ -19,7 +19,7 @@
       <div class="featured-content">
         <h3 class="featured-content-subheading subheading"><?php echo $post_country ?></h3>
         <h3 class="featured-content-title heading page-h3"><?php the_title() ?></h3>
-        <?php echo the_excerpt() ?>
+        <p class="featured-content-paragraph"><?php echo get_the_excerpt() ?></p>
       </div>
     </div>
     <?php
