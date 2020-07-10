@@ -19,10 +19,12 @@
     }
   }
 
-  &-featured {
+  &-featured,
+  &-posts-inner {
     @media (min-width: $screen-size-m) {
       display: flex;
       justify-content: space-between;
+      flex-wrap: wrap;
     }
   }
 
@@ -33,7 +35,8 @@
     }
   }
 
-  &-featured-title {
+  &-featured-title,
+  &-posts-title {
     margin-bottom: 1.5rem;
   }
 }

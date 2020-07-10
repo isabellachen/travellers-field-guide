@@ -93,15 +93,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 /*--------------------------------------------------------------
 # Utilities
 --------------------------------------------------------------*/
-
-/* Accessibility
---------------------------------------------- */
-@import 'utilities/accessibility';
-
-/* Alignments
---------------------------------------------- */
-@import 'utilities/alignments';
-@import 'utilities/effects';
+@import 'utilities/utilities';
 
 @import 'pages/pages';
 @import 'templates/templates';

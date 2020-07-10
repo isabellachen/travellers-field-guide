@@ -79,47 +79,49 @@ get_header();
       ?>
       <div class="frontpage-posts-title heading page-h2">Travel Diaries</div>
       <div class="frontpage-posts">
-        <?php
-        if (get_query_var('paged')) {
-          $paged = get_query_var('paged');
-        } elseif (get_query_var('page')) {
-          $paged = get_query_var('page');
-        } else {
-          $paged = 1;
-        }
-        $temp = $wp_query;
-        $wp_query = null;
-        $wp_query = new WP_Query('posts_per_page=12&paged=' . $paged);
-        if ($wp_query->have_posts()) :
-          while ($wp_query->have_posts()) : $wp_query->the_post(); ?>
-            <?php
-            $post_country = get_the_tags()[0]->name; //name of country
-            ?>
-            <div class="post-tile-single shrink-on-hover">
-              <a href="<?php echo the_permalink() ?>">
-                <div class="post-tile-content-wrapper">
-                  <div class="post-tile-content">
-                    <h3 class="post-tile-content-subheading subheading"><?php echo $post_country ?></h3>
-                    <h3 class="post-tile-content-title heading page-h3"><?php the_title() ?></h3>
-                  </div>
-                </div>
-                <?php
-                if (has_post_thumbnail()) {
-                  echo the_post_thumbnail('post-thumbnail', ['class' => 'post-tile-image']);
-                }
-                ?>
-              </a>
-            </div>
-          <?php endwhile; ?>
-          <nav class="pagination-wrapper">
-            <?php tfg_pagination(); ?>
-          </nav>
-        <?php
+        <div class="frontpage-posts-inner">
+          <?php
+          if (get_query_var('paged')) {
+            $paged = get_query_var('paged');
+          } elseif (get_query_var('page')) {
+            $paged = get_query_var('page');
+          } else {
+            $paged = 1;
+          }
+          $temp = $wp_query;
           $wp_query = null;
-          $wp_query = $temp;
-          wp_reset_postdata();
-        endif;
-        ?>
+          $wp_query = new WP_Query('posts_per_page=12&paged=' . $paged);
+          if ($wp_query->have_posts()) :
+            while ($wp_query->have_posts()) : $wp_query->the_post(); ?>
+              <?php
+              $post_country = get_the_tags()[0]->name; //name of country
+              ?>
+              <div class="tile-single shrink-on-hover mb-1_5">
+                <a href="<?php echo the_permalink() ?>">
+                  <div class="tile-content-wrapper">
+                    <div class="tile-content">
+                      <h3 class="tile-content-subheading subheading"><?php echo $post_country ?></h3>
+                      <h3 class="tile-content-title heading page-h3"><?php the_title() ?></h3>
+                    </div>
+                  </div>
+                  <?php
+                  if (has_post_thumbnail()) {
+                    echo the_post_thumbnail('post-thumbnail', ['class' => 'tile-image']);
+                  }
+                  ?>
+                </a>
+              </div>
+            <?php endwhile; ?>
+        </div>
+        <nav class="pagination-wrapper">
+          <?php tfg_pagination(); ?>
+        </nav>
+      <?php
+            $wp_query = null;
+            $wp_query = $temp;
+            wp_reset_postdata();
+          endif;
+      ?>
       </div>
     </div><!-- .frontpage-featured-wrapper -->
   <?php endwhile; ?>

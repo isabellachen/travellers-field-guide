@@ -71,6 +71,7 @@
     position: absolute;
     top: 56px;
     color: #fff;
+    z-index: 20;
 
     @media (min-width: $screen-size-l) {
       top: 88px;
