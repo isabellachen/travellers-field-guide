@@ -91,9 +91,26 @@ get_header();
         $wp_query = null;
         $wp_query = new WP_Query('posts_per_page=12&paged=' . $paged);
         if ($wp_query->have_posts()) :
-          while ($wp_query->have_posts()) : $wp_query->the_post();
-            echo the_title();
-          endwhile; ?>
+          while ($wp_query->have_posts()) : $wp_query->the_post(); ?>
+            <?php
+            $post_country = get_the_tags()[0]->name; //name of country
+            ?>
+            <div class="post-tile-single shrink-on-hover">
+              <a href="<?php echo the_permalink() ?>">
+                <div class="post-tile-content-wrapper">
+                  <div class="post-tile-content">
+                    <h3 class="post-tile-content-subheading subheading"><?php echo $post_country ?></h3>
+                    <h3 class="post-tile-content-title heading page-h3"><?php the_title() ?></h3>
+                  </div>
+                </div>
+                <?php
+                if (has_post_thumbnail()) {
+                  echo the_post_thumbnail('post-thumbnail', ['class' => 'post-tile-image']);
+                }
+                ?>
+              </a>
+            </div>
+          <?php endwhile; ?>
           <nav class="pagination-wrapper">
             <?php tfg_pagination(); ?>
           </nav>

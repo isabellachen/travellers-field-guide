@@ -26,9 +26,10 @@
     }
   }
 
-  &-featured-wrapper {
+  &-featured-wrapper,
+  &-posts-wrapper {
     @media (min-width: $screen-size-m) {
-      margin-top: 1.5rem;
+      margin-top: 2rem;
     }
   }
 

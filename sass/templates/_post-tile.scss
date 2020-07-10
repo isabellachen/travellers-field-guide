@@ -1,4 +1,4 @@
-.featured {
+.post-tile {
   &-single {
     overflow: hidden;
     width: 100%;
@@ -42,6 +42,14 @@
     left: 0;
   }
 
+  &-content {
+    width: 100%;
+    padding-bottom: 0.5rem;
+    @media (min-width: $screen-size-m) {
+      padding-bottom: 1rem;
+    }
+  }
+
   &-content-wrapper {
     position: absolute;
     top: 0;
@@ -58,25 +66,9 @@
     }
   }
 
-  &-content {
-    padding-bottom: 0.5rem;
-    @media (min-width: $screen-size-m) {
-      padding-bottom: 1rem;
-    }
-  }
-
   &-content-subheading,
   &-content-title,
   &-content-paragraph {
     margin: 0;
-  }
-
-  &-content-title {
-    line-height: 2rem;
-    margin-top: 0.15rem;
-
-    @media (min-width: $screen-size-m) {
-      padding-bottom: 0;
-    }
   }
 }
