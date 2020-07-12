@@ -1,0 +1,137 @@
+.entry-header {
+  text-align: center;
+  position: relative;
+  color: #fff;
+  z-index: 20;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid $c-primary-light;
+  margin: auto;
+
+  @media (max-width: $screen-size-l) {
+    max-width: $width-s;
+  }
+
+  @media (min-width: $screen-size-m) {
+    border-bottom: 2px solid $c-primary-mid;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
+  }
+
+  &-subtitle {
+    font-family: $font-display;
+    font-size: $fs-hero-subtitle-mobile;
+    text-transform: uppercase;
+    display: inline-block;
+    border-bottom: 2px solid #ffffff;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
+
+    @media (min-width: $screen-size-m) {
+      font-size: $fs-hero-subtitle-desktop;
+    }
+  }
+  &-title-wrapper {
+    margin: 0 0 10px 0;
+  }
+
+  &-title {
+    font-family: $font-display;
+    font-size: $fs-hero-title-mobile;
+    text-transform: uppercase;
+    line-height: initial;
+    margin: 0.25rem 0;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.4);
+
+    @media (min-width: $screen-size-m) {
+      margin: 0.5rem 0;
+      font-size: $fs-hero-title-ipad;
+      text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
+    }
+
+    @media (min-width: $screen-size-l) {
+      font-size: $fs-hero-title-desktop;
+    }
+  }
+
+  &-title--lg {
+    font-size: $fs-hero-title-desktop;
+  }
+
+  &-excerpt-wrapper {
+    margin: auto;
+    max-width: $width-xs;
+    display: none;
+
+    @media (min-width: $screen-size-m) {
+      max-width: $width-s;
+      display: block;
+    }
+  }
+}
+
+.entry-content {
+  text-align: justify;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1rem auto;
+  font-size: $fs-single-body;
+
+  @media (max-width: $screen-size-xxl) {
+    max-width: $width-m;
+  }
+
+  @media (max-width: $screen-size-l) {
+    max-width: $width-s;
+  }
+
+  h2,
+  h3 {
+    font-family: $font-display;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  h2 {
+    font-size: $fs-single-h2-mobile;
+    @media (min-width: $screen-size-m) {
+      font-size: $fs-single-h2;
+    }
+  }
+
+  h3 {
+    font-size: $fs-single-h3-mobile;
+    @media (min-width: $screen-size-m) {
+      font-size: $fs-single-h3;
+    }
+  }
+
+  p {
+    margin: 0.25rem 0;
+    @media (min-width: $screen-size-m) {
+      max-width: $width-m;
+      font-size: $fs-single-body;
+    }
+  }
+
+  .mh-tip {
+    background-color: $c-primary-dark;
+    padding: 1rem;
+    max-width: 540px;
+    margin: 0.5rem 0;
+    @media (min-width: $screen-size-m) {
+      margin: 1rem 0;
+    }
+
+    h2 {
+      font-size: $fs-single-h3-mobile; //use h3 size for mh-tip
+      margin: 0;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid $c-primary-light;
+    }
+
+    p {
+      margin: 0;
+      padding-top: 0.5rem;
+      max-width: 540px;
+    }
+  }
+}

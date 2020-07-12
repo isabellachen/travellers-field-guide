@@ -1,17 +1,21 @@
 .wp-caption {
-	margin-bottom: 1.5em;
-	max-width: 100%;
+  margin-bottom: 1.5em;
+  max-width: 100%;
+  font-size: 1rem;
 
-	img[class*="wp-image-"] {
+  @media (min-width: $screen-size-m) {
+    font-size: 1.1rem;
+  }
 
-		@include center-block;
-	}
+  img[class*='wp-image-'] {
+    @include center-block;
+  }
 
-	.wp-caption-text {
-		margin: 0.8075em 0;
-	}
+  .wp-caption-text {
+    padding: 0.5rem;
+  }
 }
 
 .wp-caption-text {
-	text-align: center;
+  text-align: center;
 }

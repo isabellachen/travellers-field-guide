@@ -11,5 +11,23 @@ img {
 }
 
 figure {
-  margin: 1em 0; // Extra wide images within figure tags don't overflow the content area.
+  // margin: 1em 0; // Extra wide images within figure tags don't overflow the content area.
+}
+
+.wp-block-image {
+  font-style: italic;
+  margin: 0.1rem 0 0.1rem;
+
+  @media (min-width: $screen-size-m) {
+    margin: 1rem 0 0.5rem;
+  }
+  figure {
+    margin-bottom: 0;
+  }
+
+  figcaption {
+    margin: 0;
+    padding: 0 0.5rem 0.5rem;
+    text-align: center;
+  }
 }

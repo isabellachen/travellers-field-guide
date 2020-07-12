@@ -16,9 +16,13 @@ To set up the portrait image of the featured story, create a custom field "featu
 
 The theme displays the three latest featured stories of the country on the country page. Set up is similar to Featured Stories for the Home Page. The naming is "country_featured" for the boolean field. This feature uses the "featured_story_image" to display the portait image in the country page.
 
-### For Home Page
+## Image Size
 
-### For Country Page
+Set up the new image sizes: Settings > Media
+Medium Size: 800
+Large Size: 1170
+
+The theme comes with a default small size at width 540px.
 
 ## Category Pages
 

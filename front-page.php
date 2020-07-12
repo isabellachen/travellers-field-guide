@@ -16,7 +16,7 @@
 get_header();
 ?>
 
-<main id="primary" class="frontpage site-main container">
+<main id="primary" class="site-main frontpage  container">
   <?php while (have_posts()) :
     the_post(); ?>
     <div class="frontpage-intro-wrapper">

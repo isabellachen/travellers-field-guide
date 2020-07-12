@@ -79,27 +79,15 @@
           <img class="hero-image" src="<?php echo $featured_img_uri; ?>">
         <?php endif; ?>
         <div class="hero-content <?php echo is_front_page() ? "hero-content--centered" : "" ?>">
-          <!-- Subtitle: display the country category for the current post, e.g. "Iceland" -->
-          <?php
-          if (is_single()) : ?>
-            <div class="hero-subtitle">
-              <?php
-              $post_id = get_the_ID();
-              $post_tags = get_the_tags($post_id);
-              echo $post_tags[0]->name
-              ?>
-            </div>
-          <?php endif; ?>
-
           <div class="hero-title-wrapper container">
             <?php if (is_front_page()) : ?>
               <h1 class="hero-title hero-title--lg">A Traveller's Field Guide</h1>
-            <?php else : ?>
+            <?php elseif (is_category()) : ?>
               <?php
               $category = get_queried_object();
               $cat_name = get_cat_name($category->term_id);
               ?>
-              <h1 class="hero-title"><?php echo is_category() ? $cat_name : the_title() ?></h1>
+              <h1 class="hero-title"><?php echo $cat_name  ?></h1>
             <?php endif; ?>
           </div> <!-- .hero-title -->
 
@@ -107,8 +95,8 @@
           <div class="hero-excerpt-wrapper">
             <?php if (is_front_page()) : ?>
               <?php echo get_bloginfo('description') ?>
-            <?php else : ?>
-              <div class="hero-excerpt hero-excerpt--mobile"><?php echo is_category() ? category_description() : the_excerpt() ?></div>
+            <?php elseif (is_category()) : ?>
+              <div class="hero-excerpt hero-excerpt--mobile"><?php category_description() ?></div>
             <?php endif; ?>
           </div><!-- .hero-excerpt -->
 

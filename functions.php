@@ -285,3 +285,24 @@ if (!function_exists('tfg_pagination')) {
     }
   }
 }
+
+/*-----------------------------------------------------------------------------------*/
+/* Custom Image Sizes
+/*-----------------------------------------------------------------------------------*/
+
+function use_new_image_size()
+{
+  if (function_exists('add_image_size')) {
+    add_image_size('width-s', 540, 0, false);
+  }
+}
+add_action('after_setup_theme', 'use_new_image_size');
+
+function create_custom_image_size($sizes)
+{
+  $custom_sizes = array(
+    'width-s' => 'Width-S 540'
+  );
+  return array_merge($sizes, $custom_sizes);
+}
+add_filter('image_size_names_choose', 'create_custom_image_size');

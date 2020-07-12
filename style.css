@@ -52,6 +52,9 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
  * Font sizes for Home Page and Destination Pages (i.e. Iceland, Cape Verde)
  */
 /*
+ * Font sizes for Single Post Pages
+ */
+/*
  * Typography inherited from UNDERSCORES
  */
 /*
@@ -530,8 +533,25 @@ img {
   max-width: 100%;
 }
 
-figure {
-  margin: 1em 0;
+.wp-block-image {
+  font-style: italic;
+  margin: 0.1rem 0 0.1rem;
+}
+
+@media (min-width: 768px) {
+  .wp-block-image {
+    margin: 1rem 0 0.5rem;
+  }
+}
+
+.wp-block-image figure {
+  margin-bottom: 0;
+}
+
+.wp-block-image figcaption {
+  margin: 0;
+  padding: 0 0.5rem 0.5rem;
+  text-align: center;
 }
 
 table {
@@ -718,6 +738,9 @@ textarea {
  * Font sizes for Home Page and Destination Pages (i.e. Iceland, Cape Verde)
  */
 /*
+ * Font sizes for Single Post Pages
+ */
+/*
  * Typography inherited from UNDERSCORES
  */
 /*
@@ -730,6 +753,7 @@ textarea {
   font-size: 1.125rem;
   text-transform: uppercase;
   position: relative;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
 }
 
 @media (min-width: 992px) {
@@ -967,16 +991,23 @@ textarea {
 .wp-caption {
   margin-bottom: 1.5em;
   max-width: 100%;
+  font-size: 1rem;
 }
 
-.wp-caption img[class*="wp-image-"] {
+@media (min-width: 768px) {
+  .wp-caption {
+    font-size: 1.1rem;
+  }
+}
+
+.wp-caption img[class*='wp-image-'] {
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
 
 .wp-caption .wp-caption-text {
-  margin: 0.8075em 0;
+  padding: 0.5rem;
 }
 
 .wp-caption-text {
@@ -987,6 +1018,9 @@ textarea {
 --------------------------------------------- */
 /*
  * Font sizes for Home Page and Destination Pages (i.e. Iceland, Cape Verde)
+ */
+/*
+ * Font sizes for Single Post Pages
  */
 /*
  * Typography inherited from UNDERSCORES
@@ -1366,4 +1400,176 @@ textarea {
 
 .frontpage-featured-title, .frontpage-posts-title {
   margin-bottom: 1.5rem;
+}
+
+.single {
+  position: relative;
+  top: -13.5rem;
+}
+
+.entry-header {
+  text-align: center;
+  position: relative;
+  color: #fff;
+  z-index: 20;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #f5f5f6;
+  margin: auto;
+}
+
+@media (max-width: 992px) {
+  .entry-header {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .entry-header {
+    border-bottom: 2px solid #50555e;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.entry-header-subtitle {
+  font-family: "Alata", "Segoe UI", Roboto, Cantarell, "Helvetica Neue", sans-serif;
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  display: inline-block;
+  border-bottom: 2px solid #ffffff;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
+}
+
+@media (min-width: 768px) {
+  .entry-header-subtitle {
+    font-size: 1.5rem;
+  }
+}
+
+.entry-header-title-wrapper {
+  margin: 0 0 10px 0;
+}
+
+.entry-header-title {
+  font-family: "Alata", "Segoe UI", Roboto, Cantarell, "Helvetica Neue", sans-serif;
+  font-size: 1.625rem;
+  text-transform: uppercase;
+  line-height: initial;
+  margin: 0.25rem 0;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.4);
+}
+
+@media (min-width: 768px) {
+  .entry-header-title {
+    margin: 0.5rem 0;
+    font-size: 2rem;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
+  }
+}
+
+@media (min-width: 992px) {
+  .entry-header-title {
+    font-size: 2.25rem;
+  }
+}
+
+.entry-header-title--lg {
+  font-size: 2.25rem;
+}
+
+.entry-header-excerpt-wrapper {
+  margin: auto;
+  max-width: 320px;
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .entry-header-excerpt-wrapper {
+    max-width: 540px;
+    display: block;
+  }
+}
+
+.entry-content {
+  text-align: justify;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1rem auto;
+  font-size: 18px;
+}
+
+@media (max-width: 1689px) {
+  .entry-content {
+    max-width: 800px;
+  }
+}
+
+@media (max-width: 992px) {
+  .entry-content {
+    max-width: 540px;
+  }
+}
+
+.entry-content h2,
+.entry-content h3 {
+  font-family: "Alata", "Segoe UI", Roboto, Cantarell, "Helvetica Neue", sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.entry-content h2 {
+  font-size: 25px;
+}
+
+@media (min-width: 768px) {
+  .entry-content h2 {
+    font-size: 28px;
+  }
+}
+
+.entry-content h3 {
+  font-size: 20px;
+}
+
+@media (min-width: 768px) {
+  .entry-content h3 {
+    font-size: 26px;
+  }
+}
+
+.entry-content p {
+  margin: 0.25rem 0;
+}
+
+@media (min-width: 768px) {
+  .entry-content p {
+    max-width: 800px;
+    font-size: 18px;
+  }
+}
+
+.entry-content .mh-tip {
+  background-color: #282c34;
+  padding: 1rem;
+  max-width: 540px;
+  margin: 0.5rem 0;
+}
+
+@media (min-width: 768px) {
+  .entry-content .mh-tip {
+    margin: 1rem 0;
+  }
+}
+
+.entry-content .mh-tip h2 {
+  font-size: 20px;
+  margin: 0;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #f5f5f6;
+}
+
+.entry-content .mh-tip p {
+  margin: 0;
+  padding-top: 0.5rem;
+  max-width: 540px;
 }
