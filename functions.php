@@ -306,3 +306,17 @@ function create_custom_image_size($sizes)
   return array_merge($sizes, $custom_sizes);
 }
 add_filter('image_size_names_choose', 'create_custom_image_size');
+
+
+/*-----------------------------------------------------------------------------------*/
+/* Disbale Unwanted Image Sizes
+/*-----------------------------------------------------------------------------------*/
+
+function shapeSpace_disable_medium_large_images($sizes)
+{
+
+  unset($sizes['medium_large']); // disable 768px size images
+  unset($sizes['1536x1536']);
+  return $sizes;
+}
+add_filter('intermediate_image_sizes_advanced', 'shapeSpace_disable_medium_large_images');

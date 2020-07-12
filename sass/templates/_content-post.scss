@@ -7,6 +7,10 @@
   border-bottom: 2px solid $c-primary-light;
   margin: auto;
 
+  @media (max-width: $screen-size-xxl) {
+    max-width: $width-m;
+  }
+
   @media (max-width: $screen-size-l) {
     max-width: $width-s;
   }
