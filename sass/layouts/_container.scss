@@ -4,15 +4,15 @@
 
 @media (min-width: $screen-size-xl) {
   .container {
-    max-width: 1170px;
+    max-width: $width-l;
   }
 
   .container-inner {
-    max-width: 800px;
+    max-width: $width-m;
   }
 
   .container-innermost {
-    max-width: 500px;
+    max-width: $width-s;
   }
 }
 

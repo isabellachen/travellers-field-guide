@@ -301,7 +301,8 @@ add_action('after_setup_theme', 'use_new_image_size');
 function create_custom_image_size($sizes)
 {
   $custom_sizes = array(
-    'width-s' => 'Width-S 540'
+    'width-s' => 'Width-S 540',
+    'medium_large' => 'Medium Large 768'
   );
   return array_merge($sizes, $custom_sizes);
 }
@@ -314,9 +315,9 @@ add_filter('image_size_names_choose', 'create_custom_image_size');
 
 function shapeSpace_disable_medium_large_images($sizes)
 {
-
-  unset($sizes['medium_large']); // disable 768px size images
+  unset($sizes['2048x2048']);
   unset($sizes['1536x1536']);
   return $sizes;
 }
 add_filter('intermediate_image_sizes_advanced', 'shapeSpace_disable_medium_large_images');
+add_filter('big_image_size_threshold', '__return_false');
