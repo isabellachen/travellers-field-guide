@@ -1,0 +1,18 @@
+.owl-tile {
+  position: relative;
+  padding-top: 100%;
+
+  &-title {
+    position: absolute;
+    top: 0;
+    z-index: 10;
+  }
+
+  &-image {
+    object-fit: cover;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}

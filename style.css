@@ -1827,6 +1827,25 @@ textarea {
   width: 100%;
 }
 
+.owl-tile {
+  position: relative;
+  padding-top: 100%;
+}
+
+.owl-tile-title {
+  position: absolute;
+  top: 0;
+  z-index: 10;
+}
+
+.owl-tile-image {
+  object-fit: cover;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
 /*
  * 	Default theme - Owl Carousel CSS File
  */
