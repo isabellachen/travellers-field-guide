@@ -53,8 +53,4 @@
     );
     ?>
   </div><!-- .entry-content -->
-
-  <footer class="entry-footer">
-    <?php travellers_field_guide_entry_footer(); ?>
-  </footer><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->

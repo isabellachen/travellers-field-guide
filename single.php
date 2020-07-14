@@ -21,27 +21,30 @@ get_header();
     get_template_part('template-parts/content', get_post_type());
   ?>
   <?php endwhile; ?>
-
-  <div class="owl-carousel">
-    <?php
-    $the_query = new WP_Query(array('tag' => $post_country));
-    while ($the_query->have_posts()) : $the_query->the_post() ?>
+  <div class="owl-carousel-wrapper">
+    <div class="owl-carousel">
       <?php
-      $carousel_item_id = get_the_ID();
-      if ($current_post_id != $carousel_item_id) : ?>
-        <div class="owl-tile">
-          <h3 class="owl-tile-title tile-content-title heading page-h3"><?php the_title() ?></h3>
-          <?php
-          if (has_post_thumbnail()) {
-            echo the_post_thumbnail('post-thumbnail', ['class' => 'owl-tile-image']);
-          } ?>
-        </div>
-        <!--.owl-tile-->
-    <?php endif;
-    endwhile;
-    wp_reset_postdata();
-    ?>
-  </div>
+      $the_query = new WP_Query(array('tag' => $post_country));
+      while ($the_query->have_posts()) : $the_query->the_post() ?>
+        <?php
+        $carousel_item_id = get_the_ID();
+        if ($current_post_id != $carousel_item_id) : ?>
+          <div class="owl-tile">
+            <div class="owl-tile-content">
+              <h3 class="owl-tile-title tile-content-title heading page-h3"><?php the_title() ?></h3>
+            </div>
+            <?php
+            if (has_post_thumbnail()) {
+              echo the_post_thumbnail('post-thumbnail', ['class' => 'owl-tile-image']);
+            } ?>
+          </div>
+          <!--.owl-tile-->
+      <?php endif;
+      endwhile;
+      wp_reset_postdata();
+      ?>
+    </div><!-- .owl-carousel -->
+  </div><!-- .owl-carousel-wrapper -->
 </main><!-- #main -->
 
 <?php
