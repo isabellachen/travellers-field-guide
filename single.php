@@ -22,6 +22,7 @@ get_header();
   ?>
   <?php endwhile; ?>
   <div class="owl-carousel-wrapper">
+    <h2 class="heading page-h2 text-align-center mb-1 border-bottom-none">Explore more stories from <?php echo $post_country ?></h2>
     <div class="owl-carousel">
       <?php
       $the_query = new WP_Query(array('tag' => $post_country));

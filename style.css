@@ -553,6 +553,7 @@ img {
 
 .wp-block-image figure {
   margin-bottom: 0;
+  margin-top: 0;
 }
 
 .wp-block-image figcaption {
@@ -1365,6 +1366,14 @@ textarea {
   margin-bottom: 1.5rem;
 }
 
+.text-align-center {
+  text-align: center;
+}
+
+.border-bottom-none {
+  border-bottom: none;
+}
+
 .frontpage {
   position: relative;
   top: -3rem;
@@ -1539,7 +1548,7 @@ textarea {
 
 @media (min-width: 768px) {
   .entry-content h2 {
-    font-size: 28px;
+    font-size: 29px;
   }
 }
 
@@ -1549,12 +1558,12 @@ textarea {
 
 @media (min-width: 768px) {
   .entry-content h3 {
-    font-size: 26px;
+    font-size: 25px;
   }
 }
 
 .entry-content p {
-  margin: 0.25rem 0;
+  margin: 0.5rem 0;
 }
 
 @media (min-width: 768px) {
@@ -1864,6 +1873,56 @@ textarea {
   position: absolute;
   top: 0;
   left: 0;
+}
+
+.owl-nav {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  z-index: 10;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 0.5rem;
+}
+
+.owl-prev,
+.owl-next {
+  height: 50px;
+  width: 50px;
+  background-color: rgba(245, 245, 246, 0.7) !important;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.owl-prev span,
+.owl-next span {
+  display: none;
+}
+
+.owl-prev:before,
+.owl-next:before {
+  content: '';
+  height: 35px;
+  width: 35px;
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: relative;
+}
+
+.owl-prev:before {
+  left: 0.25rem;
+  background-image: url("assets/icons/chevron-left-gray.svg");
+}
+
+.owl-next:before {
+  background-image: url("assets/icons/chevron-left-gray.svg");
+  transform: rotate(180deg);
+  left: -0.25rem;
 }
 
 /*

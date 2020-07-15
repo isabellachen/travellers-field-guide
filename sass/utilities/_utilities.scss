@@ -2,6 +2,18 @@
 @import 'alignments';
 @import 'accessibility';
 
+.mb-1 {
+  margin-bottom: 1rem;
+}
+
 .mb-1_5 {
   margin-bottom: 1.5rem;
+}
+
+.text-align-center {
+  text-align: center;
+}
+
+.border-bottom-none {
+  border-bottom: none;
 }

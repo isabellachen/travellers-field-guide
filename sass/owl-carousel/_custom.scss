@@ -40,3 +40,57 @@
     left: 0;
   }
 }
+
+.owl-nav {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  z-index: 10;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 0.5rem;
+}
+
+.owl-prev,
+.owl-next {
+  span {
+    display: none;
+  }
+  height: 50px;
+  width: 50px;
+  background-color: rgba(245, 245, 246, 0.7) !important;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.owl-prev,
+.owl-next {
+  &:before {
+    content: '';
+    height: 35px;
+    width: 35px;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: relative;
+  }
+}
+
+.owl-prev {
+  &:before {
+    left: 0.25rem;
+    background-image: url('assets/icons/chevron-left-gray.svg');
+  }
+}
+
+.owl-next {
+  &:before {
+    background-image: url('assets/icons/chevron-left-gray.svg');
+    transform: rotate(180deg);
+    left: -0.25rem;
+  }
+}
