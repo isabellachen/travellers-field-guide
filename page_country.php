@@ -33,15 +33,16 @@ get_header();
     <div class="frontpage-featured-wrapper">
       <?php
       $featured_stories = get_posts(array(
+        "tag" => get_the_title(),
         'meta_query' => array(
           array(
-            'key'   => 'home_featured',
+            'key'   => 'country_featured',
             'value' => '1',
           )
         )
       ));
       ?>
-      <h1 class="frontpage-featured-title heading page-h2">Featured Stories From <?php the_title() ?> </h1>
+      <div class="frontpage-featured-title heading page-h2">Featured Stories From <?php the_title() ?> </div>
       <div class="frontpage-featured">
         <?php
         if ($featured_stories) {
@@ -56,16 +57,6 @@ get_header();
     </div><!-- .frontpage-featured-wrapper -->
 
     <div class="frontpage-posts-wrapper">
-      <?php
-      $featured_stories = get_posts(array(
-        'meta_query' => array(
-          array(
-            'key'   => 'home_featured',
-            'value' => '1',
-          )
-        )
-      ));
-      ?>
       <div class="frontpage-posts-title heading page-h2">Travel Diaries</div>
       <div class="frontpage-posts">
         <div class="frontpage-posts-inner">

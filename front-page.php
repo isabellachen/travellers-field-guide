@@ -67,16 +67,6 @@ get_header();
     </div><!-- .frontpage-featured-wrapper -->
 
     <div class="frontpage-posts-wrapper">
-      <?php
-      $featured_stories = get_posts(array(
-        'meta_query' => array(
-          array(
-            'key'   => 'home_featured',
-            'value' => '1',
-          )
-        )
-      ));
-      ?>
       <div class="frontpage-posts-title heading page-h2">Travel Diaries</div>
       <div class="frontpage-posts">
         <div class="frontpage-posts-inner">

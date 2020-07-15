@@ -33,6 +33,15 @@ The other two sizes are created automatically.
 
 Hero images need to be uploaded at 2880 x 1800
 
+## Country Pages
+
+- Each destination needs to have a page created for it. E.g. "Kenya" or "Iceland".
+- The code relies on the title to display "Featured stories from <THE_TITLE>".
+- It also uses the title to find posts of the same country.
+- In the Edit Page Sidebar > Document > Page Attributes > Template: Country Page
+- Make sure to select "Country Featured"
+- Don't forget to add the portrait style "Featured Story Image", although the theme falls back onto the featured image.
+
 ## Category Pages
 
 The theme utilises custom images for category pages, e.g. destinations/europe/iceland
