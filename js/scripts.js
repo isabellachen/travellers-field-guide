@@ -1,6 +1,7 @@
 (function ($) {
   $('.owl-carousel').owlCarousel({
     nav: true,
+    navContainer: false,
     margin: 10,
     dots: false,
     responsive: {

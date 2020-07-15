@@ -69,7 +69,7 @@
           wp_reset_postdata()
           ?>
           <img class="hero-image" src="<?php echo $featured_img_url ?>">
-        <?php elseif (is_single() && has_post_thumbnail()) : ?>
+        <?php elseif (is_single() || is_page() && has_post_thumbnail()) : ?>
           <?php the_post_thumbnail('post-thumbnail', ['class' => "hero-image"]); ?>
         <?php elseif (is_category()) : ?>
           <?php

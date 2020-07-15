@@ -30,16 +30,17 @@ get_header();
         <?php
         $carousel_item_id = get_the_ID();
         if ($current_post_id != $carousel_item_id) : ?>
-          <div class="owl-tile">
-            <div class="owl-tile-content">
-              <h3 class="owl-tile-title tile-content-title heading page-h3"><?php the_title() ?></h3>
+          <a href="<?php echo the_permalink() ?>">
+            <div class="owl-tile">
+              <?php
+              if (has_post_thumbnail()) {
+                echo the_post_thumbnail('post-thumbnail', ['class' => 'owl-tile-image']);
+              } ?>
+              <div class="owl-tile-content">
+                <h3 class="owl-tile-title tile-content-title heading page-h3"><?php the_title() ?></h3>
+              </div>
             </div>
-            <?php
-            if (has_post_thumbnail()) {
-              echo the_post_thumbnail('post-thumbnail', ['class' => 'owl-tile-image']);
-            } ?>
-          </div>
-          <!--.owl-tile-->
+          </a>
       <?php endif;
       endwhile;
       wp_reset_postdata();

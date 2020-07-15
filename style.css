@@ -1362,6 +1362,10 @@ textarea {
   outline: 0;
 }
 
+.mb-1 {
+  margin-bottom: 1rem;
+}
+
 .mb-1_5 {
   margin-bottom: 1.5rem;
 }
@@ -1419,6 +1423,20 @@ textarea {
 
 .frontpage-featured-title, .frontpage-posts-title {
   margin-bottom: 1.5rem;
+}
+
+/*
+ * Countrypage template inherit styles from Frontpage template
+*/
+.countrypage {
+  position: relative;
+  top: -3rem;
+}
+
+@media (min-width: 768px) {
+  .countrypage {
+    top: -6rem;
+  }
 }
 
 .single {
@@ -1841,6 +1859,10 @@ textarea {
   padding-top: 100%;
 }
 
+.owl-tile-title {
+  color: #f5f5f6 !important;
+}
+
 .owl-tile:before {
   content: '';
   height: 100%;
@@ -1875,20 +1897,10 @@ textarea {
   left: 0;
 }
 
-.owl-nav {
-  height: 100%;
-  position: absolute;
-  top: 0;
-  z-index: 10;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 0.5rem;
-}
-
 .owl-prev,
 .owl-next {
+  position: absolute;
+  top: 40%;
   height: 50px;
   width: 50px;
   background-color: rgba(245, 245, 246, 0.7) !important;
@@ -1903,6 +1915,10 @@ textarea {
   display: none;
 }
 
+.owl-next {
+  right: 0;
+}
+
 .owl-prev:before,
 .owl-next:before {
   content: '';
@@ -1914,9 +1930,17 @@ textarea {
   position: relative;
 }
 
+.owl-prev {
+  margin-left: 0.5rem;
+}
+
 .owl-prev:before {
   left: 0.25rem;
   background-image: url("assets/icons/chevron-left-gray.svg");
+}
+
+.owl-next {
+  margin-right: 0.5rem;
 }
 
 .owl-next:before {

@@ -1,0 +1,11 @@
+/*
+ * Countrypage template inherit styles from Frontpage template
+*/
+
+.countrypage {
+  position: relative;
+  top: -3rem;
+  @media (min-width: $screen-size-m) {
+    top: -6rem;
+  }
+}
