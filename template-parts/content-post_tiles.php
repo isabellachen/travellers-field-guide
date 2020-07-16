@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Template part for the post tiles od display page template
+ * Template part for the post tiles of frontpage style template
  * - front-page.php 
  * - page_country.php
  *

@@ -34,6 +34,9 @@ if (!function_exists('travellers_field_guide_setup')) :
     // Add default posts and comments RSS feed links to head.
     add_theme_support('automatic-feed-links');
 
+    // Add excerpts for pages
+    add_post_type_support('page', 'excerpt');
+
     /*
 		 * Let WordPress manage the document title.
 		 * By adding theme support, we declare that this theme does not use a

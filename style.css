@@ -1442,20 +1442,6 @@ textarea {
   margin-bottom: 1.5rem;
 }
 
-/*
- * Countrypage template inherit styles from Frontpage template
-*/
-.countrypage {
-  position: relative;
-  top: -3rem;
-}
-
-@media (min-width: 768px) {
-  .countrypage {
-    top: -6rem;
-  }
-}
-
 .single .site-main {
   position: relative;
   top: -13.5rem;

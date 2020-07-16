@@ -11,7 +11,9 @@
 ?>
 <div class="frontpage-intro-wrapper">
   <!-- Who We Are -->
-  <h2 class="heading page-h2">Who We Are</h2>
+  <?php if (has_excerpt()) : ?>
+    <h2 class="heading page-h2"><?php the_excerpt() ?></h2>
+  <?php endif; ?>
   <div class="frontpage-intro dropcap dropcap--s">
     <?php
     the_content(

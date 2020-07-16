@@ -1,6 +1,12 @@
 # Setting up WordPress for this theme
 
-## Random Home Hero Images
+## Set up the Home Page
+
+### Leading title
+
+To display 'Who We Are', you need to add 'Who We Are' to the excerpt field of the Home Page.
+
+### Random Home Hero Images
 
 To get the random image for the home hero, you have to create a field group (e.g. "Single Post Custom Fields").
 The field Name should be called home_hero, Field Type > Choice > True/False.
@@ -38,9 +44,10 @@ Hero images need to be uploaded at 2880 x 1800
 - Each destination needs to have a page created for it. E.g. "Kenya" or "Iceland".
 - The code relies on the title to display "Featured stories from <THE_TITLE>".
 - It also uses the title to find posts of the same country.
-- In the Edit Page Sidebar > Document > Page Attributes > Template: Country Page
+- In the Edit Page Sidebar > Document > Page Attributes > Template: Frontpage Template (uses page_frontpage.php)
 - Make sure to select "Country Featured"
 - Don't forget to add the portrait style "Featured Story Image", although the theme falls back onto the featured image.
+- Don't forget to add an excerpt so we have a leading title (e.g. Land of the Lion King)
 
 ## Category Pages
 

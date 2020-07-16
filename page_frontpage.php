@@ -1,13 +1,14 @@
 <?php
 
 /**
- * Template Name: Country Page
+ * Template Name: Frontpage Template
+ * Selectable template for all pages that want to use the Front Page template
  */
 
 get_header();
 ?>
 
-<main id="primary" class="site-main countrypage container">
+<main id="primary" class="site-main frontpage container">
   <?php while (have_posts()) :
     the_post();
     get_template_part('template-parts/content', 'lead'); ?>
