@@ -18,29 +18,8 @@ get_header();
 
 <main id="primary" class="site-main frontpage  container">
   <?php while (have_posts()) :
-    the_post(); ?>
-    <div class="frontpage-intro-wrapper">
-      <!-- Who We Are -->
-      <h2 class="heading page-h2">Who We Are</h2>
-      <div class="frontpage-intro dropcap dropcap--s">
-        <?php
-        the_content(
-          sprintf(
-            wp_kses(
-              /* translators: %s: Name of current post. Only visible to screen readers */
-              __('Continue reading<span class="screen-reader-text"> "%s"</span>', 'travellers-field-guide'),
-              array(
-                'span' => array(
-                  'class' => array(),
-                ),
-              )
-            ),
-            wp_kses_post(get_the_title())
-          )
-        );
-        ?>
-      </div><!-- .frontpage-intro -->
-    </div><!-- .frontpage-intro-wrapper -->
+    the_post();
+    get_template_part('template-parts/content', 'lead'); ?>
     <div class="frontpage-featured-wrapper">
       <?php
       $featured_stories = get_posts(array(
@@ -82,25 +61,8 @@ get_header();
           $wp_query = null;
           $wp_query = new WP_Query('posts_per_page=12&paged=' . $paged);
           if ($wp_query->have_posts()) :
-            while ($wp_query->have_posts()) : $wp_query->the_post(); ?>
-              <?php
-              $post_country = get_the_tags()[0]->name; //name of country
-              ?>
-              <div class="tile-single shrink-on-hover mb-1_5">
-                <a href="<?php echo the_permalink() ?>">
-                  <div class="tile-content-wrapper">
-                    <div class="tile-content">
-                      <h3 class="tile-content-subheading subheading"><?php echo $post_country ?></h3>
-                      <h3 class="tile-content-title heading page-h3"><?php the_title() ?></h3>
-                    </div>
-                  </div>
-                  <?php
-                  if (has_post_thumbnail()) {
-                    echo the_post_thumbnail('post-thumbnail', ['class' => 'tile-image']);
-                  }
-                  ?>
-                </a>
-              </div>
+            while ($wp_query->have_posts()) : $wp_query->the_post();
+              get_template_part('template-parts/content', 'post_tiles'); ?>
             <?php endwhile; ?>
         </div>
         <nav class="pagination-wrapper">
