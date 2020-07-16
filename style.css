@@ -1378,6 +1378,10 @@ textarea {
   border-bottom: none;
 }
 
+.margin-auto {
+  margin: auto;
+}
+
 .dropcap p:first-of-type:first-child:first-letter {
   font-family: "Alata", "Segoe UI", Roboto, Cantarell, "Helvetica Neue", sans-serif;
   float: left;

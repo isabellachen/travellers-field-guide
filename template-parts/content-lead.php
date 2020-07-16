@@ -9,7 +9,7 @@
  * @package travellers-field-guide
  */
 ?>
-<div class="frontpage-intro-wrapper">
+<div class="container-inner margin-auto">
   <!-- Who We Are -->
   <?php if (has_excerpt()) : ?>
     <h2 class="heading page-h2"><?php the_excerpt() ?></h2>
