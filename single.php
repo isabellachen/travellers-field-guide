@@ -16,16 +16,18 @@ get_header();
   <?php
   while (have_posts()) :
     the_post();
-    $post_country = get_the_tags()[0]->slug; //name of country
+    $the_tag = get_the_tags()[0];
+    $post_tag_slug = $the_tag->slug;
+    $post_page_parent = $the_tag->name;
     $current_post_id = get_the_ID();
     get_template_part('template-parts/content', get_post_type());
   ?>
   <?php endwhile; ?>
   <div class="owl-carousel-wrapper">
-    <h2 class="heading page-h2 text-align-center mb-1 border-bottom-none">Explore more stories from <?php echo $post_country ?></h2>
+    <h2 class="heading page-h2 text-align-center mb-1 border-bottom-none">Explore more stories from <?php echo $post_page_parent ?></h2>
     <div class="owl-carousel">
       <?php
-      $the_query = new WP_Query(array('tag' => $post_country));
+      $the_query = new WP_Query(array('tag' => $post_tag_slug));
       while ($the_query->have_posts()) : $the_query->the_post() ?>
         <?php
         $carousel_item_id = get_the_ID();
