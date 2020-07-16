@@ -16,7 +16,7 @@ get_header();
   <?php
   while (have_posts()) :
     the_post();
-    $post_country = get_the_tags()[0]->name; //name of country
+    $post_country = get_the_tags()[0]->slug; //name of country
     $current_post_id = get_the_ID();
     get_template_part('template-parts/content', get_post_type());
   ?>

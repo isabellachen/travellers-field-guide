@@ -12,6 +12,8 @@ get_header();
   <?php get_template_part('template-parts/content', 'lead'); ?>
   <div class="frontpage-featured-wrapper">
     <?php
+    $is_regular_page = get_field('regular_page');
+    $is_country_page = !$is_regular_page;
     $post_tag_slug = $post->post_name;
     $featured_stories = get_posts(array(
       "tag" => $post_tag_slug,
@@ -23,7 +25,12 @@ get_header();
       )
     ));
     ?>
-    <div class="frontpage-featured-title heading page-h2">Featured Stories From <?php the_title() ?> </div>
+    <div class="frontpage-featured-title heading page-h2">Featured
+      <?php if ($is_country_page) : ?>
+        Stories From
+      <?php endif;
+      the_title() ?>
+    </div>
     <div class="frontpage-featured">
       <?php
       if ($featured_stories) {
@@ -52,7 +59,13 @@ get_header();
     $post_count > 3
   ) : ?>
     <div class="frontpage-posts-wrapper">
-      <div class="frontpage-posts-title heading page-h2"><?php the_title() ?> Travel Diaries</div>
+      <div class="frontpage-posts-title heading page-h2">
+        <?php
+        the_title();
+        if ($is_country_page) {
+          echo ' Travel Diaries';
+        } ?>
+      </div>
       <div class="frontpage-posts">
         <div class="frontpage-posts-inner">
           <?php
