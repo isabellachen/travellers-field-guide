@@ -28,7 +28,7 @@
     </div>
   </header><!-- .entry-header -->
 
-  <div class="entry-content">
+  <div class="entry-content dropcap">
     <?php
     the_content(
       sprintf(

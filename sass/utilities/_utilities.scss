@@ -17,3 +17,28 @@
 .border-bottom-none {
   border-bottom: none;
 }
+
+.dropcap {
+  p:first-of-type {
+    &:first-child {
+      &:first-letter {
+        font-family: $font-display;
+        float: left;
+        font-size: 3.5rem;
+        line-height: 45px;
+        padding-top: 4px;
+        padding-right: 8px;
+      }
+    }
+  }
+
+  &--s {
+    p:first-of-type {
+      &:first-child {
+        &:first-letter {
+          padding-top: 0;
+        }
+      }
+    }
+  }
+}

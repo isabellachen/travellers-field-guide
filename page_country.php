@@ -11,7 +11,7 @@ get_header();
   <?php while (have_posts()) :
     the_post(); ?>
     <div class="frontpage-intro-wrapper">
-      <div class="frontpage-intro">
+      <div class="frontpage-intro dropcap dropcap--s">
         <?php
         the_content(
           sprintf(

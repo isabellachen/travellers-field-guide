@@ -22,7 +22,7 @@ get_header();
     <div class="frontpage-intro-wrapper">
       <!-- Who We Are -->
       <h2 class="heading page-h2">Who We Are</h2>
-      <div class="frontpage-intro">
+      <div class="frontpage-intro dropcap dropcap--s">
         <?php
         the_content(
           sprintf(

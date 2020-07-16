@@ -1378,6 +1378,19 @@ textarea {
   border-bottom: none;
 }
 
+.dropcap p:first-of-type:first-child:first-letter {
+  font-family: "Alata", "Segoe UI", Roboto, Cantarell, "Helvetica Neue", sans-serif;
+  float: left;
+  font-size: 3.5rem;
+  line-height: 45px;
+  padding-top: 4px;
+  padding-right: 8px;
+}
+
+.dropcap--s p:first-of-type:first-child:first-letter {
+  padding-top: 0;
+}
+
 .frontpage {
   position: relative;
   top: -3rem;
@@ -1387,6 +1400,10 @@ textarea {
   .frontpage {
     top: -8rem;
   }
+}
+
+.frontpage-intro {
+  text-align: justify;
 }
 
 .frontpage-intro-wrapper {
@@ -1439,7 +1456,7 @@ textarea {
   }
 }
 
-.single {
+.single .site-main {
   position: relative;
   top: -13.5rem;
 }
