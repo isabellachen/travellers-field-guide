@@ -1,26 +1,40 @@
 # Setting up WordPress for this theme
 
-## Set up the Home Page
+## Set up the Home Page and FrontPage Template Pages
 
 ### Leading title
 
-To display 'Who We Are', you need to add 'Who We Are' to the excerpt field of the Home Page.
+- To display 'Who We Are', you need to add 'Who We Are' to the excerpt field of the Home Page.
 
-### Random Home Hero Images
+### Random Home Hero Images (ACF setup)
 
-To get the random image for the home hero, you have to create a field group (e.g. "Single Post Custom Fields").
-The field Name should be called home_hero, Field Type > Choice > True/False.
+- To get the random image for the home hero, you have to create a field group with ACF (e.g. "Single Post Custom Fields").
+  The field Name should be called home_hero, Field Type > Choice > True/False.
 
-## Set Up Featured Stories
+### Featured Stories for Home Page (ACF setup)
 
-The theme displays the three latest featured stories on the Home Page. To set up, under the field group for Single Posts,
-(e.g. "Single Post Custom Fields") create a field called home_featured, Field Type > Choice > True/False.
+- The theme displays the three latest featured stories on the Home Page. To set up, under the field group "Single Post Custom Fields" create a field called home_featured, Field Type > Choice > True/False.
 
-To set up the portrait image of the featured story, create a custom field "featured_story_image", of Field Type Image. Make sure the return format is "Image Array".
+- To set up the portrait image of the featured story, create a custom field "featured_story_image", of Field Type Image. Make sure the return format is "Image Array".
 
-## Set Up Country Stories
+### Featured Stories of Page (ACF setup)
 
-The theme displays the three latest featured stories of the country on the country page. Set up is similar to Featured Stories for the Home Page. The naming is "country_featured" for the boolean field. This feature uses the "featured_story_image" to display the portait image in the country page.
+- The theme displays the three latest featured stories on each page using the Frontpage template. To set up, under the field group "Single Post Custom Fields" create a field called page_featured, Field Type > Choice > True/False.
+
+## Set up the Pages using 'Frontpage Template' (e.g. 'Kenya', 'Blog', 'Music Videos')
+
+- Make sure the post has the correct tag. The tag needs to have the same slug as the page.
+  E.g. the page slug for 'Cape Verde' is 'cape-verde'. The slug for the tag 'Cape Verde' is also 'cape-verde'.
+- In the Edit Page Sidebar > Document > Page Attributes > Template: Frontpage Template (uses page_frontpage.php)
+- The code relies on the title to display "Featured stories from <THE_TITLE>".
+- Don't forget to add the portrait style "Featured Story Image", although the theme falls back onto the featured image.
+- Don't forget to add an excerpt so we have a leading title (e.g. Land of the Lion King)
+- To select the featured stories, check the 'page_featured' field in the post.
+
+### What if there are not enough posts?
+
+- FrontPage template only displays the square tiles section if there are more than three posts with the matching tag.
+- If there are less than three posts, you need to select 'page_featured' for the one, two or three posts that match the tag. If no featured posts are selected, and there are less than three posts matching the page, no posts will be displayed.
 
 ## Image Sizes
 
@@ -39,16 +53,6 @@ The other two sizes are created automatically.
 
 Hero images need to be uploaded at 2880 x 1800
 
-## Country Pages
-
-- Each destination needs to have a page created for it. E.g. "Kenya" or "Iceland".
-- The code relies on the title to display "Featured stories from <THE_TITLE>".
-- It also uses the title to find posts of the same country.
-- In the Edit Page Sidebar > Document > Page Attributes > Template: Frontpage Template (uses page_frontpage.php)
-- Make sure to select "Country Featured"
-- Don't forget to add the portrait style "Featured Story Image", although the theme falls back onto the featured image.
-- Don't forget to add an excerpt so we have a leading title (e.g. Land of the Lion King)
-
 ## Category Pages
 
 The theme utilises custom images for category pages, e.g. destinations/europe/iceland
@@ -58,4 +62,6 @@ Set up ACF for home_hero to generate random home page hero images
 
 ## Flex Column Shortcodes
 
-The theme uses the custom plugin "Columned Images for Madhouse Heaven". Remember to upload the latest version.
+- The theme uses the custom plugin "Columned Images for Madhouse Heaven". Remember to upload the latest version.
+- Usage: [flex_col_images num_col=3][/flex_col_images]
+- Takes three or four columns

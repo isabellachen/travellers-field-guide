@@ -12,11 +12,12 @@ get_header();
   <?php get_template_part('template-parts/content', 'lead'); ?>
   <div class="frontpage-featured-wrapper">
     <?php
+    $post_tag_slug = $post->post_name;
     $featured_stories = get_posts(array(
-      "tag" => get_the_title(),
+      "tag" => $post_tag_slug,
       'meta_query' => array(
         array(
-          'key'   => 'country_featured',
+          'key'   => 'page_featured',
           'value' => '1',
         )
       )
@@ -40,7 +41,7 @@ get_header();
   $temp = $wp_query;
   $wp_query = null;
   $args = array(
-    "tag" => get_the_title(),
+    "tag" => $post_tag_slug,
     'posts_per_page' => 12,
     'paged' => $paged,
   );
