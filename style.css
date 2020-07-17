@@ -1451,6 +1451,15 @@ textarea {
   top: -13.5rem;
 }
 
+.attachment-page {
+  position: relative;
+  top: 4.2rem;
+}
+
+.attachment-page img {
+  width: 100%;
+}
+
 .entry-header {
   text-align: center;
   position: relative;
