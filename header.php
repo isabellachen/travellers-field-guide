@@ -51,7 +51,7 @@
         </div><!-- container -->
       </div><!-- top-bar -->
       <div class="hero">
-        <?php if (is_front_page() || is_404()) : ?>
+        <?php if (is_front_page() || is_404() || is_search()) : ?>
           <?php
           $hero_posts = get_posts(array(
             'meta_query' => array(

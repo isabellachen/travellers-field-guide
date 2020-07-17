@@ -14,19 +14,18 @@ get_header();
 <main id="primary" class="error-404 site-main container">
 
   <section class="not-found">
-    <header class="page-header">
-      <header class="entry-header">
-        <div class="entry-header-subtitle container">404</div>
-        <div class="entry-header-title-wrapper">
-          <h1 class="entry-header-title">Oops! Looks like you are lost.</h1>
-        </div>
-        <div class="entry-header-excerpt-wrapper">
-          <div class="entry-header-excerpt entry-header-excerpt--mobile">But sometimes, getting lost can lead to unexpected adventures</div>
-        </div>
-      </header><!-- .entry-header -->
-    </header><!-- .page-header -->
 
-    <div class="page-content container margin-auto">
+    <header class="entry-header">
+      <div class="entry-header-subtitle">404</div>
+      <div class="entry-header-title-wrapper">
+        <h1 class="entry-header-title">Oops! Looks like you are lost.</h1>
+      </div>
+      <div class="entry-header-excerpt-wrapper">
+        <div class="entry-header-excerpt entry-header-excerpt--mobile">But sometimes, getting lost can lead to unexpected adventures</div>
+      </div>
+    </header><!-- .entry-header -->
+
+    <div class="page-content margin-auto">
       <div class="container-inner margin-auto"><?php get_search_form(); ?></div>
       <div class="frontpage-posts-wrapper">
         <div class="frontpage-posts-title heading page-h2">Explore Out Latest Posts</div>

@@ -1301,6 +1301,10 @@ input[type='search'] {
   width: 2.5rem;
 }
 
+.search-field {
+  margin-right: 0.5rem;
+}
+
 /*--------------------------------------------------------------
 # Plugins
 --------------------------------------------------------------*/
@@ -1409,7 +1413,7 @@ input[type='search'] {
 }
 
 .border-bottom-none {
-  border-bottom: none;
+  border-bottom: none !important;
 }
 
 .margin-auto {
@@ -1481,7 +1485,8 @@ input[type='search'] {
 }
 
 .single .site-main,
-.error404 .site-main {
+.error404 .site-main,
+.search-results .site-main {
   position: relative;
   top: -13.5rem;
 }
