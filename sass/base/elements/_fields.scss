@@ -14,13 +14,13 @@ input[type='datetime'],
 input[type='datetime-local'],
 input[type='color'],
 textarea {
-  color: $c-primary-mid;
+  color: $c-primary-light;
   border: 1px solid $c-primary-light;
   border-radius: 3px;
   padding: 3px;
 
   &:focus {
-    color: $c-primary-dark;
+    color: $c-primary-light;
   }
 }
 
@@ -30,4 +30,15 @@ select {
 
 textarea {
   width: 100%;
+}
+
+input[type='search'] {
+  padding: 0 0.5rem;
+  width: 100%;
+  border: none;
+  background-color: transparent;
+  font-size: $fs-single-h2-mobile;
+  @media (min-width: $screen-size-m) {
+    font-size: $fs-single-h2;
+  }
 }

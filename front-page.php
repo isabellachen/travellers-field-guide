@@ -80,7 +80,6 @@ get_header();
     ?>
     </div>
   </div><!-- .frontpage-featured-wrapper -->
-  <!-- end loop -->
 </main><!-- #main -->
 
 <?php

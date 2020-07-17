@@ -10,8 +10,14 @@
   margin-bottom: 1.5rem;
 }
 
-.text-align-center {
-  text-align: center;
+.text-align {
+  &-center {
+    text-align: center;
+  }
+
+  &-justify {
+    text-align: justify;
+  }
 }
 
 .border-bottom-none {

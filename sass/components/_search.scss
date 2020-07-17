@@ -1,0 +1,14 @@
+.search-form {
+  margin-top: 0.25rem;
+  display: flex;
+  justify-content: space-between;
+  label {
+    flex: 1;
+    margin-right: 0.5rem;
+  }
+}
+
+.search-icon {
+  padding: 0.25rem;
+  width: 2.5rem;
+}

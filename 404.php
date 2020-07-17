@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The template for displaying 404 pages (not found)
  *
@@ -10,51 +11,62 @@
 get_header();
 ?>
 
-	<main id="primary" class="site-main">
+<main id="primary" class="error-404 site-main container">
 
-		<section class="error-404 not-found">
-			<header class="page-header">
-				<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'travellers-field-guide' ); ?></h1>
-			</header><!-- .page-header -->
+  <section class="not-found">
+    <header class="page-header">
+      <header class="entry-header">
+        <div class="entry-header-subtitle container">404</div>
+        <div class="entry-header-title-wrapper">
+          <h1 class="entry-header-title">Oops! Looks like you are lost.</h1>
+        </div>
+        <div class="entry-header-excerpt-wrapper">
+          <div class="entry-header-excerpt entry-header-excerpt--mobile">But sometimes, getting lost can lead to unexpected adventures</div>
+        </div>
+      </header><!-- .entry-header -->
+    </header><!-- .page-header -->
 
-			<div class="page-content">
-				<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'travellers-field-guide' ); ?></p>
+    <div class="page-content container margin-auto">
+      <div class="container-inner margin-auto"><?php get_search_form(); ?></div>
+      <div class="frontpage-posts-wrapper">
+        <div class="frontpage-posts-title heading page-h2">Explore Out Latest Posts</div>
+        <div class="frontpage-posts">
+          <div class="frontpage-posts-inner">
+            <?php
+            if (get_query_var('paged')) {
+              $paged = get_query_var('paged');
+            } elseif (get_query_var('page')) {
+              $paged = get_query_var('page');
+            } else {
+              $paged = 1;
+            }
+            $temp = $wp_query;
+            $wp_query = null;
+            $args = array(
+              'posts_per_page' => 12,
+              'paged' => $paged,
+            );
+            $wp_query = new WP_Query($args);
+            if ($wp_query->have_posts()) :
+              while ($wp_query->have_posts()) : $wp_query->the_post();
+                get_template_part('template-parts/content', 'post_tiles'); ?>
+              <?php endwhile; ?>
+          </div>
+          <nav class="pagination-wrapper">
+            <?php tfg_pagination(); ?>
+          </nav>
+        <?php
+              $wp_query = null;
+              $wp_query = $temp;
+              wp_reset_postdata();
+            endif;
+        ?>
+        </div>
+      </div><!-- .frontpage-featured-wrapper -->
+    </div><!-- .page-content -->
+  </section><!-- .error-404 -->
 
-					<?php
-					get_search_form();
-
-					the_widget( 'WP_Widget_Recent_Posts' );
-					?>
-
-					<div class="widget widget_categories">
-						<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'travellers-field-guide' ); ?></h2>
-						<ul>
-							<?php
-							wp_list_categories(
-								array(
-									'orderby'    => 'count',
-									'order'      => 'DESC',
-									'show_count' => 1,
-									'title_li'   => '',
-									'number'     => 10,
-								)
-							);
-							?>
-						</ul>
-					</div><!-- .widget -->
-
-					<?php
-					/* translators: %1$s: smiley */
-					$travellers_field_guide_archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'travellers-field-guide' ), convert_smilies( ':)' ) ) . '</p>';
-					the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$travellers_field_guide_archive_content" );
-
-					the_widget( 'WP_Widget_Tag_Cloud' );
-					?>
-
-			</div><!-- .page-content -->
-		</section><!-- .error-404 -->
-
-	</main><!-- #main -->
+</main><!-- #main -->
 
 <?php
 get_footer();
