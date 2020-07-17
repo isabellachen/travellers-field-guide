@@ -58,7 +58,12 @@ get_header();
         }
         $temp = $wp_query;
         $wp_query = null;
-        $wp_query = new WP_Query('posts_per_page=12&paged=' . $paged);
+        $args = array(
+          "category_name" => 'destinations',
+          'posts_per_page' => 12,
+          'paged' => $paged,
+        );
+        $wp_query = new WP_Query($args);
         if ($wp_query->have_posts()) :
           while ($wp_query->have_posts()) : $wp_query->the_post();
             get_template_part('template-parts/content', 'post_tiles'); ?>

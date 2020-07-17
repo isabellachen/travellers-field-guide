@@ -21,6 +21,10 @@
 
 - The theme displays the three latest featured stories on each page using the Frontpage template. To set up, under the field group "Single Post Custom Fields" create a field called page_featured, Field Type > Choice > True/False.
 
+### Travel Diaries on Home Page
+
+- Only displays post under the category 'destinations'
+
 ## Set up the Pages using 'Frontpage Template' (e.g. 'Kenya', 'Blog', 'Music Videos')
 
 - Make sure the post has the correct tag. The tag needs to have the same slug as the page.
