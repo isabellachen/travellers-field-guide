@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The template for displaying archive pages
  *
@@ -10,41 +11,45 @@
 get_header();
 ?>
 
-	<main id="primary" class="site-main">
+<main id="primary" class="site-main container">
 
-		<?php if ( have_posts() ) : ?>
+  <header class="entry-header container-inner border-bottom-none">
+    <div class="entry-header-subtitle container-innermost">
+      <?php echo have_posts() ? "All Posts For" : "No Posts For:" ?>
+    </div>
+    <div class="entry-header-title-wrapper">
+      <?php
+      the_archive_title('<h1 class="entry-header-title">', '</h1>');
+      ?>
+    </div>
+  </header><!-- .page-header -->
+  <div class="page-content margin-auto">
+    <?php if (have_posts()) : ?>
+      <div class="frontpage-posts-wrapper">
+        <div class="frontpage-posts">
+          <div class="frontpage-posts-inner">
+            <?php
+            if (get_query_var('paged')) {
+              $paged = get_query_var('paged');
+            } elseif (get_query_var('page')) {
+              $paged = get_query_var('page');
+            } else {
+              $paged = 1;
+            }
+            while (have_posts()) :
+              the_post();
+              get_template_part('template-parts/content', 'post_tiles');
+            endwhile; ?>
 
-			<header class="page-header">
-				<?php
-				the_archive_title( '<h1 class="page-title">', '</h1>' );
-				the_archive_description( '<div class="archive-description">', '</div>' );
-				?>
-			</header><!-- .page-header -->
-
-			<?php
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
-
-				/*
-				 * Include the Post-Type-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_type() );
-
-			endwhile;
-
-			the_posts_navigation();
-
-		else :
-
-			get_template_part( 'template-parts/content', 'none' );
-
-		endif;
-		?>
-
-	</main><!-- #main -->
+          </div>
+          <nav class="pagination-wrapper">
+            <?php tfg_pagination(); ?>
+          </nav>
+        </div>
+      </div>
+    <?php endif; ?>
+  </div>
+</main><!-- #main -->
 
 <?php
 get_sidebar();

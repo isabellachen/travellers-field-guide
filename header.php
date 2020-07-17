@@ -69,23 +69,18 @@
           <img class="hero-image" src="<?php echo $featured_img_url ?>">
         <?php elseif (is_single() || is_page() && has_post_thumbnail()) : ?>
           <?php the_post_thumbnail('post-thumbnail', ['class' => "hero-image"]); ?>
-        <?php elseif (is_category()) : ?>
+        <?php elseif (is_category() || is_tag()) : ?>
           <?php
           $term = get_queried_object();
-          $featured_img_uri = get_field('image', $term);
-          ?>
-          <img class="hero-image" src="<?php echo $featured_img_uri; ?>">
+          $hero_tax_image = get_field('image', $term);
+          if ($hero_tax_image) {
+            echo wp_get_attachment_image($hero_tax_image, 'full', "", array("class" => "hero-image"));
+          }; ?>
         <?php endif; ?>
         <div class="hero-content <?php echo is_front_page() ? "hero-content--centered" : "" ?>">
           <div class="hero-title-wrapper container">
             <?php if (is_front_page()) : ?>
               <h1 class="hero-title hero-title--lg">A Traveller's Field Guide</h1>
-            <?php elseif (is_category()) : ?>
-              <?php
-              $category = get_queried_object();
-              $cat_name = get_cat_name($category->term_id);
-              ?>
-              <h1 class="hero-title"><?php echo $cat_name  ?></h1>
             <?php endif; ?>
           </div> <!-- .hero-title -->
 
@@ -93,8 +88,6 @@
           <div class="hero-excerpt-wrapper">
             <?php if (is_front_page()) : ?>
               <?php echo get_bloginfo('description') ?>
-            <?php elseif (is_category()) : ?>
-              <div class="hero-excerpt hero-excerpt--mobile"><?php category_description() ?></div>
             <?php endif; ?>
           </div><!-- .hero-excerpt -->
 

@@ -15,7 +15,7 @@ get_header();
 
   <section class="not-found">
 
-    <header class="entry-header">
+    <header class="entry-header container-inner">
       <div class="entry-header-subtitle">404</div>
       <div class="entry-header-title-wrapper">
         <h1 class="entry-header-title">Oops! Looks like you are lost.</h1>

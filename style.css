@@ -985,6 +985,14 @@ input[type='search'] {
   margin: 0 0 1.5em;
 }
 
+.single .site-main,
+.error404 .site-main,
+.search .site-main,
+.archive .site-main {
+  position: relative;
+  top: -13.5rem;
+}
+
 /* Widgets
 --------------------------------------------- */
 .widget {
@@ -1484,13 +1492,6 @@ input[type='search'] {
   margin-bottom: 1.5rem;
 }
 
-.single .site-main,
-.error404 .site-main,
-.search-results .site-main {
-  position: relative;
-  top: -13.5rem;
-}
-
 .attachment-page {
   position: relative;
   top: 4.2rem;
@@ -1956,7 +1957,7 @@ input[type='search'] {
 .owl-prev,
 .owl-next {
   position: absolute;
-  top: 40%;
+  top: 43%;
   height: 50px;
   width: 50px;
   background-color: rgba(245, 245, 246, 0.7) !important;

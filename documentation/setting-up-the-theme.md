@@ -62,12 +62,14 @@ The other two sizes are created automatically.
 
 Hero images need to be uploaded at 2880 x 1800
 
-## Category Pages
+## Set Up Archive Pages (Category and Tags)
 
-The theme utilises custom images for category pages, e.g. destinations/europe/iceland
+The theme utilises custom images for category pages, e.g. destinations/europe/iceland or tag pages e.g. tag/iceland
 To set up the custom images, we need to add an [ACF for an image in the category page](https://www.advancedcustomfields.com/resources/adding-fields-taxonomy-term/).
 
-Set up ACF for home_hero to generate random home page hero images
+- Use ACF for the Hero Images Custom Fields > Field Groups > Add New 'Taxonomy Custom Field'
+- Add Field > Image
+- Return format > Image ID
 
 ## Flex Column Shortcodes
 
