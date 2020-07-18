@@ -3,6 +3,7 @@
 /**
  * Template Name: Page Grid
  * Selectable template for pages that need a title and a related post grid
+ * Created for parent pages like the 'Destinations' page
  */
 
 get_header();
