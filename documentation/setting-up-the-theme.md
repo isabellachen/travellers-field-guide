@@ -71,6 +71,11 @@ To set up the custom images, we need to add an [ACF for an image in the category
 - Add Field > Image
 - Return format > Image ID
 
+## Set up the Parent Page (e.g. Destinations)
+
+- Select Page Grid as template
+- Add as parent to children (e.g. Destination is parent page to 'Iceland', 'Kenya' etc.)
+
 ## Flex Column Shortcodes
 
 - The theme uses the custom plugin "Columned Images for Madhouse Heaven". Remember to upload the latest version.

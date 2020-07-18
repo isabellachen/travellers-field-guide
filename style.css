@@ -989,7 +989,8 @@ input[type='search'] {
 .error404 .site-main,
 .search .site-main,
 .archive .site-main,
-.page-template-page_frontpage .site-main {
+.page-template-page_frontpage .site-main,
+.page-template-page_grid .site-main {
   position: relative;
   top: -13.5rem;
 }

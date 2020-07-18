@@ -1,11 +1,8 @@
 <?php
 
 /**
- * The template for displaying 404 pages (not found)
- *
- * @link https://codex.wordpress.org/Creating_an_Error_404_Page
- *
- * @package travellers-field-guide
+ * Template Name: Page Grid
+ * Selectable template for pages that need a title and a related post grid
  */
 
 get_header();
@@ -15,20 +12,12 @@ get_header();
 
   <section class="not-found">
 
-    <header class="entry-header container-inner">
-      <div class="entry-header-subtitle">404</div>
-      <div class="entry-header-title-wrapper">
-        <h1 class="entry-header-title">Oops! Looks like you are lost.</h1>
-      </div>
-      <div class="entry-header-excerpt-wrapper">
-        <div class="entry-header-excerpt entry-header-excerpt--mobile">But sometimes, getting lost can lead to unexpected adventures</div>
-      </div>
-    </header><!-- .entry-header -->
+    <?php get_template_part('template-parts/content', 'lead'); ?>
 
     <div class="page-content margin-auto">
       <div class="container-inner margin-auto"><?php get_search_form(); ?></div>
       <div class="frontpage-posts-wrapper">
-        <h2 class="frontpage-posts-title heading page-h2">Explore Out Latest Posts</h2>
+        <h2 class="frontpage-posts-title heading page-h2">Dive into the <?php the_title() ?></h2>
         <div class="frontpage-posts">
           <div class="frontpage-posts-inner">
             <?php
@@ -41,7 +30,9 @@ get_header();
             }
             $temp = $wp_query;
             $wp_query = null;
+            $page_slug = $post->post_name;
             $args = array(
+              "category_name" => $page_slug,
               'posts_per_page' => 12,
               'paged' => $paged,
             );
