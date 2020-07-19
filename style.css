@@ -485,7 +485,7 @@ big {
 --------------------------------------------- */
 body {
   background: #00000d;
-  height: calc(100% - 13.5rem);
+  overflow-x: hidden;
 }
 
 hr {
@@ -2126,6 +2126,15 @@ input[type='email'] {
   background-image: url("assets/icons/chevron-left-gray.svg");
   transform: rotate(180deg);
   left: -0.25rem;
+}
+
+.owl-carousel-wrapper--fixed {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  left: 0;
+  background-color: #50555e;
+  padding: 0 0.5rem;
 }
 
 /*

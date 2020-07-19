@@ -94,3 +94,14 @@
     left: -0.25rem;
   }
 }
+
+.owl-carousel-wrapper {
+  &--fixed {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    background-color: $c-primary-mid;
+    padding: 0 0.5rem;
+  }
+}

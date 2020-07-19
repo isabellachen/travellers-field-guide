@@ -10,7 +10,7 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?> single-post" <?php post_class(); ?>>
   <header class="entry-header">
     <!-- Subtitle: display the country category for the current post, e.g. "Iceland" -->
     <div class="entry-header-subtitle container">
@@ -53,4 +53,5 @@
     );
     ?>
   </div><!-- .entry-content -->
+  <div class="related-posts-marker"></div>
 </article><!-- #post-<?php the_ID(); ?> -->

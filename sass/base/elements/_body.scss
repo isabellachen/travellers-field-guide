@@ -1,4 +1,4 @@
 body {
   background: $c-primary-darkest; // Fallback for when there is no custom background color defined.
-  height: calc(100% - 13.5rem);
+  overflow-x: hidden;
 }
