@@ -485,6 +485,7 @@ big {
 --------------------------------------------- */
 body {
   background: #00000d;
+  height: calc(100% - 13.5rem);
 }
 
 hr {
@@ -990,6 +991,7 @@ input[type='email'] {
 .page-template-page_grid .site-main {
   position: relative;
   top: -13.5rem;
+  margin-bottom: -10rem;
 }
 
 /* Widgets
