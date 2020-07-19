@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The template for displaying the footer
  *
@@ -11,24 +12,54 @@
 
 ?>
 
-	<footer id="colophon" class="site-footer">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'travellers-field-guide' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'travellers-field-guide' ), 'WordPress' );
-				?>
-			</a>
-			<span class="sep"> | </span>
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'travellers-field-guide' ), 'travellers-field-guide', '<a href="http://underscores.me/">Isabella Chen</a>' );
-				?>
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
+<footer id="colophon" class="site-footer">
+  <div class="site-info">
+    <div class="site-footer-inner container">
+      <div class="site-footer-left">
+        <h2>Get in Touch</h2>
+        <div class="site-footer-email">
+          <img src="<?php bloginfo('template_url'); ?>/assets/icons/email.svg">
+          <span>hello [at] madhouseheaven.com</span>
+        </div>
+        <div class="site-footer-icons-wrapper">
+          <a href="https://www.facebook.com/madhouseheavenstudio/" target="_blank" class="site-footer-icon"><img src="<?php bloginfo('template_url'); ?>/assets/icons/facebook.svg"></a>
+          <a href="https://www.instagram.com/madhouse_heaven/" target="_blank" class="site-footer-icon"><img src="<?php bloginfo('template_url'); ?>/assets/icons/instagram.svg"></a>
+          <a href="https://www.youtube.com/channel/UCYntFLHyk-9XhrAYhTfxjew" target="_blank" class="site-footer-icon"><img src="<?php bloginfo('template_url'); ?>/assets/icons/youtube.svg"></a>
+          <a href="https://www.flickr.com/photos/madhouseheaven/" target="_blank" class="site-footer-icon"><img src="<?php bloginfo('template_url'); ?>/assets/icons/flickr.svg"></a>
+          <a href="https://www.pinterest.es/madhouseheaven/" target="_blank" class="site-footer-icon"><img src="<?php bloginfo('template_url'); ?>/assets/icons/pinterest.svg"></a>
+        </div>
+      </div>
+      <div class="site-footer-right">
+        <div id="mc_embed_signup">
+          <form action="https://madhouseheaven.us10.list-manage.com/subscribe/post?u=d24c7c0b82449655133ff8c5d&amp;id=8185a63b5b" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+            <div id="mc_embed_signup_scroll">
+              <h2>Stay In Touch</h2>
+              <div class="mc-wrapper">
+                <div class="mc-field-group">
+                  <label class="mc-form-label" for="mce-EMAIL">Email Address</label>
+                  <input type="email" value="" placeholder="Your Email" name="EMAIL" class="required email" id="mce-EMAIL">
+                </div>
+                <div id="mce-responses" class="clear">
+                  <div class="response" id="mce-error-response" style="display:none"></div>
+                  <div class="response" id="mce-success-response" style="display:none"></div>
+                </div> <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_d24c7c0b82449655133ff8c5d_8185a63b5b" tabindex="-1" value=""></div>
+                <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div><!-- .site-footer-main -->
+    <div class="site-footer-sub">
+      <span>© <?php echo date("Y") ?> Madhouse Heaven | Webmaster: <a href="https://www.isachen.com">www.isachen.com</a></span>
+    </div>
+  </div><!-- .site-info -->
+</footer><!-- #colophon -->
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
 
 </body>
+
 </html>

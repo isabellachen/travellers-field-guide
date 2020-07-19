@@ -32,7 +32,8 @@ textarea {
   width: 100%;
 }
 
-input[type='search'] {
+input[type='search'],
+input[type='email'] {
   padding: 0 0.5rem;
   width: 100%;
   border: none;
