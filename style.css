@@ -2166,7 +2166,7 @@ input[type='email'] {
   bottom: 0;
   width: 100%;
   left: 0;
-  background-color: #50555e;
+  background-color: rgba(0, 0, 0, 0.8);
   padding: 0 0.5rem;
   padding-bottom: 0.5rem;
 }
@@ -2174,6 +2174,20 @@ input[type='email'] {
 @media (min-width: 768px) {
   .owl-carousel-wrapper--fixed {
     padding-bottom: 1rem;
+  }
+}
+
+.owl-carousel-wrapper--fade-out-in {
+  animation: fadeoutin 1s linear forwards;
+}
+
+@keyframes fadeinout {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
   }
 }
 

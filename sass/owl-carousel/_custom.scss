@@ -107,7 +107,7 @@
       bottom: 0;
       width: 100%;
       left: 0;
-      background-color: $c-primary-mid;
+      background-color: rgba(0, 0, 0, 0.8);
       padding: 0 0.5rem;
       padding-bottom: 0.5rem;
 
@@ -115,5 +115,19 @@
         padding-bottom: 1rem;
       }
     }
+
+    &--fade-out-in {
+      animation: fadeoutin 1s linear forwards;
+    }
+  }
+}
+
+@keyframes fadeinout {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
   }
 }
