@@ -1435,6 +1435,34 @@ input[type='email'] {
   top: -1rem;
 }
 
+.long-content-controls {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin: 0 1rem 1rem 0;
+}
+
+.long-content-controls--show {
+  display: block;
+}
+
+.related-posts-icon,
+.back-to-top-icon {
+  display: flex;
+  background-color: rgba(245, 245, 246, 0.7);
+  height: 52px;
+  width: 52px;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  line-height: initial;
+}
+
+.related-posts-icon {
+  margin-bottom: 0.5rem;
+}
+
 /*--------------------------------------------------------------
 # Plugins
 --------------------------------------------------------------*/

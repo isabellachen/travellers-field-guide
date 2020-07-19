@@ -1,18 +1,36 @@
 (function ($) {
   function relatedPosts() {
     const $marker = $('.related-posts-marker');
+    const $hero = $('.hero');
+    const heroBottom = $hero.outerHeight(true);
 
+    //Trigger the related post popup
     if ($marker.length) {
-      let timeout = null;
-
+      let timeoutMarker = null;
       $(window).scroll(function () {
-        if (!timeout) {
-          timeout = setTimeout(function () {
+        if (!timeoutMarker) {
+          timeoutMarker = setTimeout(function () {
             const target = $marker.offset().top - $(window).height(); // Need to re-evaluate offset each scroll because of lazy loaded images
-            clearTimeout(timeout);
-            timeout = null;
+            clearTimeout(timeoutMarker);
+            timeoutMarker = null;
             if ($(window).scrollTop() >= target) {
               alert('made it');
+            }
+          }, 500);
+        }
+      });
+    }
+
+    //Trigger the related post button
+    if ($hero.length) {
+      let timeoutHero = null;
+      $(window).scroll(function () {
+        if (!timeoutHero) {
+          timeoutHero = setTimeout(function () {
+            clearTimeout(timeoutHero);
+            timeoutHero = null;
+            if ($(window).scrollTop() >= heroBottom) {
+              alert('display dongle');
             }
           }, 500);
         }
@@ -47,6 +65,4 @@
   $(document).ready(function () {
     initOwlCarousel();
   });
-
-  $(document).ready(readyFn);
 })(jQuery);

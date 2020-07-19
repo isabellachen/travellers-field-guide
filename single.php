@@ -12,7 +12,10 @@ get_header();
 ?>
 
 <main id="primary" class="site-main container">
-
+  <div class="long-content-controls long-content-controls--show">
+    <div class="related-posts-icon"><img src="<?php bloginfo('template_url'); ?>/assets/icons/hamburger.svg"></div>
+    <div class="back-to-top-icon"><img src="<?php bloginfo('template_url'); ?>/assets/icons/arrow.svg"></div>
+  </div>
   <?php
   while (have_posts()) :
     the_post();
