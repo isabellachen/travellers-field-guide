@@ -13,8 +13,8 @@ get_header();
 
 <main id="primary" class="site-main container">
   <div class="long-content-controls long-content-controls--show">
-    <div class="related-posts-icon"><img src="<?php bloginfo('template_url'); ?>/assets/icons/hamburger.svg"></div>
-    <div class="back-to-top-icon"><img src="<?php bloginfo('template_url'); ?>/assets/icons/arrow.svg"></div>
+    <div class="related-posts-button"><img src="<?php bloginfo('template_url'); ?>/assets/icons/hamburger.svg"></div>
+    <div class="back-to-top-button"><img src="<?php bloginfo('template_url'); ?>/assets/icons/arrow.svg"></div>
   </div>
   <?php
   while (have_posts()) :
@@ -27,8 +27,8 @@ get_header();
   ?>
   <?php endwhile; ?>
   <div class="owl-carousel-wrapper">
-    <h2 class="heading page-h2 text-align-center mb-1 border-bottom-none">Explore more stories from <?php echo $post_page_parent ?></h2>
-    <div class="owl-carousel">
+    <h2 class="owl-carousel-heading heading page-h2 border-bottom-none">Explore more stories from <?php echo $post_page_parent ?></h2>
+    <div class="owl-carousel container">
       <?php
       $the_query = new WP_Query(array('tag' => $post_tag_slug));
       while ($the_query->have_posts()) : $the_query->the_post() ?>

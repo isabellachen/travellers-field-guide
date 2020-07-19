@@ -95,13 +95,25 @@
   }
 }
 
-.owl-carousel-wrapper {
-  &--fixed {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    left: 0;
-    background-color: $c-primary-mid;
-    padding: 0 0.5rem;
+.owl-carousel {
+  &-heading {
+    padding: 0.5rem 2rem;
+    margin: 0;
+  }
+
+  &-wrapper {
+    &--fixed {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      left: 0;
+      background-color: $c-primary-mid;
+      padding: 0 0.5rem;
+      padding-bottom: 0.5rem;
+
+      @media (min-width: $screen-size-m) {
+        padding-bottom: 1rem;
+      }
+    }
   }
 }

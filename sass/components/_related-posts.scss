@@ -12,7 +12,7 @@
 
 .related-posts,
 .back-to-top {
-  &-icon {
+  &-button {
     display: flex;
     background-color: rgba(245, 245, 246, 0.7);
     height: 52px;
@@ -24,6 +24,6 @@
   }
 }
 
-.related-posts-icon {
+.related-posts-button {
   margin-bottom: 0.5rem;
 }

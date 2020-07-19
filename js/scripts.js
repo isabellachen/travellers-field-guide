@@ -3,6 +3,8 @@
     const $marker = $('.related-posts-marker');
     const $hero = $('.hero');
     const heroBottom = $hero.outerHeight(true);
+    const $relatedPostsButton = $('.related-posts-button');
+    const $relatedPostsDiv = $('.owl-carousel-wrapper');
 
     //Trigger the related post popup
     if ($marker.length) {
@@ -24,16 +26,28 @@
     //Trigger the related post button
     if ($hero.length) {
       let timeoutHero = null;
+      let hamburgerIsShown = false;
       $(window).scroll(function () {
-        if (!timeoutHero) {
+        if (!timeoutHero && !hamburgerIsShown) {
           timeoutHero = setTimeout(function () {
             clearTimeout(timeoutHero);
             timeoutHero = null;
             if ($(window).scrollTop() >= heroBottom) {
+              hamburgerIsShown = true;
               alert('display dongle');
             }
           }, 500);
         }
+        if ($(window).scrollTop() < heroBottom) {
+          hamburgerIsShown = false;
+        }
+      });
+    }
+
+    if ($relatedPostsButton.length) {
+      $relatedPostsButton.click(() => {
+        $relatedPostsDiv.addClass('owl-carousel-wrapper--fixed');
+        console.log('related posts clicked');
       });
     }
   }
