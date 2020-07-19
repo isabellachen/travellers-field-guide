@@ -27,30 +27,33 @@ get_header();
   ?>
   <?php endwhile; ?>
   <div class="owl-carousel-wrapper">
-    <h2 class="owl-carousel-heading heading page-h2 border-bottom-none">Explore more stories from <?php echo $post_page_parent ?></h2>
-    <div class="owl-carousel container">
-      <?php
-      $the_query = new WP_Query(array('tag' => $post_tag_slug));
-      while ($the_query->have_posts()) : $the_query->the_post() ?>
+    <div class="container position-relative">
+      <div class="owl-carousel-close"><img src="<?php bloginfo('template_url'); ?>/assets/icons/close.svg"></div>
+      <h2 class="owl-carousel-heading heading page-h2 border-bottom-none">Explore more stories from <?php echo $post_page_parent ?></h2>
+      <div class="owl-carousel">
         <?php
-        $carousel_item_id = get_the_ID();
-        if ($current_post_id != $carousel_item_id) : ?>
-          <a href="<?php echo the_permalink() ?>">
-            <div class="owl-tile">
-              <?php
-              if (has_post_thumbnail()) {
-                echo the_post_thumbnail('post-thumbnail', ['class' => 'owl-tile-image']);
-              } ?>
-              <div class="owl-tile-content">
-                <h3 class="owl-tile-title tile-content-title heading page-h3"><?php the_title() ?></h3>
+        $the_query = new WP_Query(array('tag' => $post_tag_slug));
+        while ($the_query->have_posts()) : $the_query->the_post() ?>
+          <?php
+          $carousel_item_id = get_the_ID();
+          if ($current_post_id != $carousel_item_id) : ?>
+            <a href="<?php echo the_permalink() ?>">
+              <div class="owl-tile">
+                <?php
+                if (has_post_thumbnail()) {
+                  echo the_post_thumbnail('thumbnail', ['class' => 'owl-tile-image']);
+                } ?>
+                <div class="owl-tile-content">
+                  <h3 class="owl-tile-title tile-content-title heading page-h3"><?php the_title() ?></h3>
+                </div>
               </div>
-            </div>
-          </a>
-      <?php endif;
-      endwhile;
-      wp_reset_postdata();
-      ?>
-    </div><!-- .owl-carousel -->
+            </a>
+        <?php endif;
+        endwhile;
+        wp_reset_postdata();
+        ?>
+      </div><!-- .owl-carousel -->
+    </div><!-- .container -->
   </div><!-- .owl-carousel-wrapper -->
 </main><!-- #main -->
 

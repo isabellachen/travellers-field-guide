@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="37px" height="38px" viewBox="0 0 37 38" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Hamburger</title>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Close" transform="translate(1.000000, 2.000000)" fill="#50555E">
+            <g id="Hamburger" transform="translate(-1.000000, -2.000000)">
+                <g id="Group" transform="translate(0.000000, 0.833333)">
+                    <path d="M-1.5,16 L38.5,16 C39.8807119,16 41,17.1192881 41,18.5 L41,19.2 C41,20.5807119 39.8807119,21.7 38.5,21.7 L-1.5,21.7 C-2.88071187,21.7 -4,20.5807119 -4,19.2 L-4,18.5 C-4,17.1192881 -2.88071187,16 -1.5,16 Z" id="Rectangle-Copy-2" transform="translate(18.500000, 18.850000) rotate(45.000000) translate(-18.500000, -18.850000) "></path>
+                    <path d="M-1.5,16 L38.5,16 C39.8807119,16 41,17.1192881 41,18.5 L41,19.2 C41,20.5807119 39.8807119,21.7 38.5,21.7 L-1.5,21.7 C-2.88071187,21.7 -4,20.5807119 -4,19.2 L-4,18.5 C-4,17.1192881 -2.88071187,16 -1.5,16 Z" id="Rectangle-Copy-3" transform="translate(18.500000, 18.850000) rotate(135.000000) translate(-18.500000, -18.850000) "></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

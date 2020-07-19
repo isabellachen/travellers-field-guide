@@ -1574,6 +1574,10 @@ input[type='email'] {
   border-bottom: none !important;
 }
 
+.position-relative {
+  position: relative;
+}
+
 .margin-auto {
   margin: auto;
 }
@@ -2159,6 +2163,17 @@ input[type='email'] {
 .owl-carousel-heading {
   padding: 0.5rem 2rem;
   margin: 0;
+}
+
+.owl-carousel-close {
+  position: absolute;
+  right: 0;
+  margin-top: 0.75rem;
+  margin-right: 0.5rem;
+}
+
+.owl-carousel-close img {
+  width: 25px;
 }
 
 .owl-carousel-wrapper--fixed {
