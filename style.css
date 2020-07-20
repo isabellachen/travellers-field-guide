@@ -483,6 +483,10 @@ big {
 
 /* Elements
 --------------------------------------------- */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: #00000d;
   overflow-x: hidden;
@@ -1436,20 +1440,15 @@ input[type='email'] {
 }
 
 .long-content-controls {
-  display: none;
   position: fixed;
   bottom: 0;
   right: 0;
   margin: 0 1rem 1rem 0;
 }
 
-.long-content-controls--show {
-  display: block;
-}
-
 .related-posts-button,
 .back-to-top-button {
-  display: flex;
+  display: none;
   background-color: rgba(245, 245, 246, 0.7);
   height: 52px;
   width: 52px;
@@ -1461,6 +1460,14 @@ input[type='email'] {
 
 .related-posts-button {
   margin-bottom: 0.5rem;
+}
+
+.related-posts-button--show {
+  display: flex;
+}
+
+.back-to-top-button--show {
+  display: flex;
 }
 
 /*--------------------------------------------------------------

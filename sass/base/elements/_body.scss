@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: $c-primary-darkest; // Fallback for when there is no custom background color defined.
   overflow-x: hidden;

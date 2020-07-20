@@ -1,62 +1,75 @@
 (function ($) {
-  function showHideLongContentControls() {
-    const $marker = $('.related-posts-marker');
-    const $hero = $('.hero');
-    const heroBottom = $hero.outerHeight(true);
-    const $relatedPostsButton = $('.related-posts-button'); // The Hamburger
-    const $relatedPostsDiv = $('.owl-carousel-wrapper');
-    const $relatedPostsDivCloseButton = $('.owl-carousel-close'); // The Close Button
-    const relatedPostDivHeight = $relatedPostsDiv.outerHeight(true);
-    const $longContentControls = $('.long-content-controls');
+  const $marker = $('.related-posts-marker');
+  const $hero = $('.hero');
+  const $relatedPostsButton = $('.related-posts-button'); // The Hamburger
+  const $backToTopButton = $('.back-to-top-button');
+  const $relatedPostsDiv = $('.owl-carousel-wrapper');
+  const $relatedPostsDivCloseButton = $('.owl-carousel-close'); // The Close Button
 
-    //Trigger the long content controls and style for related post carousel when end of article is scrolled over
+  let markerTarget;
+
+  function dockWithBottom(relatedPostDivHeight) {
     if ($marker.length) {
       let timeoutMarker = null;
       $(window).scroll(function () {
         if (!timeoutMarker) {
           timeoutMarker = setTimeout(function () {
-            const markerTarget =
+            markerTarget =
               $marker.offset().top -
               ($(window).height() - relatedPostDivHeight); // Need to re-evaluate offset each scroll because of lazy loaded images
             clearTimeout(timeoutMarker);
             timeoutMarker = null;
             if ($(window).scrollTop() >= markerTarget) {
-              $longContentControls.removeClass('long-content-controls--show');
               $relatedPostsDiv.removeClass('owl-carousel-wrapper--fixed');
               $relatedPostsDiv.addClass('owl-carousel-wrapper--fade-out-in');
             }
-            if (
-              $(window).scrollTop() < markerTarget &&
-              $(window).scrollTop() > heroBottom
-            ) {
-              $longContentControls.addClass('long-content-controls--show');
-            }
           }, 250);
         }
       });
     }
+  }
 
-    //Trigger the long-content-controls when the hero is scrolled over
-    if ($hero.length) {
-      let timeoutHero = null;
-      let hamburgerIsShown = false;
+  function initLongContentControls(heroBottom) {
+    if ($marker.length && $hero.length) {
+      let timeoutLongContentControls = null;
       $(window).scroll(function () {
-        if (!timeoutHero && !hamburgerIsShown) {
-          timeoutHero = setTimeout(function () {
-            clearTimeout(timeoutHero);
-            timeoutHero = null;
+        if (!timeoutLongContentControls) {
+          timeoutLongContentControls = setTimeout(function () {
+            clearTimeout(timeoutLongContentControls);
+            timeoutLongContentControls = null;
             if ($(window).scrollTop() >= heroBottom) {
-              hamburgerIsShown = true;
-              $longContentControls.addClass('long-content-controls--show');
+              $relatedPostsButton.addClass('related-posts-button--show');
+              $backToTopButton.addClass('back-to-top-button--show');
+            }
+            if ($(window).scrollTop() < heroBottom) {
+              $relatedPostsButton.removeClass('related-posts-button--show');
+              $backToTopButton.removeClass('back-to-top-button--show');
+            }
+            if (
+              $(window).scrollTop() >=
+              $marker.offset().top - $(window).height() //If the related carousel is on screen
+            ) {
+              $relatedPostsButton.removeClass('related-posts-button--show');
+            }
+            if (
+              $(window).scrollTop() <
+                $marker.offset().top - $(window).height() &&
+              $(window).scrollTop() > heroBottom //If the related carousel is not on screen
+            ) {
+              $relatedPostsButton.addClass('related-posts-button--show');
             }
           }, 250);
         }
-        if ($(window).scrollTop() < heroBottom) {
-          hamburgerIsShown = false;
-          $longContentControls.removeClass('long-content-controls--show');
-        }
       });
     }
+  }
+
+  function initForLongContent() {
+    const relatedPostDivHeight = $relatedPostsDiv.outerHeight(true);
+    const heroBottom = $hero.outerHeight(true);
+
+    dockWithBottom(relatedPostDivHeight);
+    initLongContentControls(heroBottom);
 
     //Click events for related posts carousel
     if ($relatedPostsButton.length) {
@@ -69,6 +82,13 @@
     if ($relatedPostsDivCloseButton.length) {
       $relatedPostsDivCloseButton.click(() => {
         $relatedPostsDiv.removeClass('owl-carousel-wrapper--fixed');
+      });
+    }
+
+    if ($backToTopButton.length) {
+      $backToTopButton.click(() => {
+        console.log('hi');
+        window.scroll(0, 0);
       });
     }
 
@@ -104,7 +124,7 @@
   }
 
   $(window).on('load', function () {
-    showHideLongContentControls();
+    initForLongContent();
   });
 
   $(document).ready(function () {

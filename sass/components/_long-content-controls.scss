@@ -1,19 +1,14 @@
 .long-content-controls {
-  display: none;
   position: fixed;
   bottom: 0;
   right: 0;
   margin: 0 1rem 1rem 0;
-
-  &--show {
-    display: block;
-  }
 }
 
 .related-posts,
 .back-to-top {
   &-button {
-    display: flex;
+    display: none;
     background-color: rgba(245, 245, 246, 0.7);
     height: 52px;
     width: 52px;
@@ -26,4 +21,13 @@
 
 .related-posts-button {
   margin-bottom: 0.5rem;
+  &--show {
+    display: flex;
+  }
+}
+
+.back-to-top-button {
+  &--show {
+    display: flex;
+  }
 }
