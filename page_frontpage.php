@@ -16,7 +16,7 @@ get_header();
     $is_country_page = !$is_regular_page;
     $post_tag_slug = $post->post_name;
     $featured_stories = get_posts(array(
-      "tag" => $post_tag_slug,
+      'category_name' => $post_tag_slug,
       'meta_query' => array(
         array(
           'key'   => 'page_featured',
@@ -48,7 +48,7 @@ get_header();
   $temp = $wp_query;
   $wp_query = null;
   $args = array(
-    "tag" => $post_tag_slug,
+    'category_name' => $post_tag_slug,
     'posts_per_page' => 12,
     'paged' => $paged,
   );
