@@ -1450,12 +1450,18 @@ input[type='email'] {
 .back-to-top-button {
   display: none;
   background-color: rgba(245, 245, 246, 0.7);
-  height: 52px;
-  width: 52px;
+  height: 45px;
+  width: 45px;
   border-radius: 50%;
   align-items: center;
   justify-content: center;
   line-height: initial;
+}
+
+.related-posts-button img,
+.back-to-top-button img {
+  height: 22px;
+  width: 22px;
 }
 
 .related-posts-button {

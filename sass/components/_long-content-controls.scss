@@ -5,17 +5,20 @@
   margin: 0 1rem 1rem 0;
 }
 
-.related-posts,
-.back-to-top {
-  &-button {
-    display: none;
-    background-color: rgba(245, 245, 246, 0.7);
-    height: 52px;
-    width: 52px;
-    border-radius: 50%;
-    align-items: center;
-    justify-content: center;
-    line-height: initial;
+.related-posts-button,
+.back-to-top-button {
+  display: none;
+  background-color: rgba(245, 245, 246, 0.7);
+  height: 45px;
+  width: 45px;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  line-height: initial;
+
+  img {
+    height: 22px;
+    width: 22px;
   }
 }
 
