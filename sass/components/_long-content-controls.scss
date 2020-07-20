@@ -1,3 +1,5 @@
+$button-size: 45px;
+
 .long-content-controls {
   position: fixed;
   bottom: 0;
@@ -9,14 +11,6 @@
 .related-posts-button,
 .back-to-top-button {
   display: none;
-  background-color: rgba(245, 245, 246, 0.7);
-  height: 45px;
-  width: 45px;
-  border-radius: 50%;
-  align-items: center;
-  justify-content: center;
-  line-height: initial;
-
   img {
     height: 22px;
     width: 22px;
@@ -24,14 +18,66 @@
 }
 
 .related-posts-button {
+  position: relative;
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    border-radius: 50%;
+    width: $button-size;
+    height: $button-size;
+    background-color: $c-secondary;
+    z-index: 0;
+    animation: ping 0.8s 8 alternate;
+    opacity: 0;
+  }
+}
+
+.related-posts-button-inner,
+.back-to-top-button-inner {
+  position: relative;
+  display: flex;
+  background-color: rgba(245, 245, 246, 0.7);
+  height: $button-size;
+  width: $button-size;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  line-height: initial;
+  z-index: 10;
+}
+
+.related-posts-button {
   margin-bottom: 0.5rem;
   &--show {
-    display: flex;
+    display: block;
   }
 }
 
 .back-to-top-button {
   &--show {
-    display: flex;
+    display: block;
   }
 }
+
+@keyframes ping {
+  0% {
+    opacity: 0;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0.8;
+    transform: scale(1.8);
+  }
+}
+// @keyframes ping {
+//   0%,
+//   100% {
+//     opacity: 0.8;
+//     transform: scale(1.8);
+//   }
+//   50% {
+//     opacity: 0;
+//     transform: scale(1);
+//   }
+// }
