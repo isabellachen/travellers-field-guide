@@ -987,6 +987,7 @@ input[type='email'] {
   margin: 0 0 1.5em;
 }
 
+.home .site-main,
 .single .site-main,
 .error404 .site-main,
 .search .site-main,
