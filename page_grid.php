@@ -18,7 +18,7 @@ get_header();
     <div class="page-content margin-auto">
       <div class="container-inner margin-auto"><?php get_search_form(); ?></div>
       <div class="frontpage-posts-wrapper">
-        <h2 class="frontpage-posts-title heading page-h2">Dive into the <?php the_title() ?></h2>
+        <h2 class="frontpage-posts-title heading page-h2">Dive into <?php the_title() ?></h2>
         <div class="frontpage-posts">
           <div class="frontpage-posts-inner">
             <?php
