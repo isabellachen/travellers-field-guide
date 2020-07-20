@@ -2166,6 +2166,7 @@ input[type='email'] {
 }
 
 .owl-carousel-close {
+  display: none;
   position: absolute;
   right: 0;
   margin-top: 0.75rem;
@@ -2174,6 +2175,10 @@ input[type='email'] {
 
 .owl-carousel-close img {
   width: 25px;
+}
+
+.owl-carousel-wrapper {
+  z-index: 30;
 }
 
 .owl-carousel-wrapper--fixed {
@@ -2192,12 +2197,12 @@ input[type='email'] {
   }
 }
 
-.owl-carousel-wrapper--fade-out-in {
-  animation: fadeoutin 1s linear forwards;
+.owl-carousel-wrapper--fixed .owl-carousel-close {
+  display: block;
 }
 
-.owl-carousel-close--hide {
-  display: none;
+.owl-carousel-wrapper--fade-out-in {
+  animation: fadeoutin 1s linear forwards;
 }
 
 @keyframes fadeinout {

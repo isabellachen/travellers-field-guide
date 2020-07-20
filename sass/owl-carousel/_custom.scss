@@ -102,6 +102,7 @@
   }
 
   &-close {
+    display: none;
     position: absolute;
     right: 0;
     margin-top: 0.75rem;
@@ -113,6 +114,8 @@
   }
 
   &-wrapper {
+    z-index: 30;
+
     &--fixed {
       position: fixed;
       bottom: 0;
@@ -125,15 +128,15 @@
       @media (min-width: $screen-size-m) {
         padding-bottom: 1rem;
       }
+
+      .owl-carousel-close {
+        display: block;
+      }
     }
 
     &--fade-out-in {
       animation: fadeoutin 1s linear forwards;
     }
-  }
-
-  &-close--hide {
-    display: none;
   }
 }
 

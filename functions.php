@@ -156,6 +156,7 @@ function travellers_field_guide_scripts()
 
   wp_enqueue_script('travellers-field-guide-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true);
   wp_enqueue_script('owl-carousel', get_template_directory_uri() . '/js/owl.carousel.min.js', array('jquery'), _S_VERSION, true);
+  wp_enqueue_script('travellers-field-guide-scripts', get_template_directory_uri() . '/js/long-content-controls.js', array('owl-carousel', 'jquery'), _S_VERSION, true);
   wp_enqueue_script('travellers-field-guide-scripts', get_template_directory_uri() . '/js/scripts.js', array('owl-carousel', 'jquery'), _S_VERSION, true);
   wp_enqueue_style('googlefont_css', 'https://fonts.googleapis.com/css2?family=Alata&family=Lato:wght@300;400;700;900&display=swap');
 

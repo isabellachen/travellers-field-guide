@@ -23,7 +23,6 @@
             if ($(window).scrollTop() >= markerTarget) {
               $longContentControls.removeClass('long-content-controls--show');
               $relatedPostsDiv.removeClass('owl-carousel-wrapper--fixed');
-              $relatedPostsDivCloseButton.addClass('owl-carousel-close--hide');
               $relatedPostsDiv.addClass('owl-carousel-wrapper--fade-out-in');
             }
             if (
@@ -63,6 +62,13 @@
     if ($relatedPostsButton.length) {
       $relatedPostsButton.click(() => {
         $relatedPostsDiv.addClass('owl-carousel-wrapper--fixed');
+      });
+    }
+
+    //Close related posts when click close
+    if ($relatedPostsDivCloseButton.length) {
+      $relatedPostsDivCloseButton.click(() => {
+        $relatedPostsDiv.removeClass('owl-carousel-wrapper--fixed');
       });
     }
 
