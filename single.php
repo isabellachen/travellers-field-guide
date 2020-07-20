@@ -26,7 +26,7 @@ get_header();
     get_template_part('template-parts/content', get_post_type());
   ?>
   <?php endwhile; ?>
-  <div class="owl-carousel-wrapper">
+  <div id="relatedPosts" class="owl-carousel-wrapper">
     <div class="container position-relative">
       <div class="owl-carousel-close"><img src="<?php bloginfo('template_url'); ?>/assets/icons/close.svg"></div>
       <h2 class="owl-carousel-heading heading page-h2 border-bottom-none">Explore more stories from <?php echo $post_page_parent ?></h2>

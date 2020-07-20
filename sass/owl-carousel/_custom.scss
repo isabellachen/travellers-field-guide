@@ -131,6 +131,10 @@
       animation: fadeoutin 1s linear forwards;
     }
   }
+
+  &-close--hide {
+    display: none;
+  }
 }
 
 @keyframes fadeinout {

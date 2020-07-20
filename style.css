@@ -2196,6 +2196,10 @@ input[type='email'] {
   animation: fadeoutin 1s linear forwards;
 }
 
+.owl-carousel-close--hide {
+  display: none;
+}
+
 @keyframes fadeinout {
   0%,
   100% {

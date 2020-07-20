@@ -3,8 +3,10 @@
     const $marker = $('.related-posts-marker');
     const $hero = $('.hero');
     const heroBottom = $hero.outerHeight(true);
-    const $relatedPostsButton = $('.related-posts-button');
+    const $relatedPostsButton = $('.related-posts-button'); // The Hamburger
     const $relatedPostsDiv = $('.owl-carousel-wrapper');
+    const $relatedPostsDivCloseButton = $('.owl-carousel-close'); // The Close Button
+    const relatedPostDivHeight = $relatedPostsDiv.outerHeight(true);
     const $longContentControls = $('.long-content-controls');
 
     //Trigger the long content controls and style for related post carousel when end of article is scrolled over
@@ -13,16 +15,19 @@
       $(window).scroll(function () {
         if (!timeoutMarker) {
           timeoutMarker = setTimeout(function () {
-            const target = $marker.offset().top - $(window).height() * 0.76; // Need to re-evaluate offset each scroll because of lazy loaded images
+            const markerTarget =
+              $marker.offset().top -
+              ($(window).height() - relatedPostDivHeight); // Need to re-evaluate offset each scroll because of lazy loaded images
             clearTimeout(timeoutMarker);
             timeoutMarker = null;
-            if ($(window).scrollTop() >= target) {
+            if ($(window).scrollTop() >= markerTarget) {
               $longContentControls.removeClass('long-content-controls--show');
               $relatedPostsDiv.removeClass('owl-carousel-wrapper--fixed');
+              $relatedPostsDivCloseButton.addClass('owl-carousel-close--hide');
               $relatedPostsDiv.addClass('owl-carousel-wrapper--fade-out-in');
             }
             if (
-              $(window).scrollTop() < target &&
+              $(window).scrollTop() < markerTarget &&
               $(window).scrollTop() > heroBottom
             ) {
               $longContentControls.addClass('long-content-controls--show');
@@ -54,12 +59,22 @@
       });
     }
 
-    //Click event for related posts carousel
+    //Click events for related posts carousel
     if ($relatedPostsButton.length) {
       $relatedPostsButton.click(() => {
         $relatedPostsDiv.addClass('owl-carousel-wrapper--fixed');
       });
     }
+
+    //Close related posts when click outside
+    $(document).click(function (e) {
+      if (
+        $(e.target).closest('#relatedPosts').length === 0 &&
+        $(e.target).closest('.related-posts-button').length === 0
+      ) {
+        $relatedPostsDiv.removeClass('owl-carousel-wrapper--fixed');
+      }
+    });
   }
 
   function initOwlCarousel() {
