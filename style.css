@@ -988,15 +988,36 @@ input[type='email'] {
 }
 
 .home .site-main,
-.single .site-main,
 .error404 .site-main,
 .search .site-main,
-.archive .site-main,
 .page-template-page_frontpage .site-main,
 .page-template-page_grid .site-main {
   position: relative;
-  top: -13.5rem;
-  margin-bottom: -10rem;
+}
+
+@media (min-width: 768px) {
+  .home .site-main,
+  .error404 .site-main,
+  .search .site-main,
+  .page-template-page_frontpage .site-main,
+  .page-template-page_grid .site-main {
+    top: -13.5rem;
+    margin-bottom: -10rem;
+  }
+}
+
+.single .site-main,
+.archive .site-main {
+  position: relative;
+  top: -5rem;
+}
+
+@media (min-width: 768px) {
+  .single .site-main,
+  .archive .site-main {
+    top: -13.5rem;
+    margin-bottom: -10rem;
+  }
 }
 
 /* Widgets
