@@ -25,17 +25,12 @@
 
 - Only displays post under the category 'destinations'
 
-## Set up the Pages using 'Frontpage Template' (e.g. 'Kenya', 'Blog', 'Music Videos')
+## Set up Categories
 
-- VERY IMPORTANT: The page slug must be the same as the category slug.
-- Make sure the page slug is not prefaced by an article. This is a quirk of the pre-existing content.
-  - For example the title is 'The Netherlands' but the slug is 'netherlands'.
-  - In the category 'Postmodern Burger', the category slug is 'postmodern-burger'. The title of the page is 'Post-Modern Burgers' while the slug is 'postmodern-burger'
-- In the Edit Page Sidebar > Document > Page Attributes > Template: Frontpage Template (uses page_frontpage.php)
-- The code relies on the title to display "Featured stories from <THE_TITLE>".
-- Don't forget to add the portrait style "Featured Story Image", although the theme falls back onto the featured image.
-- Don't forget to add an excerpt so we have a leading title (e.g. Land of the Lion King)
-- To select the featured stories, check the 'page_featured' field in the post.
+- Each category is a page
+- To use the frontpage layout for the category page, make sure 'Has Featured Stories' is checked
+- To show a lead (e.g. 'Land of Fire and Ice' for the Iceland category), add it in the 'Category Lead' field
+  - If there is no lead text, the description will not be shown
 
 ### What if there are not enough posts?
 
