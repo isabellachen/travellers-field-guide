@@ -2215,6 +2215,10 @@ input[type='email'] {
   margin: 0;
 }
 
+.owl-carousel-heading a {
+  text-decoration: none !important;
+}
+
 .owl-carousel-close {
   display: none;
   position: absolute;

@@ -27,6 +27,8 @@ get_header();
   <?php
   while (have_posts()) :
     the_post();
+    $post_category = get_the_category();
+    $post_category_link = get_category_link($post_category[0]->term_id);
     $the_tag = get_the_tags()[0];
     $post_tag_slug = $the_tag->slug;
     $post_page_parent = $the_tag->name;
@@ -37,7 +39,7 @@ get_header();
   <div id="relatedPosts" class="owl-carousel-wrapper">
     <div class="container position-relative">
       <div class="owl-carousel-close"><img src="<?php bloginfo('template_url'); ?>/assets/icons/close.svg"></div>
-      <h2 class="owl-carousel-heading heading page-h2 border-bottom-none">Explore more stories from <?php echo $post_page_parent ?></h2>
+      <h2 class="owl-carousel-heading heading page-h2 border-bottom-none">Explore more stories from <a href="$post_category_link"><?php echo $post_page_parent ?></a></h2>
       <div class="owl-carousel">
         <?php
         $the_query = new WP_Query(array('tag' => $post_tag_slug));
@@ -49,7 +51,7 @@ get_header();
               <div class="owl-tile">
                 <?php
                 if (has_post_thumbnail()) {
-                  echo the_post_thumbnail('thumbnail', ['class' => 'owl-tile-image']);
+                  echo the_post_thumbnail('medium', ['class' => 'owl-tile-image']);
                 } ?>
                 <div class="owl-tile-content">
                   <h3 class="owl-tile-title tile-content-title heading page-h3"><?php the_title() ?></h3>
