@@ -78,3 +78,8 @@ To set up the custom images, we need to add an [ACF for an image in the category
 - The theme uses the custom plugin "Columned Images for Madhouse Heaven". Remember to upload the latest version.
 - Usage: [flex_col_images num_col=3][/flex_col_images]
 - Takes three or four columns
+
+## Images for the mobile menu
+
+- Should be 768 width by 1024 width
+- Needs to be manually gradiented

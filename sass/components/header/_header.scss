@@ -2,13 +2,8 @@
 
 .top-bar {
   position: absolute;
-  z-index: 10;
+  z-index: 30;
   width: 100%;
-  margin-top: 0.25rem;
-
-  @media (min-width: $screen-size-l) {
-    margin-top: 0.75rem;
-  }
 
   &_content {
     display: flex;
@@ -16,11 +11,24 @@
     justify-content: space-between;
     align-items: center;
     margin: auto;
+    @media (min-width: $screen-size-l) {
+      margin-top: 0.75rem;
+      max-width: $width-l;
+    }
   }
 }
 
 .site-branding {
   width: 16rem;
+  margin-top: 0.25rem;
+  margin-left: 0.25rem;
+  position: absolute;
+  top: 0;
+
+  @media (min-width: $screen-size-l) {
+    margin: 0;
+    position: relative;
+  }
 }
 
 .hero {

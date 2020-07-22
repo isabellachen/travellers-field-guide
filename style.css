@@ -499,11 +499,6 @@ hr {
   margin-bottom: 1.5em;
 }
 
-ul,
-ol {
-  margin: 0 0 1.5em 3em;
-}
-
 ul {
   list-style: disc;
 }
@@ -515,7 +510,6 @@ ol {
 li > ul,
 li > ol {
   margin-bottom: 0;
-  margin-left: 1.5em;
 }
 
 dt {
@@ -779,60 +773,94 @@ input[type='email'] {
  * SCREEN SIZES
 */
 .main-navigation {
-  display: flex;
-  align-items: center;
-  font-family: 'Alata';
+  font-family: "Alata", "Segoe UI", Roboto, Cantarell, "Helvetica Neue", sans-serif;
   font-size: 1.125rem;
   text-transform: uppercase;
-  position: relative;
   text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+  top: 0.25rem;
+  right: 0;
 }
 
-@media (min-width: 992px) {
+@media (max-width: 992px) {
   .main-navigation {
-    top: 0.25rem;
+    font-size: 1.5rem;
+    top: 0;
+    width: 100%;
   }
 }
 
 .main-navigation ul {
-  display: none;
   list-style: none;
-  margin: 0;
-  padding-left: 0;
 }
 
-.main-navigation ul ul {
+.main-navigation ul:first-child {
+  display: flex;
+  margin: 0;
+}
+
+@media (max-width: 992px) {
+  .main-navigation ul:first-child {
+    min-height: 100vh;
+    display: none;
+    margin: 0;
+    padding-left: 0;
+    top: 0;
+    right: 0;
+    width: 100%;
+    padding-top: 40px;
+    background-image: url("assets/menu/flamingoes.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: #00000de6;
+  }
+}
+
+.main-navigation ul:first-child ul {
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-  float: left;
   position: absolute;
   top: 100%;
   left: -999em;
   z-index: 99999;
 }
 
-.main-navigation ul ul ul {
+.main-navigation ul:first-child ul ul {
   left: -999em;
   top: 0;
 }
 
-.main-navigation ul ul li:hover > ul,
-.main-navigation ul ul li.focus > ul {
+.main-navigation ul:first-child ul li:hover > ul,
+.main-navigation ul:first-child ul li.focus > ul {
   display: block;
   left: auto;
 }
 
-.main-navigation ul ul a {
+.main-navigation ul:first-child ul a {
   width: 200px;
 }
 
-.main-navigation ul li:hover > ul,
-.main-navigation ul li.focus > ul {
+.main-navigation ul:first-child li:hover > ul,
+.main-navigation ul:first-child li.focus > ul {
   left: auto;
+}
+
+@media (max-width: 992px) {
+  .main-navigation ul:first-child li:hover > ul,
+  .main-navigation ul:first-child li.focus > ul {
+    position: relative;
+  }
 }
 
 .main-navigation li {
   position: relative;
   padding: 0 1.25rem;
+}
+
+@media (max-width: 992px) {
+  .main-navigation li {
+    padding: 0.5rem 0.25rem;
+    border-top: 1px solid;
+  }
 }
 
 .main-navigation li > a {
@@ -841,10 +869,24 @@ input[type='email'] {
   padding-bottom: 0.25rem;
 }
 
+@media (max-width: 992px) {
+  .main-navigation li > a {
+    padding-bottom: 0;
+  }
+}
+
 .main-navigation li:hover > a,
 .main-navigation li.focus > a {
   color: #f5f5f6;
   border-bottom: 2px solid #ffffff;
+}
+
+@media (max-width: 992px) {
+  .main-navigation li:hover > a,
+  .main-navigation li.focus > a {
+    border-bottom: none;
+    padding-bottom: 0.5rem;
+  }
 }
 
 .main-navigation li:visited > a {
@@ -862,7 +904,9 @@ input[type='email'] {
   background-color: transparent;
   cursor: pointer;
   display: inline-block;
-  margin-top: 1rem 0.25rem;
+  position: absolute;
+  right: 0;
+  z-index: 10;
 }
 
 .menu-toggle,
@@ -873,9 +917,6 @@ input[type='email'] {
 @media screen and (min-width: 992px) {
   .menu-toggle {
     display: none;
-  }
-  .main-navigation ul {
-    display: flex;
   }
 }
 
@@ -1090,15 +1131,8 @@ input[type='email'] {
 */
 .top-bar {
   position: absolute;
-  z-index: 10;
+  z-index: 30;
   width: 100%;
-  margin-top: 0.25rem;
-}
-
-@media (min-width: 992px) {
-  .top-bar {
-    margin-top: 0.75rem;
-  }
 }
 
 .top-bar_content {
@@ -1109,8 +1143,26 @@ input[type='email'] {
   margin: auto;
 }
 
+@media (min-width: 992px) {
+  .top-bar_content {
+    margin-top: 0.75rem;
+    max-width: 1024px;
+  }
+}
+
 .site-branding {
   width: 16rem;
+  margin-top: 0.25rem;
+  margin-left: 0.25rem;
+  position: absolute;
+  top: 0;
+}
+
+@media (min-width: 992px) {
+  .site-branding {
+    margin: 0;
+    position: relative;
+  }
 }
 
 .hero {
