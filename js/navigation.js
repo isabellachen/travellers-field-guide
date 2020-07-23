@@ -4,7 +4,7 @@
  * Handles toggling the navigation menu for small screens and enables TAB key
  * navigation support for dropdown menus.
  */
-(function () {
+(function ($) {
   const siteNavigation = document.getElementById('site-navigation');
 
   // Return early if the navigation don't exist.
@@ -100,4 +100,23 @@
       menuItem.classList.toggle('focus');
     }
   }
-})();
+
+  /**
+   * Handle click events for desktop menus
+   */
+
+  // const topLevelLinksWithChildren = $('.menu > .menu-item-has-children');
+
+  // for (let i = 0; i < topLevelLinksWithChildren.length; i++) {
+  //   const $el = $(topLevelLinksWithChildren[i]);
+  //   $el.click(() => {
+  //     if (!$el.hasClass('show')) {
+  //       $el.addClass('show');
+  //     }
+  //   });
+  // }
+
+  // $(document).click((e) => {
+  //   if ($(e.target).closest('#relatedPosts').length === 0)
+  // })
+})(jQuery);

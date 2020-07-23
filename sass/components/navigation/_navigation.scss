@@ -28,8 +28,8 @@
       display: none;
       margin: 0;
       padding-left: 0;
-      top: 0;
-      right: 0;
+      position: absolute;
+      left: 0;
       width: 100%;
       padding-top: 40px;
       // background-image: url('assets/menu/flamingoes.png');
@@ -39,45 +39,65 @@
     }
 
     ul {
-      box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+      //second level
       padding-left: 2rem;
-      // float: left;
+      display: none;
       position: absolute;
-      top: 100%;
-      left: -999em;
       z-index: 99999;
 
-      ul {
+      @media (max-width: $screen-size-l) {
+        display: block;
         left: -999em;
-        top: 0;
+      }
+      ul {
+        //final level
+        @media (max-width: $screen-size-l) {
+          left: -999em;
+          top: 0;
+        }
       }
 
       li {
-        &:hover > ul,
+        &:hover > ul, //final level ul
         &.focus > ul {
-          display: block;
-          left: auto;
+          @media (max-width: $screen-size-l) {
+            left: auto;
+          }
         }
       }
 
       a {
         width: 200px;
       }
+    }
 
-      :hover > a,
-      .focus > a {
-      }
-
-      a:hover,
-      a.focus {
+    & > li:hover > ul {
+      @media (min-width: $screen-size-l) {
+        left: -25rem;
+        background-color: rgba(0, 0, 0, 0.8);
+        color: purple;
       }
     }
 
-    li:hover > ul,
+    li:hover > ul, // submenu on hover of parent list item
     li.focus > ul {
-      left: auto;
+      display: block;
+      @media (min-width: $screen-size-l) {
+        display: flex;
+      }
       @media (max-width: $screen-size-l) {
+        left: auto;
         position: relative;
+      }
+
+      ul {
+        //final level on hover of top level li
+        display: block;
+
+        @media (min-width: $screen-size-l) {
+          //note this is min-width, default is max-width
+          position: relative;
+        }
       }
     }
   }
@@ -120,12 +140,6 @@
     text-decoration: none;
     padding-left: 0.25rem;
   }
-
-  .current_page_item > a,
-  .current-menu-item > a,
-  .current_page_ancestor > a,
-  .current-menu-ancestor > a {
-  }
 }
 
 /* Small menu. */
@@ -140,16 +154,21 @@
   z-index: 10;
 }
 
-.menu-toggle,
+.menu-toggle {
+  display: none;
+  @media (max-width: $screen-size-l) {
+    display: block;
+  }
+}
 .main-navigation.toggled ul {
   display: block;
 }
 
-@media screen and (min-width: $screen-size-l) {
-  .menu-toggle {
-    display: none;
-  }
-}
+// @media screen and (max-width: $screen-size-l) {
+//   .menu-toggle {
+//     display: block;
+//   }
+// }
 
 .comment-navigation,
 .posts-navigation,

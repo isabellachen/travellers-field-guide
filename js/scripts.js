@@ -87,7 +87,6 @@
 
     if ($backToTopButton.length) {
       $backToTopButton.click(() => {
-        console.log('hi');
         window.scroll(0, 0);
       });
     }
