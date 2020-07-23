@@ -34,7 +34,6 @@
             <?php the_custom_logo() ?>
           </div>
           <nav id="site-navigation" class="main-navigation">
-            <!-- <div class="background-image"> <img src="<?php bloginfo('template_url'); ?>/assets/menu/flamingoes.png"></div> -->
             <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
               <div class="bar1"></div>
               <div class="bar2"></div>

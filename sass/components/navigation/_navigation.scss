@@ -15,17 +15,6 @@
     width: 100%;
   }
 
-  // .background-image {
-  //   display: none;
-  //   @media (max-width: $screen-size-l) {
-  //     display: block;
-  //     position: absolute;
-  //     top: 0;
-  //     left: 0;
-  //     object-fit: contain;
-  //   }
-  // }
-
   ul {
     list-style: none;
   }
@@ -43,14 +32,15 @@
       right: 0;
       width: 100%;
       padding-top: 40px;
-      background-image: url('assets/menu/flamingoes.png');
-      background-size: contain;
-      background-repeat: no-repeat;
+      // background-image: url('assets/menu/flamingoes.png');
+      // background-size: contain;
+      // background-repeat: no-repeat;
       background-color: #00000de6;
     }
 
     ul {
       box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+      padding-left: 2rem;
       // float: left;
       position: absolute;
       top: 100%;
@@ -128,6 +118,7 @@
   a {
     display: block;
     text-decoration: none;
+    padding-left: 0.25rem;
   }
 
   .current_page_item > a,
@@ -135,15 +126,6 @@
   .current_page_ancestor > a,
   .current-menu-ancestor > a {
   }
-}
-
-.menu-primary-menu-container {
-  // position: absolute;
-  // background-color: rgba(127, 255, 212, 0.5);
-  // height: 100vh;
-  // top: 0;
-  // right: 0;
-  // width: 100%;
 }
 
 /* Small menu. */

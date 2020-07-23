@@ -809,15 +809,13 @@ input[type='email'] {
     right: 0;
     width: 100%;
     padding-top: 40px;
-    background-image: url("assets/menu/flamingoes.png");
-    background-size: contain;
-    background-repeat: no-repeat;
     background-color: #00000de6;
   }
 }
 
 .main-navigation ul:first-child ul {
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+  padding-left: 2rem;
   position: absolute;
   top: 100%;
   left: -999em;
@@ -896,6 +894,7 @@ input[type='email'] {
 .main-navigation a {
   display: block;
   text-decoration: none;
+  padding-left: 0.25rem;
 }
 
 /* Small menu. */
