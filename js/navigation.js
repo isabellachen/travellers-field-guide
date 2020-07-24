@@ -101,22 +101,13 @@
     }
   }
 
-  /**
-   * Handle click events for desktop menus
-   */
-
-  // const topLevelLinksWithChildren = $('.menu > .menu-item-has-children');
-
-  // for (let i = 0; i < topLevelLinksWithChildren.length; i++) {
-  //   const $el = $(topLevelLinksWithChildren[i]);
-  //   $el.click(() => {
-  //     if (!$el.hasClass('show')) {
-  //       $el.addClass('show');
-  //     }
-  //   });
-  // }
-
-  // $(document).click((e) => {
-  //   if ($(e.target).closest('#relatedPosts').length === 0)
-  // })
+  const firstLevelItems = $('.menu > .menu-item-has-children');
+  for (let i = 0; i < firstLevelItems.length; i++) {
+    $(firstLevelItems[i]).on('mouseover', (e) => {
+      $('.hero-content').hide();
+    });
+    $(firstLevelItems[i]).on('mouseout', (e) => {
+      $('.hero-content').show();
+    });
+  }
 })(jQuery);

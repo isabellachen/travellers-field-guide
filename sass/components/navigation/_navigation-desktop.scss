@@ -2,17 +2,17 @@
 
 .main-navigation {
   font-family: $font-display;
-  font-size: $fs-navigation-mobile;
+  font-size: $fs-navigation-desktop;
   text-transform: uppercase;
   text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
-  right: 0;
-  top: 0;
-  width: 100%;
   z-index: 10;
+  top: 0.25rem;
+  right: 0;
 
-  @media (min-width: $screen-size-l) {
-    font-size: $fs-navigation-desktop;
-    width: unset;
+  @media (max-width: $screen-size-l) {
+    font-size: $fs-navigation-mobile;
+    top: 0;
+    width: 100%;
   }
 
   ul {
@@ -20,45 +20,49 @@
   }
 
   ul:first-child {
-    // first level
-    display: none;
-    position: absolute;
-    background-color: #00000de6;
-    min-height: 100vh;
-    width: 100%;
-    left: 0;
+    display: flex;
     margin: 0;
-    padding-left: 0;
-    padding-top: 40px;
 
-    @media (min-width: $screen-size-l) {
-      display: flex;
-      position: relative;
-      background-color: transparent;
-      min-height: unset;
-      width: unset;
-      padding-top: 0;
+    @media (max-width: $screen-size-l) {
+      min-height: 100vh;
+      display: none;
+      margin: 0;
+      padding-left: 0;
+      position: absolute;
+      left: 0;
+      width: 100%;
+      padding-top: 40px;
+      // background-image: url('assets/menu/flamingoes.png');
+      // background-size: contain;
+      // background-repeat: no-repeat;
+      background-color: #00000de6;
     }
 
     ul {
-      //any ul nested in the first ul of the main-navigation - second and final level
+      //second level
       padding-left: 2rem;
+      display: none;
       position: absolute;
       z-index: 99999;
-      display: block;
-      left: -999em;
 
-      ul {
-        //any ul nested in another ul - final level
+      @media (max-width: $screen-size-l) {
+        display: block;
         left: -999em;
-        top: 0;
-        height: 100%;
+      }
+      ul {
+        //final level
+        @media (max-width: $screen-size-l) {
+          left: -999em;
+          top: 0;
+        }
       }
 
       li {
         &:hover > ul, //final level ul
         &.focus > ul {
-          left: auto;
+          @media (max-width: $screen-size-l) {
+            left: auto;
+          }
         }
       }
 
@@ -67,62 +71,47 @@
       }
     }
 
-    & > li:hover {
-      // on hover of top level list elements
-      @media (min-width: $screen-size-l) {
-        border-bottom: $nav-border-bottom-active;
-      }
-    }
-
     li:hover > ul, // submenu on hover of parent list item
     li.focus > ul {
       display: block;
-      left: auto;
-      position: relative;
 
-      @media (min-width: $screen-size-l) {
-        position: absolute;
-        display: flex;
-        left: -30rem;
-        height: 400px;
+      @media (max-width: $screen-size-l) {
+        left: auto;
+        position: relative;
       }
 
       ul {
-        //final level on focus of top level li
+        //final level on hover of top level li
         display: block;
-        @media (min-width: $screen-size-l) {
-          display: flex;
-          position: unset;
-          flex-direction: column;
-          flex-wrap: wrap;
-        }
       }
     }
   }
 
   li {
-    // On hover of *any* list item in the menu
     position: relative;
-    padding: 0.5rem 0.25rem;
-    border-top: 1px solid;
-
-    @media (min-width: $screen-size-l) {
+    padding: 0 1.25rem;
+    @media (max-width: $screen-size-l) {
       padding: 0.5rem 0.25rem;
-      border-top: none;
+      border-top: 1px solid;
     }
 
     & > a {
       color: $c-primary-light;
       border-bottom: $nav-border-bottom-hide;
-      padding-bottom: 0;
+      padding-bottom: 0.25rem;
+
+      @media (max-width: $screen-size-l) {
+        padding-bottom: 0;
+      }
     }
 
     &:hover > a,
     &.focus > a {
       color: $c-primary-light;
-      padding-bottom: 0.5rem;
-      @media (min-width: $screen-size-l) {
-        padding-bottom: 0;
+      border-bottom: $nav-border-bottom-active;
+      @media (max-width: $screen-size-l) {
+        border-bottom: none;
+        padding-bottom: 0.5rem;
       }
     }
 
@@ -151,14 +140,20 @@
 }
 
 .menu-toggle {
-  display: block;
-  @media (min-width: $screen-size-l) {
-    display: none;
+  display: none;
+  @media (max-width: $screen-size-l) {
+    display: block;
   }
 }
 .main-navigation.toggled ul {
   display: block;
 }
+
+// @media screen and (max-width: $screen-size-l) {
+//   .menu-toggle {
+//     display: block;
+//   }
+// }
 
 .comment-navigation,
 .posts-navigation,

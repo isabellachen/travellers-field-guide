@@ -774,19 +774,19 @@ input[type='email'] {
 */
 .main-navigation {
   font-family: "Alata", "Segoe UI", Roboto, Cantarell, "Helvetica Neue", sans-serif;
-  font-size: 1.125rem;
+  font-size: 1.5rem;
   text-transform: uppercase;
   text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
-  z-index: 10;
-  top: 0.25rem;
   right: 0;
+  top: 0;
+  width: 100%;
+  z-index: 10;
 }
 
-@media (max-width: 1024px) {
+@media (min-width: 1024px) {
   .main-navigation {
-    font-size: 1.5rem;
-    top: 0;
-    width: 100%;
+    font-size: 1.125rem;
+    width: unset;
   }
 }
 
@@ -795,50 +795,45 @@ input[type='email'] {
 }
 
 .main-navigation ul:first-child {
-  display: flex;
+  display: none;
+  position: absolute;
+  background-color: #00000de6;
+  min-height: 100vh;
+  width: 100%;
+  left: 0;
   margin: 0;
+  padding-left: 0;
+  padding-top: 40px;
 }
 
-@media (max-width: 1024px) {
+@media (min-width: 1024px) {
   .main-navigation ul:first-child {
-    min-height: 100vh;
-    display: none;
-    margin: 0;
-    padding-left: 0;
-    position: absolute;
-    left: 0;
-    width: 100%;
-    padding-top: 40px;
-    background-color: #00000de6;
+    display: flex;
+    position: relative;
+    background-color: transparent;
+    min-height: unset;
+    width: unset;
+    padding-top: 0;
   }
 }
 
 .main-navigation ul:first-child ul {
   padding-left: 2rem;
-  display: none;
   position: absolute;
   z-index: 99999;
+  display: block;
+  left: -999em;
 }
 
-@media (max-width: 1024px) {
-  .main-navigation ul:first-child ul {
-    display: block;
-    left: -999em;
-  }
+.main-navigation ul:first-child ul ul {
+  left: -999em;
+  top: 0;
+  height: 100%;
 }
 
-@media (max-width: 1024px) {
-  .main-navigation ul:first-child ul ul {
-    left: -999em;
-    top: 0;
-  }
-}
-
-@media (max-width: 1024px) {
-  .main-navigation ul:first-child ul li:hover > ul,
-  .main-navigation ul:first-child ul li.focus > ul {
-    left: auto;
-  }
+.main-navigation ul:first-child ul li:hover > ul,
+.main-navigation ul:first-child ul li.focus > ul {
+  left: auto;
 }
 
 .main-navigation ul:first-child ul a {
@@ -846,30 +841,25 @@ input[type='email'] {
 }
 
 @media (min-width: 1024px) {
-  .main-navigation ul:first-child > li:hover > ul {
-    left: -25rem;
-    background-color: rgba(0, 0, 0, 0.8);
-    color: purple;
+  .main-navigation ul:first-child > li:hover {
+    border-bottom: 2px solid #ffffff;
   }
 }
 
 .main-navigation ul:first-child li:hover > ul,
 .main-navigation ul:first-child li.focus > ul {
   display: block;
+  left: auto;
+  position: relative;
 }
 
 @media (min-width: 1024px) {
   .main-navigation ul:first-child li:hover > ul,
   .main-navigation ul:first-child li.focus > ul {
+    position: absolute;
     display: flex;
-  }
-}
-
-@media (max-width: 1024px) {
-  .main-navigation ul:first-child li:hover > ul,
-  .main-navigation ul:first-child li.focus > ul {
-    left: auto;
-    position: relative;
+    left: -30rem;
+    height: 400px;
   }
 }
 
@@ -881,45 +871,42 @@ input[type='email'] {
 @media (min-width: 1024px) {
   .main-navigation ul:first-child li:hover > ul ul,
   .main-navigation ul:first-child li.focus > ul ul {
-    position: relative;
+    display: flex;
+    position: unset;
+    flex-direction: column;
+    flex-wrap: wrap;
   }
 }
 
 .main-navigation li {
   position: relative;
-  padding: 0 1.25rem;
+  padding: 0.5rem 0.25rem;
+  border-top: 1px solid;
 }
 
-@media (max-width: 1024px) {
+@media (min-width: 1024px) {
   .main-navigation li {
     padding: 0.5rem 0.25rem;
-    border-top: 1px solid;
+    border-top: none;
   }
 }
 
 .main-navigation li > a {
   color: #f5f5f6;
   border-bottom: 2px solid transparent;
-  padding-bottom: 0.25rem;
-}
-
-@media (max-width: 1024px) {
-  .main-navigation li > a {
-    padding-bottom: 0;
-  }
+  padding-bottom: 0;
 }
 
 .main-navigation li:hover > a,
 .main-navigation li.focus > a {
   color: #f5f5f6;
-  border-bottom: 2px solid #ffffff;
+  padding-bottom: 0.5rem;
 }
 
-@media (max-width: 1024px) {
+@media (min-width: 1024px) {
   .main-navigation li:hover > a,
   .main-navigation li.focus > a {
-    border-bottom: none;
-    padding-bottom: 0.5rem;
+    padding-bottom: 0;
   }
 }
 
@@ -945,12 +932,12 @@ input[type='email'] {
 }
 
 .menu-toggle {
-  display: none;
+  display: block;
 }
 
-@media (max-width: 1024px) {
+@media (min-width: 1024px) {
   .menu-toggle {
-    display: block;
+    display: none;
   }
 }
 
