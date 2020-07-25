@@ -89,12 +89,17 @@
   }
 
   &-content {
-    display: none; //TODO remove
     text-align: center;
     position: absolute;
     top: 56px;
     color: #fff;
     z-index: 20;
+    opacity: 1;
+    transition: opacity 150ms;
+
+    &--hide {
+      opacity: 0;
+    }
 
     @media (min-width: $screen-size-l) {
       top: 88px;

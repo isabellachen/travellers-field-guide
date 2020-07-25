@@ -23,7 +23,7 @@
 </head>
 
 <body <?php body_class(); ?>>
-  <?php wp_body_open(); ?>–
+  <?php wp_body_open(); ?>
   <div id="page" class="site">
     <a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e('Skip to content', 'travellers-field-guide'); ?></a>
 
@@ -51,7 +51,7 @@
         </div><!-- container -->
       </div><!-- top-bar -->
       <div class="hero">
-        <div class="hero-menu-darken hero-menu-darken--dark"></div> <!-- TODO remove --dark-->
+        <div class="hero-menu-darken"></div>
         <?php if (is_front_page() || is_404() || is_search()) : ?>
           <?php
           $hero_posts = get_posts(array(

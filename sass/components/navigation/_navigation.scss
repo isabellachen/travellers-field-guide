@@ -44,6 +44,7 @@
       @media (min-width: $screen-size-l) {
         padding-left: 0.5rem;
         padding-right: 0.5rem;
+        border-bottom: $nav-border-bottom-hide;
         &:hover {
           border-bottom: $nav-border-bottom-active;
         }
@@ -105,11 +106,15 @@
       }
     }
 
-    // submenu on hover of parent list item
+    // submenu on focus of parent list item
+    li:hover > ul,
     li.focus > ul {
-      display: block;
-      left: auto;
-      position: relative;
+      // hack to make sure navigation hoverable on narrow desktop screens
+      @media (max-width: $screen-size-l-reverse) {
+        display: block;
+        left: auto;
+        position: relative;
+      }
     }
 
     & > li:hover > ul {
@@ -145,7 +150,6 @@
     &:hover > a,
     &.focus > a {
       color: $c-primary-light;
-      padding-bottom: 0.5rem;
       @media (min-width: $screen-size-l) {
         padding-bottom: 0;
       }
