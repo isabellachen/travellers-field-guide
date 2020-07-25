@@ -1,14 +1,9 @@
 <?php
 
 /**
- * The template for displaying all pages
+ * The template for displaying all single posts
  *
- * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages
- * and that other 'pages' on your WordPress site may use a
- * different template.
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *
  * @package travellers-field-guide
  */
@@ -16,21 +11,26 @@
 get_header();
 ?>
 
-<main id="primary" class="site-main">
+<main id="primary" class="site-main container">
+  <div class="long-content-controls">
+    <div class="back-to-top-button">
+      <div class="back-to-top-button-inner">
+        <img src="<?php bloginfo('template_url'); ?>/assets/icons/arrow.svg">
+      </div>
+    </div>
+  </div>
   <?php
   while (have_posts()) :
     the_post();
-
-    get_template_part('template-parts/content', 'page');
-
-    // If comments are open or we have at least one comment, load up the comment template.
-    if (comments_open() || get_comments_number()) :
-      comments_template();
-    endif;
-
-  endwhile; // End of the loop.
+    $post_category = get_the_category();
+    $post_category_link = get_category_link($post_category[0]->term_id);
+    $the_tag = get_the_tags()[0];
+    $post_tag_slug = $the_tag->slug;
+    $post_page_parent = $the_tag->name;
+    $current_post_id = get_the_ID();
+    get_template_part('template-parts/content', 'post');
   ?>
-
+  <?php endwhile; ?>
 </main><!-- #main -->
 
 <?php

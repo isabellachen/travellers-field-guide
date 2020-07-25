@@ -1,0 +1,14 @@
+.wpcf7 {
+  width: 100%;
+  input[type='text'],
+  input[type='email'] {
+    border-bottom: 1px solid $c-primary-light;
+    border-radius: unset;
+    margin-bottom: 1rem;
+
+    &::placeholder {
+      color: $c-primary-dark;
+      font-size: 26px;
+    }
+  }
+}

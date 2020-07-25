@@ -79,12 +79,7 @@
   }
 
   input[type='submit'] {
-    border-radius: 0;
-    padding: 0.75rem;
-    text-transform: uppercase;
-    border: none;
     background-color: $c-primary-dark;
-    color: white;
   }
 
   input[type='email'] {

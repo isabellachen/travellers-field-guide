@@ -121,7 +121,7 @@ function travellers_field_guide_content_width()
   // This variable is intended to be overruled from themes.
   // Open WPCS issue: {@link https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/issues/1043}.
   // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
-  $GLOBALS['content_width'] = apply_filters('travellers_field_guide_content_width', 640);
+  $GLOBALS['content_width'] = apply_filters('travellers_field_guide_content_width', 768);
 }
 add_action('after_setup_theme', 'travellers_field_guide_content_width', 0);
 
@@ -297,7 +297,8 @@ if (!function_exists('tfg_pagination')) {
 function use_new_image_size()
 {
   if (function_exists('add_image_size')) {
-    add_image_size('width-s', 540, 0, false);
+    add_image_size('width_s', 540, 0, false);
+    add_image_size('medium_square', 350, 350, true);
   }
 }
 add_action('after_setup_theme', 'use_new_image_size');
@@ -305,7 +306,8 @@ add_action('after_setup_theme', 'use_new_image_size');
 function create_custom_image_size($sizes)
 {
   $custom_sizes = array(
-    'width-s' => 'Width-S 540',
+    'width_s' => 'Width-S 540',
+    'medium_square' => 'Medium-Square 350',
     'medium_large' => 'Medium Large 768'
   );
   return array_merge($sizes, $custom_sizes);

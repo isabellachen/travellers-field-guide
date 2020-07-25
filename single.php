@@ -51,7 +51,7 @@ get_header();
               <div class="owl-tile">
                 <?php
                 if (has_post_thumbnail()) {
-                  echo the_post_thumbnail('medium', ['class' => 'owl-tile-image']);
+                  echo the_post_thumbnail('medium_square', ['class' => 'owl-tile-image']);
                 } ?>
                 <div class="owl-tile-content">
                   <h3 class="owl-tile-title tile-content-title heading page-h3"><?php the_title() ?></h3>
