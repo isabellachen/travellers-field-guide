@@ -104,10 +104,12 @@
   const firstLevelItems = $('.menu > .menu-item-has-children');
   for (let i = 0; i < firstLevelItems.length; i++) {
     $(firstLevelItems[i]).on('mouseover', (e) => {
-      $('.hero-content').hide();
+      // $('.hero-content').hide();
+      // $('.hero-menu-darken').addClass('hero-menu-darken--dark'); //TODO uncomment
     });
     $(firstLevelItems[i]).on('mouseout', (e) => {
-      $('.hero-content').show();
+      // $('.hero-content').show();
+      // $('.hero-menu-darken').removeClass('hero-menu-darken--dark'); //TODO uncomment
     });
   }
 })(jQuery);

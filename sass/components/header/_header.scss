@@ -6,6 +6,7 @@
   width: 100%;
 
   &_content {
+    position: relative;
     display: flex;
     width: 100%;
     justify-content: space-between;
@@ -45,6 +46,19 @@
     width: 100%;
   }
 
+  &-menu-darken {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 15;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 500ms;
+    &--dark {
+      opacity: 1;
+    }
+  }
+
   &:after {
     content: '';
     background: linear-gradient(
@@ -75,6 +89,7 @@
   }
 
   &-content {
+    display: none; //TODO remove
     text-align: center;
     position: absolute;
     top: 56px;
@@ -141,5 +156,14 @@
       max-width: $width-s;
       display: block;
     }
+  }
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
