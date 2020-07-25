@@ -28,7 +28,7 @@
     if ($featured_story_image) {
       echo wp_get_attachment_image($featured_story_image, 'full', "", array("class" => "tile-image"));
     } elseif (has_post_thumbnail()) {
-      echo the_post_thumbnail('post-thumbnail', ['class' => 'tile-image']);
+      the_post_thumbnail('medium_large', ['class' => 'tile-image']);
     }
     ?>
   </a>

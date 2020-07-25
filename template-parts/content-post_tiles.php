@@ -22,7 +22,7 @@
     </div>
     <?php
     if (has_post_thumbnail()) {
-      echo the_post_thumbnail('post-thumbnail', ['class' => 'tile-image']);
+      the_post_thumbnail('post-thumbnail', ['class' => 'tile-image']);
     }
     ?>
   </a>

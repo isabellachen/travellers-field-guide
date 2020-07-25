@@ -64,10 +64,9 @@
           ));
           $rand = rand(0, count($hero_posts) - 1);
           $post_id = $hero_posts[$rand]->ID;
-          $featured_img_url = get_the_post_thumbnail_url($post_id);
-          wp_reset_postdata()
+          wp_reset_postdata();
+          echo get_the_post_thumbnail($post_id, 'post-thumbnail', ['class' => "hero-image"]);
           ?>
-          <img class="hero-image" src="<?php echo $featured_img_url ?>">
         <?php elseif (is_single() || is_page() && has_post_thumbnail()) : ?>
           <?php the_post_thumbnail('post-thumbnail', ['class' => "hero-image"]); ?>
         <?php elseif (is_category() || is_tag()) : ?>
