@@ -865,6 +865,9 @@ input[type='submit'] {
   .main-navigation ul:first-child > li > ul > li > ul a {
     font-size: 1rem;
   }
+  .main-navigation ul:first-child > li > ul > li > ul a:hover {
+    text-decoration: underline;
+  }
 }
 
 .main-navigation ul:first-child ul {
@@ -1101,6 +1104,16 @@ input[type='submit'] {
   margin: 0 0 1.5em;
 }
 
+.archive-lead h2,
+.content-lead h2 {
+  border-bottom: 1px solid #f5f5f680;
+}
+
+.archive-lead p,
+.content-lead p {
+  margin-bottom: 0;
+}
+
 .home .site-main,
 .error404 .site-main,
 .search .site-main,
@@ -1160,6 +1173,14 @@ input[type='submit'] {
 /* Make sure logo link wraps around logo image. */
 .custom-logo-link {
   display: flex;
+}
+
+#wpdevart_content_prev_img {
+  margin-left: 1rem;
+}
+
+#wpdevart_content_next_img {
+  margin-right: 1rem;
 }
 
 /* Captions
@@ -1972,6 +1993,10 @@ input[type='submit'] {
 
 .entry-header-title--lg {
   font-size: 2.25rem;
+}
+
+.entry-header-excerpt {
+  text-align: justify;
 }
 
 .entry-header-excerpt-wrapper {
