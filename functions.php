@@ -327,3 +327,22 @@ function shapeSpace_disable_medium_large_images($sizes)
 }
 add_filter('intermediate_image_sizes_advanced', 'shapeSpace_disable_medium_large_images');
 add_filter('big_image_size_threshold', '__return_false');
+
+/*-----------------------------------------------------------------------------------*/
+/* Selective Dequeue unnecessary styles
+/*-----------------------------------------------------------------------------------*/
+function mh_dequeue_unused_css()
+{
+  wp_dequeue_style('wp-block-library');
+  wp_dequeue_style('wp-block-library-theme');
+  wp_dequeue_style('wc-block-style'); // Remove WooCommerce block CSS
+  if (!(is_single() || is_page()) || is_front_page()) {
+    wp_dequeue_style('flex_col_images_shortcode_style'); //Remove flex col for display pages
+    wp_deregister_style('wpdevart_lightbox_front_end_css');
+    wp_deregister_style('wpdevart_lightbox_effects');
+  }
+  if (!is_page('work-with-us')) { //if not work with us page, dequeue contact form
+    wp_dequeue_style('contact-form-7'); // 
+  }
+}
+add_action('wp_enqueue_scripts', 'mh_dequeue_unused_css', 100);
