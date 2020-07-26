@@ -22,13 +22,7 @@ get_header();
   <?php
   while (have_posts()) :
     the_post();
-    $post_category = get_the_category();
-    $post_category_link = get_category_link($post_category[0]->term_id);
-    $the_tag = get_the_tags()[0];
-    $post_tag_slug = $the_tag->slug;
-    $post_page_parent = $the_tag->name;
-    $current_post_id = get_the_ID();
-    get_template_part('template-parts/content', 'post');
+    get_template_part('template-parts/content', get_post_type());
   ?>
   <?php endwhile; ?>
 </main><!-- #main -->
