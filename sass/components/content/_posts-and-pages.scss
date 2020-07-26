@@ -16,3 +16,13 @@
   clear: both;
   margin: 0 0 1.5em;
 }
+
+.archive-lead,
+.content-lead {
+  h2 {
+    border-bottom: 1px solid #f5f5f680;
+  }
+  p {
+    margin-bottom: 0;
+  }
+}

@@ -9,7 +9,7 @@
  * @package travellers-field-guide
  */
 ?>
-<div class="container-inner margin-auto">
+<div class="archive-lead container-inner margin-auto">
   <?php if (!empty($category_lead)) : ?>
     <h2 class="heading page-h2"><?php echo $category_lead ?></h2>
   <?php endif; ?>

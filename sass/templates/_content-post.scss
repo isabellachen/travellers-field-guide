@@ -59,6 +59,10 @@
     font-size: $fs-hero-title-desktop;
   }
 
+  &-excerpt {
+    text-align: justify;
+  }
+
   &-excerpt-wrapper {
     margin: auto;
     max-width: $width-xs;
