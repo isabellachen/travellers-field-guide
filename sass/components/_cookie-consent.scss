@@ -1,0 +1,9 @@
+#cookie-law-info-bar {
+  background-color: rgba(0, 0, 0, 0.8) !important;
+  padding: 5px;
+  span {
+    a:first-child {
+      display: none;
+    }
+  }
+}

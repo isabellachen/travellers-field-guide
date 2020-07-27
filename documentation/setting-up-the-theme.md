@@ -85,3 +85,7 @@ To set up the custom images, we need to add an [ACF for an image in the category
 
 - Uses Contact Form 7 plugin
 - It is styled with the class '.wpcf7'
+
+## Cookie Consent
+
+The theme works with GDPR Cookie Consent plugin
