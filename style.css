@@ -1728,6 +1728,15 @@ input[type='submit'] {
   margin: 2rem 0;
 }
 
+#cookie-law-info-bar {
+  background-color: rgba(0, 0, 0, 0.8) !important;
+  padding: 5px;
+}
+
+#cookie-law-info-bar span a:first-child {
+  display: none;
+}
+
 /*--------------------------------------------------------------
 # Plugins
 --------------------------------------------------------------*/
