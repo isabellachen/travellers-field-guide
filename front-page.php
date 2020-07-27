@@ -66,6 +66,7 @@ get_header();
         $wp_query = new WP_Query($args);
         if ($wp_query->have_posts()) :
           while ($wp_query->have_posts()) : $wp_query->the_post();
+            set_query_var('is_front_page', true);
             get_template_part('template-parts/content', 'post_tiles'); ?>
           <?php endwhile; ?>
       </div>
