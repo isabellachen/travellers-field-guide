@@ -1648,6 +1648,24 @@ input[type='submit'] {
   z-index: 30;
 }
 
+@media (min-width: 1024px) {
+  .long-content-controls {
+    right: calc(((100vw - 540px) / 2) - 90px);
+  }
+}
+
+@media (min-width: 1200px) {
+  .long-content-controls {
+    right: calc(((100vw - 768px) / 2) - 90px);
+  }
+}
+
+@media (min-width: 1689px) {
+  .long-content-controls {
+    right: calc(((100vw - 1024px) / 2) - 90px);
+  }
+}
+
 .related-posts-button,
 .back-to-top-button {
   display: none;
