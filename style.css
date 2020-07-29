@@ -501,7 +501,6 @@ hr {
 
 ul {
   list-style: disc;
-  max-width: 768px;
 }
 
 ol {
@@ -2144,6 +2143,7 @@ input[type='submit'] {
   padding: 0.25rem 0.5rem;
   margin-top: 0;
   margin-bottom: 0;
+  max-width: 768px;
 }
 
 .entry-content .mh-list li {
