@@ -121,16 +121,18 @@
     }
   }
 
-  .mh-tip {
+  .mh-tip,
+  .mh-list {
     background-color: $c-primary-dark;
     padding: 1rem;
-    max-width: 540px;
+    max-width: $width-s;
     margin: 0.5rem 0;
     @media (min-width: $screen-size-m) {
       margin: 1rem 0;
     }
 
-    h2 {
+    h2,
+    h3 {
       font-size: $fs-single-h3-mobile; //use h3 size for mh-tip
       margin: 0;
       padding-bottom: 0.5rem;
@@ -141,6 +143,24 @@
       margin: 0;
       padding-top: 0.5rem;
       max-width: 540px;
+    }
+  }
+
+  .mh-list {
+    ul {
+      padding-left: 0;
+      list-style: none;
+      padding: 0.25rem 0.5rem;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+    li {
+      padding: 1rem;
+      border-bottom: 1px solid $c-primary-mid;
+      &:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+      }
     }
   }
 }

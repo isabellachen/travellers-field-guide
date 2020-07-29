@@ -501,6 +501,7 @@ hr {
 
 ul {
   list-style: disc;
+  max-width: 768px;
 }
 
 ol {
@@ -711,7 +712,7 @@ textarea {
 }
 
 textarea::placeholder {
-  color: #282c34;
+  color: #50555e;
 }
 
 input[type='search'],
@@ -1097,6 +1098,11 @@ input[type='submit'] {
 .entry-content,
 .entry-summary {
   margin: 1.5em 0 0;
+}
+
+.entry-content h2,
+.entry-content h3 {
+  margin-bottom: 0;
 }
 
 .page-links {
@@ -1709,6 +1715,7 @@ input[type='submit'] {
 
 .wpcf7 {
   width: 100%;
+  max-width: 768px;
 }
 
 .wpcf7 input[type='text'],
@@ -1720,7 +1727,7 @@ input[type='submit'] {
 
 .wpcf7 input[type='text']::placeholder,
 .wpcf7 input[type='email']::placeholder {
-  color: #282c34;
+  color: #50555e;
   font-size: 26px;
 }
 
@@ -2081,7 +2088,8 @@ input[type='submit'] {
   }
 }
 
-.entry-content .mh-tip {
+.entry-content .mh-tip,
+.entry-content .mh-list {
   background-color: #282c34;
   padding: 1rem;
   max-width: 540px;
@@ -2089,22 +2097,45 @@ input[type='submit'] {
 }
 
 @media (min-width: 768px) {
-  .entry-content .mh-tip {
+  .entry-content .mh-tip,
+  .entry-content .mh-list {
     margin: 1rem 0;
   }
 }
 
-.entry-content .mh-tip h2 {
+.entry-content .mh-tip h2,
+.entry-content .mh-tip h3,
+.entry-content .mh-list h2,
+.entry-content .mh-list h3 {
   font-size: 20px;
   margin: 0;
   padding-bottom: 0.5rem;
   border-bottom: 1px solid #f5f5f6;
 }
 
-.entry-content .mh-tip p {
+.entry-content .mh-tip p,
+.entry-content .mh-list p {
   margin: 0;
   padding-top: 0.5rem;
   max-width: 540px;
+}
+
+.entry-content .mh-list ul {
+  padding-left: 0;
+  list-style: none;
+  padding: 0.25rem 0.5rem;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.entry-content .mh-list li {
+  padding: 1rem;
+  border-bottom: 1px solid #50555e;
+}
+
+.entry-content .mh-list li:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
 }
 
 /*

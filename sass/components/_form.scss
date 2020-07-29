@@ -1,5 +1,6 @@
 .wpcf7 {
   width: 100%;
+  max-width: $width-m;
   input[type='text'],
   input[type='email'] {
     border-bottom: 1px solid $c-primary-light;
@@ -7,7 +8,7 @@
     margin-bottom: 1rem;
 
     &::placeholder {
-      color: $c-primary-dark;
+      color: $c-primary-mid;
       font-size: 26px;
     }
   }

@@ -354,3 +354,35 @@ function mh_dequeue_unused_css()
   }
 }
 add_action('wp_enqueue_scripts', 'mh_dequeue_unused_css', 100);
+
+/* 
+ * dequeue jetpack script that replaces images for retina displays causing problems with lightbox
+*/
+function jeherve_dequeue_devicepx()
+{
+  wp_dequeue_script('devicepx');
+}
+add_action('wp_enqueue_scripts', 'jeherve_dequeue_devicepx');
+
+/* 
+ * Add google analytics to the head
+*/
+
+function wpse_43672_wp_head()
+{
+  //Close PHP tags 
+?>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-71125016-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'UA-71125016-1');
+  </script>
+
+<?php //Open PHP tags
+}
+add_action('wp_head', 'wpse_43672_wp_head');
