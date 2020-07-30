@@ -1,24 +1,28 @@
-.home,
-.error404,
+// .home,
 .search,
+.error404,
+.page,
+.single,
 .page-template-page_frontpage,
 .page-template-page_grid {
   .site-main {
     position: relative;
-    @media (min-width: $screen-size-m) {
+    top: -6rem;
+    @media (min-width: $screen-size-l) {
       top: -13.5rem;
       margin-bottom: -10rem;
     }
   }
 }
 
-.page,
-.single,
 .archive {
   .site-main {
     position: relative;
-    top: -5rem;
+    top: auto;
     @media (min-width: $screen-size-m) {
+      top: -7rem;
+    }
+    @media (min-width: $screen-size-l) {
       top: -13.5rem;
       margin-bottom: -10rem;
     }

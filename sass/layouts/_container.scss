@@ -2,6 +2,12 @@
   margin: auto;
 }
 
+@media (min-width: $screen-size-m) {
+  .container-inner {
+    max-width: $width-s;
+  }
+}
+
 @media (min-width: $screen-size-xl) {
   .container {
     max-width: $width-l;

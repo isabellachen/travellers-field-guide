@@ -83,6 +83,10 @@
     height: 280px;
     object-fit: cover;
 
+    &--shorter {
+      height: auto;
+    }
+
     @media (min-width: $screen-size-s) {
       height: auto;
     }

@@ -330,7 +330,6 @@ add_filter('image_size_names_choose', 'create_custom_image_size');
 function shapeSpace_disable_medium_large_images($sizes)
 {
   unset($sizes['2048x2048']);
-  unset($sizes['1536x1536']);
   return $sizes;
 }
 add_filter('intermediate_image_sizes_advanced', 'shapeSpace_disable_medium_large_images');

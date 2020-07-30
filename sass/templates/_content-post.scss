@@ -165,3 +165,10 @@
     }
   }
 }
+
+.page {
+  .entry-header-subtitle {
+    // Subtitles only for posts
+    display: none;
+  }
+}

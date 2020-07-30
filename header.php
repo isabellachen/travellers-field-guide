@@ -74,7 +74,7 @@
           $term = get_queried_object();
           $hero_tax_image = get_field('image', $term);
           if ($hero_tax_image) {
-            echo wp_get_attachment_image($hero_tax_image, 'full', "", array("class" => "hero-image"));
+            echo wp_get_attachment_image($hero_tax_image, 'full', "", array("class" => "hero-image hero-image--shorter"));
           }; ?>
         <?php endif; ?>
         <div class="hero-content <?php echo is_front_page() ? "hero-content--centered" : "" ?>">

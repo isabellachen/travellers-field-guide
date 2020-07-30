@@ -21,12 +21,12 @@ get_header();
         <h1 class="entry-header-title">Oops! Looks like you are lost.</h1>
       </div>
       <div class="entry-header-excerpt-wrapper">
-        <div class="entry-header-excerpt entry-header-excerpt--mobile">But sometimes, getting lost can lead to unexpected adventures</div>
+        <div class="entry-header-excerpt--mobile text-align-center">But sometimes, getting lost can lead to unexpected adventures</div>
       </div>
     </header><!-- .entry-header -->
 
     <div class="page-content margin-auto">
-      <div class="container-inner margin-auto"><?php get_search_form(); ?></div>
+      <div class="container-inner page-content-search"><?php get_search_form(); ?></div>
       <div class="frontpage-posts-wrapper">
         <h2 class="frontpage-posts-title heading page-h2">Explore Out Latest Posts</h2>
         <div class="frontpage-posts">
