@@ -51,7 +51,7 @@
         </div><!-- container -->
       </div><!-- top-bar -->
       <div class="hero">
-        <div class="hero-menu-darken"></div>
+        <div class="hero-menu-darken <?php echo is_category() ? 'hero-menu-darken--circular-gradient' : '' ?>"></div>
         <?php if (is_front_page() || is_404() || is_search()) : ?>
           <?php
           $hero_posts = get_posts(array(

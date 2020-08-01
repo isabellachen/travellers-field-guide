@@ -306,7 +306,8 @@ function use_new_image_size()
 {
   if (function_exists('add_image_size')) {
     add_image_size('width_s', 540, 0, false);
-    add_image_size('medium_square', 350, 350, true);
+    add_image_size('small_square', 300, 300, true);
+    add_image_size('medium_square', 478, 478, true);
   }
 }
 add_action('after_setup_theme', 'use_new_image_size');
@@ -315,7 +316,8 @@ function create_custom_image_size($sizes)
 {
   $custom_sizes = array(
     'width_s' => 'Width-S 540',
-    'medium_square' => 'Medium-Square 350',
+    'small_square' => 'Small-Square 300',
+    'medium_square' => 'Medium-Square 700',
     'medium_large' => 'Medium Large 768'
   );
   return array_merge($sizes, $custom_sizes);

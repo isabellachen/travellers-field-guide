@@ -974,6 +974,7 @@ input[type='submit'] {
 @media (min-width: 1024px) {
   .main-navigation a {
     padding: 0;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
   }
 }
 
@@ -1310,6 +1311,10 @@ input[type='submit'] {
 
 .hero-menu-darken--dark {
   opacity: 1;
+}
+
+.hero-menu-darken--circular-gradient {
+  background: radial-gradient(circle at 75% -15%, rgba(0, 0, 13, 0.75) 15%, rgba(0, 0, 13, 0.15) 80%);
 }
 
 .hero:after {
