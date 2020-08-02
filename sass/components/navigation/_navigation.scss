@@ -10,7 +10,7 @@
   width: 100%;
   z-index: 10;
 
-  @media (min-width: $screen-size-l) {
+  @media (min-width: $screen-size-xl) {
     font-size: $fs-navigation-desktop;
     width: unset;
   }
@@ -23,15 +23,16 @@
     // first level
     display: none;
     position: absolute;
-    background-color: #00000de6;
+    background-color: rgba(0, 0, 0, 0.8);
     min-height: 100vh;
     width: 100%;
     left: 0;
+    top: 0;
     margin: 0;
     padding-left: 0;
     padding-top: 40px;
 
-    @media (min-width: $screen-size-l) {
+    @media (min-width: $screen-size-xl) {
       display: flex;
       position: unset;
       background-color: transparent;
@@ -41,7 +42,7 @@
     }
 
     & > li {
-      @media (min-width: $screen-size-l) {
+      @media (min-width: $screen-size-xl) {
         padding-left: 0.5rem;
         padding-right: 0.5rem;
         border-bottom: $nav-border-bottom-hide;
@@ -53,7 +54,7 @@
 
     & > li > ul {
       // second level, main menu block
-      @media (min-width: $screen-size-l) {
+      @media (min-width: $screen-size-xl) {
         padding-top: 1rem;
         display: flex;
         justify-content: center;
@@ -61,7 +62,7 @@
     }
 
     & > li > ul > li > ul {
-      @media (min-width: $screen-size-l) {
+      @media (min-width: $screen-size-xl) {
         //target final level
         display: flex;
         flex-direction: column;
@@ -84,7 +85,7 @@
       z-index: 99999;
       display: block;
       left: -999em;
-      @media (min-width: $screen-size-l) {
+      @media (min-width: $screen-size-xl) {
         padding-left: 0.25rem;
       }
 
@@ -103,7 +104,7 @@
 
       a {
         width: 200px;
-        @media (min-width: $screen-size-l) {
+        @media (min-width: $screen-size-xl) {
           width: 170px;
         }
       }
@@ -113,7 +114,7 @@
     li:hover > ul,
     li.focus > ul {
       // hack to make sure navigation hoverable on narrow desktop screens
-      @media (max-width: $screen-size-l-reverse) {
+      @media (max-width: $screen-size-xl-reverse) {
         display: block;
         left: auto;
         position: relative;
@@ -122,7 +123,7 @@
 
     & > li:hover > ul {
       // target second level ul
-      @media (min-width: $screen-size-l) {
+      @media (min-width: $screen-size-xl) {
         position: absolute;
         display: flex;
         left: 0;
@@ -139,7 +140,7 @@
     padding: 0.5rem 0.25rem;
     border-top: 1px solid;
 
-    @media (min-width: $screen-size-l) {
+    @media (min-width: $screen-size-xl) {
       padding: 0.25rem 0.25rem;
       border-top: none;
     }
@@ -153,7 +154,7 @@
     &:hover > a,
     &.focus > a {
       color: $c-primary-light;
-      @media (min-width: $screen-size-l) {
+      @media (min-width: $screen-size-xl) {
         padding-bottom: 0;
       }
     }
@@ -168,6 +169,9 @@
     text-decoration: none;
     padding-left: 0.25rem;
     @media (min-width: $screen-size-l) {
+      padding-left: 1rem;
+    }
+    @media (min-width: $screen-size-xl) {
       padding: 0;
       text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
     }
@@ -188,7 +192,7 @@
 
 .menu-toggle {
   display: block;
-  @media (min-width: $screen-size-l) {
+  @media (min-width: $screen-size-xl) {
     display: none;
   }
 }

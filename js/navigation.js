@@ -84,6 +84,7 @@
         // On li elements toggle the class .focus.
         if ('li' === self.tagName.toLowerCase()) {
           self.classList.toggle('focus');
+          window.scroll(0, 0);
         }
         self = self.parentNode;
       }
@@ -98,6 +99,7 @@
         }
       }
       menuItem.classList.toggle('focus');
+      window.scroll(0, 0);
     }
   }
 
@@ -105,11 +107,11 @@
   for (let i = 0; i < firstLevelItems.length; i++) {
     $(firstLevelItems[i]).on('mouseover', (e) => {
       $('.hero-content').addClass('hero-content--hide');
-      $('.hero-menu-darken').addClass('hero-menu-darken--dark'); //TODO uncomment
+      $('.hero-menu-darken').addClass('hero-menu-darken--dark');
     });
     $(firstLevelItems[i]).on('mouseout', (e) => {
       $('.hero-content').removeClass('hero-content--hide');
-      $('.hero-menu-darken').removeClass('hero-menu-darken--dark'); //TODO uncomment
+      $('.hero-menu-darken').removeClass('hero-menu-darken--dark');
     });
   }
 })(jQuery);
