@@ -32,6 +32,7 @@
     }
   }
 
+  &-gallery-wrapper,
   &-featured-wrapper,
   &-posts-wrapper {
     @media (min-width: $screen-size-m) {
@@ -42,5 +43,19 @@
   &-featured-title,
   &-posts-title {
     margin-bottom: 1.5rem;
+  }
+
+  &-gallery {
+    position: relative;
+
+    img {
+      object-fit: cover;
+      @media (min-width: $screen-size-m) {
+        height: 290px;
+      }
+      @media (min-width: $screen-size-l) {
+        height: 390px;
+      }
+    }
   }
 }

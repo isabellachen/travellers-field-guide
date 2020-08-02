@@ -39,6 +39,12 @@
     }
   }
 
+  &-single--full_width {
+    @media (min-width: $screen-size-m) {
+      padding-top: 38%;
+    }
+  }
+
   &-image {
     object-fit: cover;
     width: 100%;
@@ -69,6 +75,12 @@
     padding-bottom: 0.5rem;
     @media (min-width: $screen-size-m) {
       padding-bottom: 1rem;
+    }
+  }
+
+  &-content--two_thirds {
+    @media (min-width: $screen-size-l) {
+      width: 66.666%;
     }
   }
 

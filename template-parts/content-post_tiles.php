@@ -16,7 +16,7 @@
   <a href="<?php echo the_permalink() ?>">
     <div class="tile-content-wrapper">
       <div class="tile-content">
-        <?php if ($is_front_page) : ?>
+        <?php if (isset($is_front_page)) : ?>
           <h3 class="tile-content-subheading subheading"><?php echo $post_country ?></h3>
         <?php endif; ?>
         <h3 class="tile-content-title heading page-h3"><?php the_title() ?></h3>
