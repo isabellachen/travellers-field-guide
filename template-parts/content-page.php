@@ -12,9 +12,6 @@
 
 <article id="post-<?php the_ID(); ?> single-post" <?php post_class(); ?>>
   <header class="entry-header">
-    <!-- Subtitle: display the country category for the current post, e.g. "Iceland" -->
-    <div class="entry-header-subtitle container">
-    </div>
     <div class="entry-header-title-wrapper">
       <h1 class="entry-header-title"><?php the_title() ?></h1>
     </div>

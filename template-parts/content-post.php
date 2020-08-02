@@ -17,8 +17,12 @@
       <?php
       $post_id = get_the_ID();
       $post_tags = get_the_tags($post_id);
-      echo $post_tags[0]->name
+      $post_tag_single = $post_tags[0]->name;
+      $post_category = get_category_by_slug($post_tag_single);
+      $post_cateogory_ID = $post_category->cat_ID;
+      $post_category_url = get_category_link($post_cateogory_ID);
       ?>
+      <a href="<?php echo $post_category_url ?>"><?php echo $post_tag_single ?></a>
     </div>
     <div class="entry-header-title-wrapper">
       <h1 class="entry-header-title"><?php the_title() ?></h1>

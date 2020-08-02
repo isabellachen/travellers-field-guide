@@ -30,6 +30,11 @@
     margin: 0;
     position: relative;
   }
+
+  img {
+    height: 39px;
+    object-fit: contain;
+  }
 }
 
 .hero {

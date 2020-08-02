@@ -83,6 +83,7 @@ if (count($photo_gallery_posts) > 0) : ?>
     <div class="frontpage-gallery">
       <?php
       $post = $photo_gallery_posts[0];
+      $photo_gallery_post_id = get_the_ID();
       get_template_part('template-parts/content', 'photo_gallery');
       wp_reset_postdata();
       ?>
@@ -111,7 +112,10 @@ if (count($photo_gallery_posts) > 0) : ?>
         $paged = 1;
       }
       while ($wp_query->have_posts()) : $wp_query->the_post();
-        get_template_part('template-parts/content', 'post_tiles'); ?>
+        if ($photo_gallery_post_id != get_the_ID()) {
+          get_template_part('template-parts/content', 'post_tiles');
+        }
+      ?>
       <?php endwhile; ?>
     </div>
     <nav class="pagination-wrapper">
