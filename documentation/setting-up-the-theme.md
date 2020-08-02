@@ -37,11 +37,6 @@
 - FrontPage template only displays the square tiles section if there are more than three posts with the matching tag.
 - If there are less than three posts, you need to select 'page_featured' for the one, two or three posts that match the tag. If no featured posts are selected, and there are less than three posts matching the page, no posts will be displayed.
 
-### Regular Page vs Country Page
-
-- Select the custom field 'Regular Page' when not creating country pages. (e.g. Promo Clips)
-- This will remove 'Stories From' as we don't want to read 'Featured Stories From Promo Clips'
-
 ## Image Sizes
 
 In total, this theme needs 5 different image sizes.
