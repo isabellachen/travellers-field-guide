@@ -111,8 +111,13 @@ if (count($photo_gallery_posts) > 0) : ?>
       } else {
         $paged = 1;
       }
+
       while ($wp_query->have_posts()) : $wp_query->the_post();
-        if ($photo_gallery_post_id != get_the_ID()) {
+        if (isset($photo_gallery_post_id)) {
+          if ($photo_gallery_post_id != get_the_ID()) {
+            get_template_part('template-parts/content', 'post_tiles');
+          }
+        } else {
           get_template_part('template-parts/content', 'post_tiles');
         }
       ?>

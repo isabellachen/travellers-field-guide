@@ -339,7 +339,7 @@ add_filter('big_image_size_threshold', '__return_false');
 /*-----------------------------------------------------------------------------------*/
 /* Selective Dequeue unnecessary styles
 /*-----------------------------------------------------------------------------------*/
-function mh_dequeue_unused_css()
+function tfg_dequeue_unused_css()
 {
   wp_dequeue_style('wp-block-library');
   wp_dequeue_style('wp-block-library-theme');
@@ -353,22 +353,22 @@ function mh_dequeue_unused_css()
     wp_dequeue_style('contact-form-7'); // 
   }
 }
-add_action('wp_enqueue_scripts', 'mh_dequeue_unused_css', 100);
+add_action('wp_enqueue_scripts', 'tfg_dequeue_unused_css', 100);
 
 /* 
  * dequeue jetpack script that replaces images for retina displays causing problems with lightbox
 */
-function jeherve_dequeue_devicepx()
+function tfg_dequeue_devicepx()
 {
   wp_dequeue_script('devicepx');
 }
-add_action('wp_enqueue_scripts', 'jeherve_dequeue_devicepx');
+add_action('wp_enqueue_scripts', 'tfg_dequeue_devicepx');
 
 /* 
  * Add google analytics to the head
 */
 
-function wpse_43672_wp_head()
+function tgf_ga_head()
 {
   //Close PHP tags 
 ?>
@@ -385,4 +385,20 @@ function wpse_43672_wp_head()
 
 <?php //Open PHP tags
 }
-add_action('wp_head', 'wpse_43672_wp_head');
+add_action('wp_head', 'tgf_ga_head');
+
+/**
+ * Custom number of posts in category pages
+ */
+function set_offset_on_front_page($query)
+{
+  if (is_category() && !is_paged()) {
+    // +1 because we want to add the Photo Gallery (former chapter guides) to the query and still maintain the 3 per row layout
+    $query->query_vars['posts_per_page'] = get_option('posts_per_page') + 1;
+  }
+  if (is_category() && is_paged()) {
+    $posts_per_page = isset($query->query_vars['posts_per_page']) ? $query->query_vars['posts_per_page'] : get_option('posts_per_page');
+    $query->query_vars['offset'] = (($query->query_vars['paged'] - 2) * $posts_per_page) + $posts_per_page + 1;
+  }
+}
+add_action('pre_get_posts', 'set_offset_on_front_page');

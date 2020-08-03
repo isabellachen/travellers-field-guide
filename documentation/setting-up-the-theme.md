@@ -84,3 +84,8 @@ To set up the custom images, we need to add an [ACF for an image in the category
 ## Cookie Consent
 
 The theme works with GDPR Cookie Consent plugin
+
+## Photo Gallery Posts
+
+Photo Gallery posts must be the latest post (in terms of date) in the category.
+This is because of how the offset works (posts_per_page + 1 on the category front page)
