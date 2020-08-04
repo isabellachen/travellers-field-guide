@@ -80,9 +80,6 @@
 
 .entry-content {
   text-align: justify;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   margin: 1rem auto;
   font-size: $fs-single-body;
 
@@ -122,8 +119,10 @@
     }
   }
 
-  p {
-    margin: 0.5rem 0;
+  p,
+  ol,
+  ul {
+    margin: 0.5rem auto;
     @media (min-width: $screen-size-m) {
       max-width: $width-m;
       font-size: $fs-single-body;

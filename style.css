@@ -2140,9 +2140,6 @@ input[type='submit'] {
 
 .entry-content {
   text-align: justify;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   margin: 1rem auto;
   font-size: 18px;
 }
@@ -2196,12 +2193,16 @@ input[type='submit'] {
   }
 }
 
-.entry-content p {
-  margin: 0.5rem 0;
+.entry-content p,
+.entry-content ol,
+.entry-content ul {
+  margin: 0.5rem auto;
 }
 
 @media (min-width: 768px) {
-  .entry-content p {
+  .entry-content p,
+  .entry-content ol,
+  .entry-content ul {
     max-width: 768px;
     font-size: 18px;
     width: 100%;
