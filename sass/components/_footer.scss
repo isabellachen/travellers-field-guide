@@ -18,7 +18,6 @@
 
   h2 {
     font-size: $fs-single-h3-mobile;
-    font-family: $font-display;
     text-transform: uppercase;
     @media (min-width: $screen-size-m) {
       font-size: $fs-single-h3;

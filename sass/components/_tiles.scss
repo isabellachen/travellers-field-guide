@@ -90,6 +90,11 @@
     margin: 0;
   }
 
+  &-content-subheading {
+    font-weight: 300;
+    font-family: $font__main;
+  }
+
   &-content-title {
     line-height: 2rem;
     margin-top: 0.15rem;

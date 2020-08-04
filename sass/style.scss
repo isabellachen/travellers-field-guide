@@ -100,3 +100,16 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 
 @import 'owl-carousel/owl.carousel';
 @import 'owl-carousel/owl.theme.default';
+
+/*
+ * Custom styles specific to the content
+*/
+
+.menu-item-12942 > ul::before {
+  content: '';
+  position: absolute;
+  height: 60px;
+  width: 300px;
+  left: -10rem;
+  top: -2rem;
+}

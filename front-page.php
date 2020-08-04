@@ -30,7 +30,7 @@ get_header();
       )
     ));
     ?>
-    <div class="frontpage-featured-title heading page-h2">Featured Stories</div>
+    <h2 class="frontpage-featured-title heading page-h2">Featured Stories</h2>
     <div class="frontpage-featured">
       <?php
       if ($featured_stories) {
@@ -45,7 +45,7 @@ get_header();
   </div><!-- .frontpage-featured-wrapper -->
 
   <div class="frontpage-posts-wrapper">
-    <div class="frontpage-posts-title heading page-h2">Travel Diaries</div>
+    <h2 class="frontpage-posts-title heading page-h2">Travel Diaries</h2>
     <div class="frontpage-posts">
       <div class="frontpage-posts-inner">
         <?php

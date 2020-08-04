@@ -20,7 +20,7 @@
         <?php if (is_front_page()) : ?>
           <h3 class="tile-content-subheading subheading"><?php echo $post_country ?></h3>
         <?php endif; ?>
-        <h3 class="tile-content-title heading page-h3"><?php the_title() ?></h3>
+        <h3 class="pb-0 mb-0 heading page-h3"><?php the_title() ?></h3>
         <p class="tile-content-paragraph"><?php echo get_the_excerpt() ?></p>
       </div>
     </div>

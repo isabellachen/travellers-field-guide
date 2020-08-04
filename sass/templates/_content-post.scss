@@ -21,7 +21,6 @@
   }
 
   &-subtitle {
-    font-family: $font-display;
     font-size: $fs-hero-subtitle-mobile;
     text-transform: uppercase;
     display: inline-block;
@@ -42,7 +41,6 @@
   }
 
   &-title {
-    font-family: $font-display;
     font-size: $fs-hero-title-mobile;
     text-transform: uppercase;
     line-height: initial;
@@ -99,7 +97,6 @@
   h2,
   h3,
   h4 {
-    font-family: $font-display;
     text-align: center;
     text-transform: uppercase;
   }
@@ -176,6 +173,12 @@
         padding-bottom: 0;
       }
     }
+  }
+
+  .mh-faq-block {
+    width: 100%;
+    border-top: 1px solid $c-primary-light;
+    padding: 0.75rem;
   }
 }
 

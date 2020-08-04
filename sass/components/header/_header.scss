@@ -103,6 +103,7 @@
 
     @media (min-width: $screen-size-s) {
       height: auto;
+      height: intrinsic;
     }
   }
 
@@ -136,7 +137,6 @@
   }
 
   &-title {
-    font-family: $font-display;
     font-size: $fs-hero-title-mobile;
     text-transform: uppercase;
     line-height: initial;
@@ -159,7 +159,6 @@
   }
 
   &-subtitle {
-    font-family: $font-display;
     font-size: $fs-hero-subtitle-mobile;
     text-transform: uppercase;
     display: inline-block;

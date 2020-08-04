@@ -10,10 +10,6 @@ img {
   max-width: 100%; // Adhere to container width.
 }
 
-figure {
-  // margin: 1em 0; // Extra wide images within figure tags don't overflow the content area.
-}
-
 .wp-block-image {
   font-style: italic;
   margin: 0.1rem 0 0.1rem;
@@ -23,10 +19,6 @@ figure {
 
   @media (min-width: $screen-size-m) {
     margin: 0.5rem 0 0.5rem;
-  }
-
-  a {
-    display: flex; //remove link offset that affects alignment of caption
   }
 
   figure {

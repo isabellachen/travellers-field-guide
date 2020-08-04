@@ -45,12 +45,12 @@ get_header();
       )
     ));
     if (count($featured_stories) > 0) : ?>
-      <div class="frontpage-featured-title heading page-h2">Featured
+      <h2 class="frontpage-featured-title heading page-h2">Featured
         <?php if ($is_destination) : ?>
           Stories From
         <?php endif;
         echo $taxonomy_name ?>
-      </div>
+      </h2>
       <div class="frontpage-featured">
         <?php
         if ($featured_stories) {
@@ -77,9 +77,9 @@ $photo_gallery_posts = get_posts(array(
 ));
 if (count($photo_gallery_posts) > 0) : ?>
   <div class="frontpage-gallery-wrapper">
-    <div class="frontpage-featured-title heading page-h2">
+    <h2 class="frontpage-featured-title heading page-h2">
       <?php echo $taxonomy_name; ?> Photo Gallery
-    </div>
+    </h2>
     <div class="frontpage-gallery">
       <?php
       $post = $photo_gallery_posts[0];
