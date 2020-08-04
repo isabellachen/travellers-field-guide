@@ -1,6 +1,7 @@
 .wpcf7 {
   width: 100%;
   max-width: $width-m;
+  margin: auto;
   input[type='text'],
   input[type='email'] {
     border-bottom: 1px solid $c-primary-light;

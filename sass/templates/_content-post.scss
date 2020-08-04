@@ -121,7 +121,8 @@
 
   p,
   ol,
-  ul {
+  ul,
+  div {
     margin: 0.5rem auto;
     @media (min-width: $screen-size-m) {
       max-width: $width-m;
@@ -135,9 +136,9 @@
     background-color: $c-primary-dark;
     padding: 1rem;
     max-width: $width-s;
-    margin: 0.5rem 0;
+    margin: 0.5rem auto;
     @media (min-width: $screen-size-m) {
-      margin: 1rem 0;
+      margin: 1rem auto;
     }
 
     h2,
