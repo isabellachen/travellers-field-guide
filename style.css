@@ -852,6 +852,7 @@ input[type='submit'] {
 
 @media (min-width: 1200px) {
   .main-navigation ul:first-child > li {
+    cursor: pointer;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
     border-bottom: 2px solid transparent;
@@ -867,6 +868,10 @@ input[type='submit'] {
     display: flex;
     justify-content: center;
   }
+}
+
+.main-navigation ul:first-child > li > ul > li {
+  cursor: default;
 }
 
 @media (min-width: 1200px) {

@@ -43,6 +43,7 @@
 
     & > li {
       @media (min-width: $screen-size-xl) {
+        cursor: pointer;
         padding-left: 0.5rem;
         padding-right: 0.5rem;
         border-bottom: $nav-border-bottom-hide;
@@ -59,6 +60,10 @@
         display: flex;
         justify-content: center;
       }
+    }
+
+    & > li > ul > li {
+      cursor: default;
     }
 
     & > li > ul > li > ul {
