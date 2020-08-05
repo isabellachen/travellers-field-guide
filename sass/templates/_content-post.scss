@@ -83,12 +83,14 @@
   margin: 1rem auto;
   font-size: $fs-single-body;
 
-  @media (max-width: $screen-size-xxl) {
+  @media (min-width: $screen-size-l) {
+    max-width: $width-s;
+  }
+  @media (min-width: $screen-size-xl) {
     max-width: $width-m;
   }
-
-  @media (max-width: $screen-size-l) {
-    max-width: $width-s;
+  @media (min-width: $screen-size-xxl) {
+    max-width: $width-l;
   }
 
   h2,
@@ -122,63 +124,13 @@
   p,
   ol,
   ul,
-  div {
+  .wp-block-yoast-faq-block {
     margin: 0.5rem auto;
     @media (min-width: $screen-size-m) {
       max-width: $width-m;
       font-size: $fs-single-body;
       width: 100%;
     }
-  }
-
-  .mh-tip,
-  .mh-list {
-    background-color: $c-primary-dark;
-    padding: 1rem;
-    max-width: $width-s;
-    margin: 0.5rem auto;
-    @media (min-width: $screen-size-m) {
-      margin: 1rem auto;
-    }
-
-    h2,
-    h3 {
-      font-size: $fs-single-h3-mobile; //use h3 size for mh-tip
-      margin: 0;
-      padding-bottom: 0.5rem;
-      border-bottom: 1px solid $c-primary-light;
-    }
-
-    p {
-      margin: 0;
-      padding-top: 0.5rem;
-      max-width: 540px;
-    }
-  }
-
-  .mh-list {
-    ul {
-      padding-left: 0;
-      list-style: none;
-      padding: 0.25rem 0.5rem;
-      margin-top: 0;
-      margin-bottom: 0;
-      max-width: $width-m;
-    }
-    li {
-      padding: 1rem;
-      border-bottom: 1px solid $c-primary-mid;
-      &:last-child {
-        border-bottom: none;
-        padding-bottom: 0;
-      }
-    }
-  }
-
-  .mh-faq-block {
-    width: 100%;
-    border-top: 1px solid $c-primary-light;
-    padding: 0.75rem;
   }
 }
 
@@ -187,4 +139,54 @@
     // Subtitles only for posts
     display: none;
   }
+}
+
+.mh-tip,
+.mh-list {
+  background-color: $c-primary-dark;
+  padding: 1rem;
+  max-width: $width-s;
+  margin: 0.5rem auto;
+
+  @media (min-width: $screen-size-m) {
+    margin: 1rem auto;
+  }
+
+  h2,
+  h3 {
+    font-size: $fs-single-h3-mobile; //use h3 size for mh-tip
+    margin: 0;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid $c-primary-light;
+  }
+
+  p {
+    margin: 0;
+    padding-top: 0.5rem;
+    max-width: 540px;
+  }
+}
+
+.mh-list {
+  ul {
+    padding-left: 0;
+    list-style: none;
+    padding: 0.25rem 0.5rem;
+    margin-top: 0;
+    margin-bottom: 0;
+    max-width: $width-m;
+  }
+  li {
+    padding: 1rem;
+    border-bottom: 1px solid $c-primary-mid;
+    &:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+  }
+}
+
+.mh-faq-block {
+  width: 100%;
+  padding: 0.75rem;
 }
