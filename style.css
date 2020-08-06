@@ -2747,3 +2747,7 @@ input[type='submit'] {
   left: -10rem;
   top: -2rem;
 }
+
+.justified-image-grid {
+  margin-top: 1rem;
+}
