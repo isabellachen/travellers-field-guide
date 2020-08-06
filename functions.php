@@ -328,41 +328,14 @@ add_filter('image_size_names_choose', 'create_custom_image_size');
 /* Disbale Unwanted Image Sizes
 /*-----------------------------------------------------------------------------------*/
 
-function shapeSpace_disable_medium_large_images($sizes)
+function tfg_disable_medium_large_images($sizes)
 {
   unset($sizes['2048x2048']);
   return $sizes;
 }
-add_filter('intermediate_image_sizes_advanced', 'shapeSpace_disable_medium_large_images');
+add_filter('intermediate_image_sizes_advanced', 'tfg_disable_medium_large_images');
 add_filter('big_image_size_threshold', '__return_false');
 
-/*-----------------------------------------------------------------------------------*/
-/* Selective Dequeue unnecessary styles
-/*-----------------------------------------------------------------------------------*/
-function tfg_dequeue_unused_css()
-{
-  wp_dequeue_style('wp-block-library');
-  wp_dequeue_style('wp-block-library-theme');
-  wp_dequeue_style('wc-block-style'); // Remove WooCommerce block CSS
-  if (!(is_single() || is_page()) || is_front_page()) {
-    wp_dequeue_style('flex_col_images_shortcode_style'); //Remove flex col for display pages
-    wp_deregister_style('wpdevart_lightbox_front_end_css');
-    wp_deregister_style('wpdevart_lightbox_effects');
-  }
-  if (!is_page('work-with-us')) { //if not work with us page, dequeue contact form
-    wp_dequeue_style('contact-form-7'); // 
-  }
-}
-add_action('wp_enqueue_scripts', 'tfg_dequeue_unused_css', 100);
-
-/* 
- * dequeue jetpack script that replaces images for retina displays causing problems with lightbox
-*/
-function tfg_dequeue_devicepx()
-{
-  wp_dequeue_script('devicepx');
-}
-add_action('wp_enqueue_scripts', 'tfg_dequeue_devicepx');
 
 /* 
  * Add google analytics to the head
@@ -388,7 +361,8 @@ function tgf_ga_head()
 add_action('wp_head', 'tgf_ga_head');
 
 /**
- * Custom number of posts in category pages
+ * Custom number of posts in category pages - used for pagination
+ * https://wordpress.stackexchange.com/a/372278/153787
  */
 function set_offset_on_front_page($query)
 {
@@ -402,3 +376,66 @@ function set_offset_on_front_page($query)
   }
 }
 add_action('pre_get_posts', 'set_offset_on_front_page');
+
+/*-----------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------*/
+/* Selective Dequeue unnecessary styles and scripts
+/*-----------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------*/
+function tfg_dequeue_unused_css()
+{
+  wp_dequeue_style('wp-block-library');
+  wp_dequeue_style('wp-block-library-theme');
+  wp_dequeue_style('wc-block-style'); // Remove WooCommerce block CSS
+  if (!(is_single() || is_page()) || is_front_page()) {
+    wp_dequeue_style('flex_col_images_shortcode_style'); //Remove flex col for display pages
+    wp_deregister_style('wpdevart_lightbox_front_end_css');
+    wp_deregister_style('wpdevart_lightbox_effects');
+  }
+}
+add_action('wp_enqueue_scripts', 'tfg_dequeue_unused_css', 100);
+
+/* 
+ * dequeue contact form 7
+*/
+function tfg_dequeue_wpcf7()
+{
+  if (!is_page('work-with-us')) { //if not work with us page, dequeue contact form
+    wp_dequeue_script('contact-form-7');
+    wp_dequeue_style('contact-form-7'); // 
+  }
+}
+add_action('wp_enqueue_scripts', 'tfg_dequeue_wpcf7');
+
+/* 
+ * dequeue jetpack script that replaces images for retina displays causing problems with lightbox
+*/
+function tfg_dequeue_devicepx()
+{
+  wp_dequeue_script('devicepx');
+}
+add_action('wp_enqueue_scripts', 'tfg_dequeue_devicepx');
+
+/**
+ * Disable the emoji's
+ */
+function disable_emojis()
+{
+  remove_action('wp_head', 'print_emoji_detection_script', 7);
+  remove_action('admin_print_scripts', 'print_emoji_detection_script');
+  remove_action('wp_print_styles', 'print_emoji_styles');
+  remove_action('admin_print_styles', 'print_emoji_styles');
+  remove_filter('the_content_feed', 'wp_staticize_emoji');
+  remove_filter('comment_text_rss', 'wp_staticize_emoji');
+  remove_filter('wp_mail', 'wp_staticize_emoji_for_email');
+}
+add_action('init', 'disable_emojis');
+
+/**
+ * Disable Comment Script
+ */
+function tfg_clean_header_hook()
+{
+  wp_deregister_script('comment-reply');
+}
+add_action('init', 'tfg_clean_header_hook');
