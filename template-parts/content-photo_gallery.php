@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Template part for displaying featured tiles in frontpage and country pages
+ * Template part for displaying photo gallery landscape tile in frontpage and country pages
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
@@ -12,7 +12,7 @@
 <div class="tile-single tile-single--full_width shrink-on-hover">
   <?php
   $post_country = get_the_tags()[0]->name; //name of country
-  $featured_story_image = get_field('featured_story_image');
+  $photo_gallery_image = get_field('photo_gallery_image');
   ?>
   <a href="<?php echo the_permalink() ?>">
     <div class="tile-content-wrapper">
@@ -25,8 +25,8 @@
       </div>
     </div>
     <?php
-    if ($featured_story_image) {
-      echo wp_get_attachment_image($featured_story_image, 'full', "", array("class" => "tile-image"));
+    if ($photo_gallery_image) {
+      echo wp_get_attachment_image($photo_gallery_image, 'full', "", array("class" => "tile-image"));
     } elseif (has_post_thumbnail()) {
       the_post_thumbnail('medium_large', ['class' => 'tile-image']);
     }
