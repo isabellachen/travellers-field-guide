@@ -122,11 +122,20 @@
     });
   }
 
+  //Quick fix to anchor scoll on FAQ links
+  function offsetAnchor() {
+    if (location.hash.length !== 0) {
+      window.scrollTo(window.scrollX, window.scrollY - 80);
+    }
+  }
+
   $(window).on('load', function () {
     initForLongContent();
   });
 
   $(document).ready(function () {
     initOwlCarousel();
+    window.addEventListener('hashchange', offsetAnchor);
+    window.setTimeout(offsetAnchor, 0);
   });
 })(jQuery);
