@@ -32,10 +32,16 @@
     }
   }
 
-  &-gallery-wrapper,
-  &-featured-wrapper,
   &-posts-wrapper {
     @media (min-width: $screen-size-m) {
+      margin-top: 2rem;
+    }
+  }
+
+  &-gallery-wrapper,
+  &-featured-wrapper {
+    margin-top: 0.5rem;
+    @media (min-width: $screen-size-l) {
       margin-top: 2rem;
     }
   }

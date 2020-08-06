@@ -13,7 +13,8 @@
   <?php if (!empty($category_lead)) : ?>
     <h2 class="heading page-h2"><?php echo $category_lead ?></h2>
   <?php endif; ?>
-  <div class="frontpage-intro dropcap dropcap--s">
+  <div class="frontpage-intro archive-lead-content dropcap dropcap--s">
     <?php echo category_description(); ?>
   </div><!-- .frontpage-intro-wrapper -->
+  <div class="archive-read-button archive-read-button--more"></div>
 </div>

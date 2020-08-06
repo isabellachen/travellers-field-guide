@@ -2012,7 +2012,17 @@ input[type='submit'] {
 }
 
 @media (min-width: 768px) {
-  .frontpage-gallery-wrapper, .frontpage-featured-wrapper, .frontpage-posts-wrapper {
+  .frontpage-posts-wrapper {
+    margin-top: 2rem;
+  }
+}
+
+.frontpage-gallery-wrapper, .frontpage-featured-wrapper {
+  margin-top: 0.5rem;
+}
+
+@media (min-width: 1024px) {
+  .frontpage-gallery-wrapper, .frontpage-featured-wrapper {
     margin-top: 2rem;
   }
 }
@@ -2282,6 +2292,46 @@ input[type='submit'] {
 .mh-faq-block {
   width: 100%;
   padding: 0.75rem;
+}
+
+.archive-read-button {
+  cursor: pointer;
+  color: #736997;
+  text-align: center;
+  text-decoration: underline;
+  margin-top: 0.25rem;
+}
+
+@media (min-width: 1024px) {
+  .archive-read-button {
+    display: none;
+  }
+}
+
+.archive-read-button--more:before {
+  content: 'Read More';
+}
+
+.archive-read-button--less:before {
+  content: 'Read Less';
+}
+
+.archive-lead-content {
+  overflow-y: hidden;
+  max-height: 90px;
+  transition-property: all;
+  transition-duration: 0.5s;
+  transition-timing-function: linear;
+}
+
+@media (min-width: 1024px) {
+  .archive-lead-content {
+    max-height: initial;
+  }
+}
+
+.archive-lead-content.long {
+  max-height: 800px;
 }
 
 /*

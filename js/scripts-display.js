@@ -8,7 +8,19 @@
     }
   }
 
+  function archiveReadMore() {
+    const $button = $('.archive-read-button');
+    const $lead = $('.archive-lead-content');
+
+    $button.click(() => {
+      $lead.toggleClass('long');
+      $button.toggleClass('archive-read-button--more');
+      $button.toggleClass('archive-read-button--less');
+    });
+  }
+
   $(window).on('load', function () {
     scrollOnPaginate();
+    archiveReadMore();
   });
 })(jQuery);

@@ -156,7 +156,7 @@ function travellers_field_guide_scripts()
 
   wp_enqueue_script('travellers-field-guide-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true);
 
-  if (is_paged()) {
+  if (is_paged() || is_archive()) {
     wp_enqueue_script('travellers-field-guide-scripts', get_template_directory_uri() . '/js/scripts-display.js', array('jquery'), _S_VERSION, true);
   }
   if ((is_single() || is_page()) && !is_front_page()) {

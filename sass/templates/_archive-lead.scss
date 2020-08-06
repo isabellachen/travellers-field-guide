@@ -1,0 +1,37 @@
+.archive-read-button {
+  cursor: pointer;
+  color: $c-secondary;
+  text-align: center;
+  text-decoration: underline;
+  margin-top: 0.25rem;
+  @media (min-width: $screen-size-l) {
+    display: none;
+  }
+
+  &--more {
+    &:before {
+      content: 'Read More';
+    }
+  }
+
+  &--less {
+    &:before {
+      content: 'Read Less';
+    }
+  }
+}
+
+.archive-lead-content {
+  overflow-y: hidden;
+  max-height: 90px;
+  transition-property: all;
+  transition-duration: 0.5s;
+  transition-timing-function: linear;
+  @media (min-width: $screen-size-l) {
+    max-height: initial;
+  }
+}
+
+.archive-lead-content.long {
+  max-height: 800px;
+}

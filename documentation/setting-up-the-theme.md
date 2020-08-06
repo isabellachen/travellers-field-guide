@@ -21,6 +21,9 @@
 
 - The theme displays the three latest featured stories on each page using the Frontpage template. To set up, under the field group "Single Post Custom Fields" create a field called page_featured, Field Type > Choice > True/False.
 
+### Photo Gallery Display on Category Page (ACF setup)
+- To set up the long landscape image of the photo gallery, create a custom field "photo_gallery_image", of Field Type Image. Make sure the return format is "Image Array".
+
 ### Travel Diaries on Home Page
 
 - Only displays post under the category 'destinations'
