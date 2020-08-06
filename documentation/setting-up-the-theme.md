@@ -14,8 +14,8 @@
 ### Featured Stories for Home Page (ACF setup)
 
 - The theme displays the three latest featured stories on the Home Page. To set up, under the field group "Single Post Custom Fields" create a field called home_featured, Field Type > Choice > True/False.
-
 - To set up the portrait image of the featured story, create a custom field "featured_story_image", of Field Type Image. Make sure the return format is "Image Array".
+- To display the country subheading, the post needs a tag e.g. 'Iceland'
 
 ### Featured Stories of Page (ACF setup)
 
