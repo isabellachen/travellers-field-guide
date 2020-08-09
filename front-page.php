@@ -60,7 +60,7 @@ get_header();
         $wp_query = null;
         $args = array(
           "category_name" => 'destinations',
-          'posts_per_page' => 12,
+          'posts_per_page' => 21,
           'paged' => $paged,
         );
         $wp_query = new WP_Query($args);

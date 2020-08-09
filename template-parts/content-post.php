@@ -15,12 +15,14 @@
     <!-- Subtitle: display the country category for the current post, e.g. "Iceland" -->
     <div class="entry-header-subtitle container">
       <?php
+      $queried_object = get_queried_object();
       $post_id = get_the_ID();
       $post_tags = get_the_tags($post_id);
       $post_tag_single = $post_tags[0]->name;
       $post_category = get_category_by_slug($post_tag_single);
       $post_cateogory_ID = $post_category->cat_ID;
       $post_category_url = get_category_link($post_cateogory_ID);
+      $long_excerpt = get_field('long_excerpt', $queried_object);
       ?>
       <a href="<?php echo $post_category_url ?>"><?php echo $post_tag_single ?></a>
     </div>
@@ -28,7 +30,7 @@
       <h1 class="entry-header-title"><?php the_title() ?></h1>
     </div>
     <div class="entry-header-excerpt-wrapper">
-      <div class="entry-header-excerpt entry-header-excerpt--mobile"><?php echo the_excerpt() ?></div>
+      <div class="entry-header-excerpt entry-header-excerpt--mobile"><?php echo $long_excerpt != null ? $long_excerpt : the_excerpt() ?></div>
     </div>
   </header><!-- .entry-header -->
 
