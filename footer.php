@@ -18,15 +18,15 @@
       <div class="site-footer-left">
         <h2>Get in Touch</h2>
         <div class="site-footer-email">
-          <img src="<?php bloginfo('template_url'); ?>/assets/icons/email.svg">
+          <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/icons/email.svg">
           <span>hello [at] madhouseheaven.com</span>
         </div>
         <div class="site-footer-icons-wrapper">
-          <a href="https://www.facebook.com/madhouseheavenstudio/" target="_blank" rel="noopener noreferrer" class="site-footer-icon"><img src="<?php bloginfo('template_url'); ?>/assets/icons/facebook.svg"></a>
-          <a href="https://www.instagram.com/madhouse_heaven/" target="_blank" rel="noopener noreferrer" class="site-footer-icon"><img src="<?php bloginfo('template_url'); ?>/assets/icons/instagram.svg"></a>
-          <a href="https://www.youtube.com/channel/UCYntFLHyk-9XhrAYhTfxjew" rel="noopener noreferrer" target="_blank" class="site-footer-icon"><img src="<?php bloginfo('template_url'); ?>/assets/icons/youtube.svg"></a>
-          <a href="https://www.flickr.com/photos/madhouseheaven/" target="_blank" rel="noopener noreferrer" class="site-footer-icon"><img src="<?php bloginfo('template_url'); ?>/assets/icons/flickr.svg"></a>
-          <a href="https://www.pinterest.es/madhouseheaven/" target="_blank" rel="noopener noreferrer" class="site-footer-icon"><img src="<?php bloginfo('template_url'); ?>/assets/icons/pinterest.svg"></a>
+          <a href="https://www.facebook.com/madhouseheavenstudio/" target="_blank" rel="noopener noreferrer" class="site-footer-icon"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/icons/facebook.svg"></a>
+          <a href="https://www.instagram.com/madhouse_heaven/" target="_blank" rel="noopener noreferrer" class="site-footer-icon"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/icons/instagram.svg"></a>
+          <a href="https://www.youtube.com/channel/UCYntFLHyk-9XhrAYhTfxjew" rel="noopener noreferrer" target="_blank" class="site-footer-icon"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/icons/youtube.svg"></a>
+          <a href="https://www.flickr.com/photos/madhouseheaven/" target="_blank" rel="noopener noreferrer" class="site-footer-icon"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/icons/flickr.svg"></a>
+          <a href="https://www.pinterest.es/madhouseheaven/" target="_blank" rel="noopener noreferrer" class="site-footer-icon"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/icons/pinterest.svg"></a>
         </div>
       </div>
       <div class="site-footer-right">

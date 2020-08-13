@@ -122,40 +122,13 @@
     });
   }
 
-  function elInViewport(el) {
-    if (typeof jQuery === 'function' && el instanceof jQuery) {
-      el = el[0];
-    }
-
-    const rect = el.getBoundingClientRect();
-    return (
-      rect.top >= 0 &&
-      rect.left >= 0 &&
-      rect.bottom <=
-        (window.innerHeight || document.documentElement.clientHeight) &&
-      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-    );
-  }
-
-  //Quick fix to anchor scoll on FAQ links
+  //Quick fix to anchor scoll on FAQ links - does not work properly with lazy load turned on
   function offsetAnchor() {
     const hash = window.location.hash;
     const $target = $(hash);
-
-    function scrollTo() {
-      let targetLocation = $target.offset().top;
-      window.scroll(0, targetLocation);
-      if (!elInViewport($target)) {
-        window.requestAnimationFrame(scrollTo);
-      }
-    }
     if (location.hash.length !== 0) {
       let targetLocation = $target.offset().top;
       window.scroll(0, targetLocation);
-      window.setTimeout(() => {
-        scrollTo();
-        window.requestAnimationFrame(scrollTo);
-      }, 1200);
     }
   }
 

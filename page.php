@@ -15,7 +15,7 @@ get_header();
   <div class="long-content-controls">
     <div class="back-to-top-button">
       <div class="back-to-top-button-inner">
-        <img src="<?php bloginfo('template_url'); ?>/assets/icons/arrow.svg">
+        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/icons/arrow.svg">
       </div>
     </div>
   </div>

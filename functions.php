@@ -366,13 +366,15 @@ add_action('wp_head', 'tgf_ga_head');
  */
 function set_offset_on_front_page($query)
 {
-  if (is_category() && !is_paged()) {
-    // +1 because we want to add the Photo Gallery (former chapter guides) to the query and still maintain the 3 per row layout
-    $query->query_vars['posts_per_page'] = get_option('posts_per_page') + 1;
-  }
-  if (is_category() && is_paged()) {
-    $posts_per_page = isset($query->query_vars['posts_per_page']) ? $query->query_vars['posts_per_page'] : get_option('posts_per_page');
-    $query->query_vars['offset'] = (($query->query_vars['paged'] - 2) * $posts_per_page) + $posts_per_page + 1;
+  if (!is_admin() && $query->is_main_query()) {
+    if (is_category() && !is_paged()) {
+      // +1 because we want to add the Photo Gallery (former chapter guides) to the query and still maintain the 3 per row layout
+      $query->query_vars['posts_per_page'] = get_option('posts_per_page') + 1;
+    }
+    if (is_category() && is_paged()) {
+      $posts_per_page = isset($query->query_vars['posts_per_page']) ? $query->query_vars['posts_per_page'] : get_option('posts_per_page');
+      $query->query_vars['offset'] = (($query->query_vars['paged'] - 2) * $posts_per_page) + $posts_per_page + 1;
+    }
   }
 }
 add_action('pre_get_posts', 'set_offset_on_front_page');

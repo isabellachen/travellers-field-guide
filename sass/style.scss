@@ -1,8 +1,8 @@
 /*!
 Theme Name: travellers-field-guide
-Theme URI: http://underscores.me/
+Theme URI: https://github.com/isabellachen/travellers-field-guide/
 Author: Isabella Chen
-Author URI: http://underscores.me/
+Author URI: http://isachen.com/
 Description: Theme for Madhouse Heaven 2.0
 Version: 1.0.0
 Tested up to: 5.4
@@ -116,4 +116,20 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 
 .justified-image-grid {
   margin-top: 1rem !important;
+}
+
+.photonic-loading {
+  border-radius: 10%;
+  background-position: 50% 60% !important;
+}
+
+.photonic-loading:after {
+  content: 'LOADING GALLERY';
+  font-size: 10px;
+  color: #ffffff;
+  width: 100%;
+  background-color: #50555e;
+  display: block;
+  text-align: center;
+  padding: 0.25rem 0;
 }
