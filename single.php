@@ -33,8 +33,8 @@ get_header();
     }
     if (isset($post_tag)) {
       $post_category = get_category_by_slug($post_tag->slug);
-      $post_category_ID = $post_category && $post_category->cat_ID;
-      $post_category_url = $post_category_ID && get_category_link($post_category_ID);
+      $post_category_ID = $post_category ? $post_category->cat_ID : false;
+      $post_category_url = $post_category_ID ? get_category_link($post_category_ID) : '';
     }
     $current_post_id = get_the_ID();
     get_template_part('template-parts/content', get_post_type());
