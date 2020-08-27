@@ -31,3 +31,24 @@
     }
   }
 }
+
+.page.page-template-page_parallax {
+  .site-main {
+    position: relative;
+    top: 0;
+    margin-bottom: 0;
+  }
+
+  .entry-content {
+    margin-top: 0;
+  }
+}
+
+/*
+ * Reset for scrollytelling pages
+*/
+.page.page-id-13706 {
+  .site-main {
+    top: 0;
+  }
+}

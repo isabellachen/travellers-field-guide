@@ -1,0 +1,11 @@
+@import './kenya/main';
+
+.scrolly {
+  min-height: 30rem;
+  position: relative;
+
+  article {
+    position: relative;
+    width: 100%;
+  }
+}
