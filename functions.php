@@ -169,6 +169,11 @@ function travellers_field_guide_scripts()
   if (!(is_single() || is_page()) || is_front_page()) {
     wp_deregister_script('wpdevart_lightbox_front_end_js');
   }
+  if (is_page('kenya-conservation')) {
+    wp_enqueue_script('intersection-observer', 'https://unpkg.com/intersection-observer', array('jquery'), _S_VERSION, true);
+    wp_enqueue_script('scrollama', 'https://unpkg.com/scrollama', array('jquery'), _S_VERSION, true);
+    wp_enqueue_script('kenya-scrolly', get_template_directory_uri() . '/js/scrolly/kenya.js', array('scrollama', 'intersection-observer', 'jquery'), _S_VERSION, true);
+  }
 }
 add_action('wp_enqueue_scripts', 'travellers_field_guide_scripts');
 
