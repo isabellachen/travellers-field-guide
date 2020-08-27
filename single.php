@@ -15,7 +15,7 @@ get_header();
   <div class="long-content-controls">
     <div class="related-posts-button">
       <div class="related-posts-button-inner">
-        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/icons/hamburger.svg">
+        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/icons/location.svg">
       </div>
     </div>
     <div class="back-to-top-button">

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="19px" height="27px" viewBox="0 0 19 27" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Shape</title>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="pin" transform="translate(-8.000000, 0.000000)" fill="#4F565D" fill-rule="nonzero">
+            <g id="location" transform="translate(8.000000, 0.000000)">
+                <path d="M9.5,27 C9.5,27 0,14.6745 0,9.45 C0,4.2309 4.25328571,0 9.5,0 C14.7467143,0 19,4.2309 19,9.45 L19,9.45 C19,14.6745 9.5,27 9.5,27 Z M9.5,12.15 C10.9996429,12.15 12.2142857,10.94175 12.2142857,9.45 C12.2142857,7.95825 10.9996429,6.75 9.5,6.75 L9.5,6.75 C8.00035714,6.75 6.78571429,7.95825 6.78571429,9.45 C6.78571429,10.94175 8.00035714,12.15 9.5,12.15 L9.5,12.15 Z" id="Shape"></path>
+            </g>
+        </g>
+    </g>
+</svg>
