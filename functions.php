@@ -341,7 +341,7 @@ add_filter('big_image_size_threshold', '__return_false');
  * Add google analytics to the head
 */
 
-function tgf_ga_head()
+function tfg_ga_head()
 {
   //Close PHP tags 
 ?>
@@ -358,7 +358,7 @@ function tgf_ga_head()
 
 <?php //Open PHP tags
 }
-add_action('wp_head', 'tgf_ga_head');
+add_action('wp_head', 'tfg_ga_head');
 
 /**
  * Custom number of posts in category pages - used for pagination

@@ -236,9 +236,9 @@ select {
  * Correct the inability to style clickable types in iOS and Safari.
  */
 button,
-[type="button"],
-[type="reset"],
-[type="submit"] {
+[type='button'],
+[type='reset'],
+[type='submit'] {
   -webkit-appearance: button;
 }
 
@@ -246,9 +246,9 @@ button,
  * Remove the inner border and padding in Firefox.
  */
 button::-moz-focus-inner,
-[type="button"]::-moz-focus-inner,
-[type="reset"]::-moz-focus-inner,
-[type="submit"]::-moz-focus-inner {
+[type='button']::-moz-focus-inner,
+[type='reset']::-moz-focus-inner,
+[type='submit']::-moz-focus-inner {
   border-style: none;
   padding: 0;
 }
@@ -257,9 +257,9 @@ button::-moz-focus-inner,
  * Restore the focus styles unset by the previous rule.
  */
 button:-moz-focusring,
-[type="button"]:-moz-focusring,
-[type="reset"]:-moz-focusring,
-[type="submit"]:-moz-focusring {
+[type='button']:-moz-focusring,
+[type='reset']:-moz-focusring,
+[type='submit']:-moz-focusring {
   outline: 1px dotted ButtonText;
 }
 
@@ -303,8 +303,8 @@ textarea {
  * 1. Add the correct box sizing in IE 10.
  * 2. Remove the padding in IE 10.
  */
-[type="checkbox"],
-[type="radio"] {
+[type='checkbox'],
+[type='radio'] {
   box-sizing: border-box;
   padding: 0;
 }
@@ -312,8 +312,8 @@ textarea {
 /**
  * Correct the cursor style of increment and decrement buttons in Chrome.
  */
-[type="number"]::-webkit-inner-spin-button,
-[type="number"]::-webkit-outer-spin-button {
+[type='number']::-webkit-inner-spin-button,
+[type='number']::-webkit-outer-spin-button {
   height: auto;
 }
 
@@ -321,7 +321,7 @@ textarea {
  * 1. Correct the odd appearance in Chrome and Safari.
  * 2. Correct the outline style in Safari.
  */
-[type="search"] {
+[type='search'] {
   -webkit-appearance: textfield;
   outline-offset: -2px;
 }
@@ -329,7 +329,7 @@ textarea {
 /**
  * Remove the inner padding in Chrome and Safari on macOS.
  */
-[type="search"]::-webkit-search-decoration {
+[type='search']::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -400,7 +400,8 @@ select,
 optgroup,
 textarea {
   color: #f5f5f6;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
   font-size: 1rem;
   line-height: 1.5;
 }
@@ -418,7 +419,8 @@ h1,
 h2,
 h3,
 h4 {
-  font-family: "Alata", "Segoe UI", Roboto, Cantarell, "Helvetica Neue", sans-serif;
+  font-family: 'Alata', 'Segoe UI', Roboto, Cantarell, 'Helvetica Neue',
+    sans-serif;
   font-weight: 400;
   margin: 0.3125rem 0;
   text-transform: uppercase;
@@ -454,7 +456,7 @@ address {
 
 pre {
   background: #eee;
-  font-family: "Courier 10 Pitch", courier, monospace;
+  font-family: 'Courier 10 Pitch', courier, monospace;
   line-height: 1.6;
   margin-bottom: 1.6em;
   max-width: 100%;
@@ -466,7 +468,7 @@ code,
 kbd,
 tt,
 var {
-  font-family: monaco, consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+  font-family: monaco, consolas, 'Andale Mono', 'DejaVu Sans Mono', monospace;
 }
 
 abbr,
@@ -488,7 +490,9 @@ big {
 @font-face {
   font-display: swap;
   font-family: 'Alata';
-  src: url("assets/fonts/alata-regular-webfont.woff2") format("woff2"), url("assets/fonts/alata-regular-webfont.woff") format("woff"), url("assets/fonts/alata-regular-webfont.ttf") format("truetype");
+  src: url('assets/fonts/alata-regular-webfont.woff2') format('woff2'),
+    url('assets/fonts/alata-regular-webfont.woff') format('woff'),
+    url('assets/fonts/alata-regular-webfont.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -621,7 +625,9 @@ a:visited {
   color: #a196c7;
 }
 
-a:hover, a:focus, a:active {
+a:hover,
+a:focus,
+a:active {
   color: #a196c7;
 }
 
@@ -629,7 +635,8 @@ a:focus {
   outline: thin dotted;
 }
 
-a:hover, a:active {
+a:hover,
+a:active {
   outline: 0;
 }
 
@@ -655,7 +662,8 @@ input[type='submit']:hover {
   border-color: #50555e;
 }
 
-button:active, button:focus,
+button:active,
+button:focus,
 input[type='button']:active,
 input[type='button']:focus,
 input[type='reset']:active,
@@ -806,7 +814,8 @@ input[type='submit'] {
  * SCREEN SIZES
 */
 .main-navigation {
-  font-family: "Alata", "Segoe UI", Roboto, Cantarell, "Helvetica Neue", sans-serif;
+  font-family: 'Alata', 'Segoe UI', Roboto, Cantarell, 'Helvetica Neue',
+    sans-serif;
   font-size: 1.5rem;
   text-transform: uppercase;
   text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
@@ -1023,9 +1032,9 @@ input[type='submit'] {
   display: block;
 }
 
-.site-main .comment-navigation, .site-main
-.posts-navigation, .site-main
-.post-navigation {
+.site-main .comment-navigation,
+.site-main .posts-navigation,
+.site-main .post-navigation {
   margin: 0 0 1.5em;
 }
 
@@ -1322,7 +1331,11 @@ input[type='submit'] {
 
 .hero:before {
   content: '';
-  background: linear-gradient(180deg, rgba(0, 0, 13, 0.3) 0%, rgba(255, 255, 255, 0) 20%);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 13, 0.3) 0%,
+    rgba(255, 255, 255, 0) 20%
+  );
   position: absolute;
   z-index: 10;
   height: 100%;
@@ -1344,7 +1357,11 @@ input[type='submit'] {
 }
 
 .hero-menu-darken--circular-gradient {
-  background: radial-gradient(circle at 75% -15%, rgba(0, 0, 13, 0.75) 15%, rgba(0, 0, 13, 0.15) 80%);
+  background: radial-gradient(
+    circle at 75% -15%,
+    rgba(0, 0, 13, 0.75) 15%,
+    rgba(0, 0, 13, 0.15) 80%
+  );
 }
 
 .hero:after {
@@ -1493,7 +1510,11 @@ input[type='submit'] {
   width: 100%;
   position: absolute;
   top: 0;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 35%, rgba(0, 0, 0, 0.5) 100%);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 35%,
+    rgba(0, 0, 0, 0.5) 100%
+  );
   z-index: 10;
 }
 
@@ -1553,13 +1574,16 @@ input[type='submit'] {
   }
 }
 
-.tile-content-subheading, .tile-content-title, .tile-content-paragraph {
+.tile-content-subheading,
+.tile-content-title,
+.tile-content-paragraph {
   margin: 0;
 }
 
 .tile-content-subheading {
   font-weight: 300;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
 }
 
 .tile-content-title {
@@ -1919,7 +1943,7 @@ input[type='submit'] {
 }
 
 /* Do not show the outline on the skip link target. */
-#primary[tabindex="-1"]:focus {
+#primary[tabindex='-1']:focus {
   outline: 0;
 }
 
@@ -1960,7 +1984,8 @@ input[type='submit'] {
 }
 
 .dropcap p:first-of-type:first-child:first-letter {
-  font-family: "Alata", "Segoe UI", Roboto, Cantarell, "Helvetica Neue", sans-serif;
+  font-family: 'Alata', 'Segoe UI', Roboto, Cantarell, 'Helvetica Neue',
+    sans-serif;
   float: left;
   font-size: 3.5rem;
   line-height: 45px;
@@ -2006,7 +2031,8 @@ input[type='submit'] {
 }
 
 @media (min-width: 768px) {
-  .frontpage-featured, .frontpage-posts-inner {
+  .frontpage-featured,
+  .frontpage-posts-inner {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -2019,17 +2045,20 @@ input[type='submit'] {
   }
 }
 
-.frontpage-gallery-wrapper, .frontpage-featured-wrapper {
+.frontpage-gallery-wrapper,
+.frontpage-featured-wrapper {
   margin-top: 0.5rem;
 }
 
 @media (min-width: 1024px) {
-  .frontpage-gallery-wrapper, .frontpage-featured-wrapper {
+  .frontpage-gallery-wrapper,
+  .frontpage-featured-wrapper {
     margin-top: 2rem;
   }
 }
 
-.frontpage-featured-title, .frontpage-posts-title {
+.frontpage-featured-title,
+.frontpage-posts-title {
   margin-bottom: 1.5rem;
 }
 
@@ -2357,7 +2386,7 @@ input[type='submit'] {
 }
 
 .owl-carousel .owl-stage:after {
-  content: ".";
+  content: '.';
   display: block;
   clear: both;
   visibility: hidden;
@@ -2516,7 +2545,8 @@ input[type='submit'] {
   transition: opacity 400ms ease;
 }
 
-.owl-carousel .owl-item .owl-lazy[src^=""], .owl-carousel .owl-item .owl-lazy:not([src]) {
+.owl-carousel .owl-item .owl-lazy[src^=''],
+.owl-carousel .owl-item .owl-lazy:not([src]) {
   max-height: 0;
 }
 
@@ -2541,7 +2571,7 @@ input[type='submit'] {
   top: 50%;
   margin-left: -40px;
   margin-top: -40px;
-  background: url("owl.video.play.png") no-repeat;
+  background: url('owl.video.play.png') no-repeat;
   cursor: pointer;
   z-index: 1;
   -webkit-backface-visibility: hidden;
@@ -2588,7 +2618,11 @@ input[type='submit'] {
   width: 100%;
   position: absolute;
   top: 0;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 35%, rgba(0, 0, 13, 0.5) 100%);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0) 35%,
+    rgba(0, 0, 13, 0.5) 100%
+  );
   z-index: 10;
 }
 
@@ -2655,7 +2689,7 @@ input[type='submit'] {
 
 .owl-prev:before {
   left: 0.25rem;
-  background-image: url("assets/icons/chevron-left-gray.svg");
+  background-image: url('assets/icons/chevron-left-gray.svg');
 }
 
 .owl-next {
@@ -2663,7 +2697,7 @@ input[type='submit'] {
 }
 
 .owl-next:before {
-  background-image: url("assets/icons/chevron-left-gray.svg");
+  background-image: url('assets/icons/chevron-left-gray.svg');
   transform: rotate(180deg);
   left: -0.25rem;
 }
@@ -2737,11 +2771,11 @@ input[type='submit'] {
 }
 
 .owl-theme .owl-nav [class*='owl-'] {
-  color: #FFF;
+  color: #fff;
   font-size: 14px;
   margin: 5px;
   padding: 4px 7px;
-  background: #D6D6D6;
+  background: #d6d6d6;
   display: inline-block;
   cursor: pointer;
   border-radius: 3px;
@@ -2749,7 +2783,7 @@ input[type='submit'] {
 
 .owl-theme .owl-nav [class*='owl-']:hover {
   background: #869791;
-  color: #FFF;
+  color: #fff;
   text-decoration: none;
 }
 
@@ -2777,14 +2811,15 @@ input[type='submit'] {
   width: 10px;
   height: 10px;
   margin: 5px 7px;
-  background: #D6D6D6;
+  background: #d6d6d6;
   display: block;
   -webkit-backface-visibility: visible;
   transition: opacity 200ms ease;
   border-radius: 30px;
 }
 
-.owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
+.owl-theme .owl-dots .owl-dot.active span,
+.owl-theme .owl-dots .owl-dot:hover span {
   background: #869791;
 }
 
@@ -2822,4 +2857,8 @@ input[type='submit'] {
 
 .photonic-object-header {
   display: none !important;
+}
+
+.photonic-stream {
+  display: block !important;
 }

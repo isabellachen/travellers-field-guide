@@ -55,6 +55,7 @@
         <?php if (is_front_page() || is_404() || is_search()) : ?>
           <?php
           $hero_posts = get_posts(array(
+            'numberposts'  => -1,
             'meta_query' => array(
               array(
                 'key'   => 'home_hero',

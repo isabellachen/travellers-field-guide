@@ -22,10 +22,11 @@ get_header();
   <div class="frontpage-featured-wrapper">
     <?php
     $featured_stories = get_posts(array(
+      'numberposts'  => -1,
       'meta_query' => array(
         array(
           'key'   => 'home_featured',
-          'value' => '1',
+          'value' => '1'
         )
       )
     ));

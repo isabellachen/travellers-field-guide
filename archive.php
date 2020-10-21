@@ -37,6 +37,7 @@ get_header();
     <?php
     $featured_stories = get_posts(array(
       'category_name' => $taxonomy_slug,
+      'numberposts'  => -1,
       'meta_query' => array(
         array(
           'key'   => 'page_featured',
