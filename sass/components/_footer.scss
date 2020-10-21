@@ -77,6 +77,33 @@
     }
   }
 
+  &-notices {
+    position: fixed;
+    bottom: 0;
+    z-index: 100;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 0.5rem;
+  }
+
+  &-notices-inner {
+    display: flex;
+    padding: 0.35rem;
+    align-items: center;
+    @media (min-width: $screen-size-m) {
+      justify-content: center;
+    }
+  }
+
+  &-notices {
+    button {
+      margin-right: 1.5rem;
+      margin-left: 1rem;
+      padding: 0.5rem;
+      min-width: 80px;
+    }
+  }
+
   input[type='submit'] {
     background-color: $c-primary-dark;
   }

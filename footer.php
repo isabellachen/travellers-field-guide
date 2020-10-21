@@ -13,6 +13,10 @@
 ?>
 
 <footer id="colophon" class="site-footer">
+  <div class="site-footer-notices">
+    <div class="site-footer-notices-inner container site-footer-notices-rebranding is-hidden"><span>Madhouse Heaven is currently rebranding to The Next Crossing, please bear with us 🙏</span><button class="button-rebranding">CLOSE</button></div>
+    <div class="site-footer-notices-inner container site-footer-notices-cookie is-hidden"><span>By continuing to use this site, you consent to cookies.</span><button class="button-cookie">ACCEPT</button></div>
+  </div>
   <div class="site-info">
     <div class="site-footer-inner container">
       <div class="site-footer-left">
