@@ -20,31 +20,16 @@ I had previously considered using GatsbyJS and the headless WordPress API to mak
 
 This custom theme was designed and develped by me. I took a mobile first approach and ensured the design looked beautiful on all screen types.
 
-<div style="width:100%; display:flex; justify-content: center;margin-bottom: 10px; margin-top: 20px;">
-  <img src="./assets/images/tnc_mobile_andorra_3.jpg" alt="lighthouse" style="width:180px; margin-right:20px; border: 5px solid #000;"/>
-  <img src="./assets/images/tnc_desktop_andorra.jpg" alt="lighthouse" style="width:720px; border: 5px solid #000;"/>
-</div>
+|                    Mobile                     |                   Desktop                    |
+| :-------------------------------------------: | :------------------------------------------: |
+| ![](./assets/images/tnc_mobile_andorra_3.jpg) | ![](./assets/images/tnc_desktop_andorra.jpg) |
 
 # The Design
 
-<div style="width:100%; display:flex; justify-content:center; margin-bottom: 10px; margin-top: 20px;">
-  <div style="margin-right: 20px;">
-    <p style="font-weight:bold; text-align:center;">Main Screen</p>
-    <img src="./assets/images/tnc_mobile_main.png" alt="lighthouse" style="width:180px;border: 5px solid #000;"/>
-  </div>
-  <div style="margin-right: 20px;">
-    <p style="font-weight:bold; text-align:center;">Navigation</p>
-    <img src="./assets/images/tnc_mobile_menu.jpg" alt="lighthouse" style="width:180px; border: 5px solid #000;"/>
-  </div>
-  <div>
-    <p style="font-weight:bold; text-align:center;">Related Post Widget</p>
-    <img src="./assets/images/tnc_related_posts.png" alt="lighthouse" style="width:180px;border: 5px solid #000;"/>
-  </div>
-</div>
+|                   Home                   |                   Menu                   |               Related Posts                |
+| :--------------------------------------: | :--------------------------------------: | :----------------------------------------: |
+| ![](./assets/images/tnc_mobile_main.png) | ![](./assets/images/tnc_mobile_menu.png) | ![](./assets/images/tnc_related_posts.png) |
 
- <div style="width:100%; display:flex; flex-direction: column; align-items: center; margin-bottom: 10px; margin-top: 20px;">
-  <div style="width: 600px;">
-    <p style="font-weight:bold; text-align:center;">Desktop Home</p>
-    <img src="./assets/images/tnc_desktop_home.png" alt="lighthouse" style="width:600px;border: 5px solid #000;"/>
-    </div>
-</div>
+|               Home Desktop                |
+| :---------------------------------------: |
+| ![](./assets/images/tnc_desktop_home.png) |
