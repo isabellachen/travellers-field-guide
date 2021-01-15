@@ -26,9 +26,9 @@ This custom theme was designed and develped by me. I took a mobile first approac
 
 # The Design
 
-|                    Home                    |                    Menu                    |               Related Posts                |
-| :----------------------------------------: | :----------------------------------------: | :----------------------------------------: |
-| ![](./assets/images/tnc_related_posts.gif) | ![](./assets/images/tnc_related_posts.gif) | ![](./assets/images/tnc_related_posts.gif) |
+|                   Home                   |                    Menu                    |               Related Posts                |
+| :--------------------------------------: | :----------------------------------------: | :----------------------------------------: |
+| ![](./assets/images/tnc_mobile_main.png) | ![](./assets/images/tnc_related_posts.gif) | ![](./assets/images/tnc_related_posts.gif) |
 
 |               Home Desktop                |
 | :---------------------------------------: |
