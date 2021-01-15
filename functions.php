@@ -317,7 +317,7 @@ function create_custom_image_size($sizes)
   $custom_sizes = array(
     'width_s' => 'Width-S 540',
     'small_square' => 'Small-Square 300',
-    'medium_square' => 'Medium-Square 700',
+    'medium_square' => 'Medium-Square 478',
     'medium_large' => 'Medium Large 768'
   );
   return array_merge($sizes, $custom_sizes);
@@ -346,7 +346,7 @@ function tfg_ga_head()
 {
   //Close PHP tags 
 ?>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-71125016-1"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7SGCVP144M"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
 
@@ -354,7 +354,7 @@ function tfg_ga_head()
       dataLayer.push(arguments);
     }
     gtag('js', new Date());
-    gtag('config', 'UA-71125016-1');
+    gtag('config', 'G-7SGCVP144M');
   </script>
 
 <?php //Open PHP tags

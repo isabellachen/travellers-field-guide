@@ -23,7 +23,7 @@
         <h2>Get in Touch</h2>
         <div class="site-footer-email">
           <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/icons/email.svg">
-          <span>hello [at] madhouseheaven.com</span>
+          <span>hello [at] thenextcrossing.com</span>
         </div>
         <div class="site-footer-icons-wrapper">
           <a href="https://www.facebook.com/madhouseheavenstudio/" target="_blank" rel="noopener noreferrer" class="site-footer-icon"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/icons/facebook.svg"></a>
@@ -56,7 +56,7 @@
       </div>
     </div><!-- .site-footer-main -->
     <div class="site-footer-sub">
-      <span>© <?php echo date("Y") ?> Madhouse Heaven | Webmaster: <a href="https://www.isachen.com">www.isachen.com</a></span>
+      <span>© <?php echo date("Y") ?> The Next Crossing | Webmaster: <a href="https://www.isachen.com">www.isachen.com</a></span>
     </div>
   </div><!-- .site-info -->
 </footer><!-- #colophon -->
