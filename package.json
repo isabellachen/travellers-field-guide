@@ -10,7 +10,7 @@
   "devDependencies": {
     "autoprefixer": "^9.1.5",
     "chokidar-cli": "^1.2.1",
-    "node-sass": "^4.9.3"
+    "node-sass": "^7.0.0"
   },
   "repository": {
     "type": "git",
